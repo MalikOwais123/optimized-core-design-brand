@@ -82,12 +82,12 @@ function MyApp({ Component, pageProps }) {
         {/* <ContactOption />  */}
         <Component {...pageProps} />
       </div>
-      {/* <Script
+      <Script
         strategy="afterInteractive"
         id="ze-snippet"
         src="https://static.zdassets.com/ekr/snippet.js?key=026cd8b7-0c2c-42c5-a8ef-6bd02caf68fb"
         // onLoad={openLiveChat}
-      /> */}
+      />
       <Script
         id="google-analytics"
         strategy="lazyOnload"
