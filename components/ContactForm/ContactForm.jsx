@@ -12,6 +12,7 @@ import {
   businessOption,
   industryOptions,
   budgetOption,
+  phoneNumber,
 } from "../../utils/Data/Data";
 import ShowMessage from "../ShowMessage/ShowMessage";
 import { post } from "../../utils/Data/helpers";
@@ -125,9 +126,9 @@ const ContactForm = () => {
           </Header>
           <Paragraph fontWeight="semi-bold">
             Leave your details below or call us on
-            <a href="tel:+1 (212)-343-1105" className={classList.callnow}>
+            <a href={`tel:${phoneNumber}`} className={classList.callnow}>
               {" "}
-              +1 (212)-343-1105
+              {phoneNumber}
             </a>{" "}
             and let`s chat about your business, your goals, and how we can help
             you grow.

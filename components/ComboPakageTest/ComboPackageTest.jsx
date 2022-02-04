@@ -1,67 +1,67 @@
-import classList from './ComboPackageTest.module.scss'
-import Header from '../Header/Header'
-import PackageList from '../PackageList/PackageList'
-import { FaCheck, FaCheckCircle } from 'react-icons/fa'
-import Button from '../Button/Button'
-import PackageListTest from '../PackageListTest/PackageListTest'
-import Paragraph from '../Paragraph/Paragraph'
-import images from '../../assets/images/discount.png';
-import Image from "next/image"
+import classList from "./ComboPackageTest.module.scss";
+import Header from "../Header/Header";
+import PackageList from "../PackageList/PackageList";
+import { FaCheck, FaCheckCircle } from "react-icons/fa";
+import Button from "../Button/Button";
+import PackageListTest from "../PackageListTest/PackageListTest";
+import Paragraph from "../Paragraph/Paragraph";
+import images from "../../assets/images/discount.png";
+import Image from "next/image";
+import { phoneNumber } from "../../utils/Data/Data";
 
 const ComboPackageTest = ({ showPrice = true }) => {
   const logoDesign = [
-    '5 Custom Logo Design Concepts',
-    'By 2 Award-winning designers',
-    'Icon Design',
-    'File Formats (PSD, PDF, AI, JPEG, PNG)',
-  ]
+    "5 Custom Logo Design Concepts",
+    "By 2 Award-winning designers",
+    "Icon Design",
+    "File Formats (PSD, PDF, AI, JPEG, PNG)",
+  ];
   const Staionary = [
-    'Business Card, Letterhead, Envelope',
-    'Fax Templete',
-    'MS Word Letterhead',
-  ]
+    "Business Card, Letterhead, Envelope",
+    "Fax Templete",
+    "MS Word Letterhead",
+  ];
 
   const SocialMedia = [
-    'Facebook Page Design',
-    'Twitter Page Design',
-    'Youtube Page Design',
-  ]
+    "Facebook Page Design",
+    "Twitter Page Design",
+    "Youtube Page Design",
+  ];
 
   const SocialMedia2 = [
-    'Google+ Page Design',
-    'Instagram Page Design',
-    'All Final File Formats',
-  ]
+    "Google+ Page Design",
+    "Instagram Page Design",
+    "All Final File Formats",
+  ];
 
   const Website = [
-    '5 Pages Website',
-    'CMS / Admin Panel',
-    'Mobile Responsive',
-    'Team of Expert Designers & Developers',
-    '8 Stock Images',
-    '5 Banner Designs',
-    'jQuery Sliders',
-    'Free Google Friendly Sitemap',
-    'Complete W3C Certified HTML',
-    'Complete Deployment',
-  ]
+    "5 Pages Website",
+    "CMS / Admin Panel",
+    "Mobile Responsive",
+    "Team of Expert Designers & Developers",
+    "8 Stock Images",
+    "5 Banner Designs",
+    "jQuery Sliders",
+    "Free Google Friendly Sitemap",
+    "Complete W3C Certified HTML",
+    "Complete Deployment",
+  ];
 
   const ValueAddedServices = [
-    '24 x 7 Customer Support',
-    'All Final File Formats',
-    'Dedicated Account Manager',
-    '100% Satisfaction Guarantee',
-    '100% Unique Design Guarantee',
-    '100% Money Back Guarantee',
-  ]
+    "24 x 7 Customer Support",
+    "All Final File Formats",
+    "Dedicated Account Manager",
+    "100% Satisfaction Guarantee",
+    "100% Unique Design Guarantee",
+    "100% Money Back Guarantee",
+  ];
 
   return (
     <>
       <div className={classList.packages_wrapper}>
         <div className={classList.packages_items}>
           <div
-            className={`${classList.header_items} ${classList.centralize_txt}`}
-          >
+            className={`${classList.header_items} ${classList.centralize_txt}`}>
             <Header fontWeight="medium" variant="h3">
               Combo Packages
             </Header>
@@ -81,16 +81,15 @@ const ComboPackageTest = ({ showPrice = true }) => {
                   <div
                     className={classList.list_items}
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      margin: ' 10px 0',
-                    }}
-                  >
+                      display: "flex",
+                      alignItems: "center",
+                      margin: " 10px 0",
+                    }}>
                     <FaCheck
                       className={classList.check_icon}
-                      style={{ margin: '0 10px 0 0' }}
+                      style={{ margin: "0 10px 0 0" }}
                       color="#272a3d"
-                      size={'15px'}
+                      size={"15px"}
                     />
                     <Paragraph>{a}</Paragraph>
                   </div>
@@ -104,16 +103,15 @@ const ComboPackageTest = ({ showPrice = true }) => {
                   <div
                     className={classList.list_items}
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      margin: ' 10px 0',
-                    }}
-                  >
+                      display: "flex",
+                      alignItems: "center",
+                      margin: " 10px 0",
+                    }}>
                     <FaCheck
                       className={classList.check_icon}
-                      style={{ margin: '0 10px 0 0' }}
+                      style={{ margin: "0 10px 0 0" }}
                       color="#272a3d"
-                      size={'15px'}
+                      size={"15px"}
                     />
                     <Paragraph>{a}</Paragraph>
                   </div>
@@ -127,16 +125,15 @@ const ComboPackageTest = ({ showPrice = true }) => {
                   <div
                     className={classList.list_items}
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      margin: ' 10px 0',
-                    }}
-                  >
+                      display: "flex",
+                      alignItems: "center",
+                      margin: " 10px 0",
+                    }}>
                     <FaCheck
                       className={classList.check_icon}
-                      style={{ margin: '0 10px 0 0' }}
+                      style={{ margin: "0 10px 0 0" }}
                       color="#272a3d"
-                      size={'15px'}
+                      size={"15px"}
                     />
                     <Paragraph>{a}</Paragraph>
                   </div>
@@ -151,16 +148,15 @@ const ComboPackageTest = ({ showPrice = true }) => {
                   <div
                     className={classList.list_items}
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      margin: ' 10px 0',
-                    }}
-                  >
+                      display: "flex",
+                      alignItems: "center",
+                      margin: " 10px 0",
+                    }}>
                     <FaCheck
                       className={classList.check_icon}
-                      style={{ margin: '0 10px 0 0' }}
+                      style={{ margin: "0 10px 0 0" }}
                       color="#272a3d"
-                      size={'15px'}
+                      size={"15px"}
                     />
                     <Paragraph>{a}</Paragraph>
                   </div>
@@ -174,16 +170,15 @@ const ComboPackageTest = ({ showPrice = true }) => {
                   <div
                     className={classList.list_items}
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      margin: ' 10px 0',
-                    }}
-                  >
+                      display: "flex",
+                      alignItems: "center",
+                      margin: " 10px 0",
+                    }}>
                     <FaCheck
                       className={classList.check_icon}
-                      style={{ margin: '0 10px 0 0' }}
+                      style={{ margin: "0 10px 0 0" }}
                       color="#272a3d"
-                      size={'15px'}
+                      size={"15px"}
                     />
                     <Paragraph>{a}</Paragraph>
                   </div>
@@ -199,16 +194,15 @@ const ComboPackageTest = ({ showPrice = true }) => {
                   <div
                     className={classList.list_items}
                     style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      margin: ' 10px 0',
-                    }}
-                  >
+                      display: "flex",
+                      alignItems: "center",
+                      margin: " 10px 0",
+                    }}>
                     <FaCheck
                       className={classList.check_icon}
-                      style={{ margin: '0 10px 0 0' }}
+                      style={{ margin: "0 10px 0 0" }}
                       color="#272a3d"
-                      size={'15px'}
+                      size={"15px"}
                     />
                     <Paragraph>{a}</Paragraph>
                   </div>
@@ -228,13 +222,13 @@ const ComboPackageTest = ({ showPrice = true }) => {
         </div>
         <div className={classList.packages_items}>
           <div className={classList.inner_items}>
-            <a href="tel:5167866597">Call Now 516-786-6597</a>
+            <a href={`tel:${phoneNumber}`}>Call Now {phoneNumber}</a>
             <Button>Order Now</Button>
           </div>
         </div>
       </div>
     </>
-  )
-}
+  );
+};
 
-export default ComboPackageTest
+export default ComboPackageTest;

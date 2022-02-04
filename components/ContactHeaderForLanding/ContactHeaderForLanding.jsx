@@ -7,7 +7,8 @@ import message from "../../assets/images/logo/message.png";
 import { openLiveChat } from "../../utils/Data/helpers";
 import logo from "../../assets/images/logo.svg";
 import NavLink from "./../Navlinks/Navlinks";
-import Image from "next/image"
+import Image from "next/image";
+import { phoneNumber } from "../../utils/Data/Data";
 
 const ContactHeaderForLanding = () => {
   return (
@@ -30,10 +31,10 @@ const ContactHeaderForLanding = () => {
           </div>
           <div className={classList.contact_info}>
             <Image src={call.src} alt="" width={15} height={15} />
-            <a href="tel:+1 (212)-343-1105">+1 (212)-343-1105</a>
+            <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
           </div>
           <div className={classList.contact_info_btn}>
-            <Image src={chatLogo.src} alt="" width={28} height={28}  />
+            <Image src={chatLogo.src} alt="" width={28} height={28} />
             <a onClick={openLiveChat}>Live Chat</a>
           </div>
         </div>

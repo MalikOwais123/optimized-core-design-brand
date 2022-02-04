@@ -18,21 +18,23 @@ import branding3 from "../../assets/images/webImages/3.png";
 import branding4 from "../../assets/images/webImages/4.png";
 import NavLink from "../../components/Navlinks/Navlinks";
 import Head from "next/head";
-
+import { phoneNumber } from "../../utils/Data/Data";
 
 const index = () => {
   return (
     <>
       <div className={classList.ecommerce}>
-      <Head>
-          <title>Custom Web Portal Solutions | The Core Designs
-          </title>
+        <Head>
+          <title>Custom Web Portal Solutions | The Core Designs</title>
           <meta
             name="description"
             content="Looking for agile web portal design and development services? Welcome to The Core Designs. Contact our team and get the best web portal for your organization."
           />
         </Head>
-        <ReuseableRow cover={true} backgroundImage={bgWebDesign} contentImage={branding4}>
+        <ReuseableRow
+          cover={true}
+          backgroundImage={bgWebDesign}
+          contentImage={branding4}>
           <Header color="white" fontWeight="bold" fontSize="45">
             Custom Web Application Solutions
           </Header>
@@ -42,10 +44,14 @@ const index = () => {
             application for your organization.
           </Paragraph>
           <div>
-          <NavLink href="/contact">
-            
-            <Button backgroundColor="#FFFFFF" color="#1D2228" hoverLight={true}>Get Started</Button>
-          </NavLink>
+            <NavLink href="/contact">
+              <Button
+                backgroundColor="#FFFFFF"
+                color="#1D2228"
+                hoverLight={true}>
+                Get Started
+              </Button>
+            </NavLink>
           </div>
           <BannerMultiLogo />
         </ReuseableRow>
@@ -83,7 +89,7 @@ const index = () => {
               color="black"
               backgroundColor="transparent"
               style={{ border: "1px solid black", borderRadius: "6px" }}>
-              +1 (212)-343-1105
+              {phoneNumber}
             </Button>
           </div>
         </ReuseableRow>
@@ -110,17 +116,17 @@ const index = () => {
             and other platforms. With an internal staff of skilled designers and
             developers who are well-versed in platforms like Magento, Joomla,
             and OsCommerce, among others. With its dynamic application creation
-            services, Core Designs has earned a name for itself in the E-Commerce
-            business. Being the leading E-Commerce application development
-            company, we have developed plenty of applications for multinational
-            brands. Our area of expertise and strength is e-commerce website
-            design and development for E-Commerce businesses. The look and feel
-            of the website, including the design and layout, is the primary
-            emphasis of our experienced Application Development team. How well
-            the application is designed and managed by the business owner
-            determines how well the products catalog is kept, how easy it is to
-            handle the shopping cart and change it during the shopping process,
-            and how easy it is to make a secure payment.
+            services, Core Designs has earned a name for itself in the
+            E-Commerce business. Being the leading E-Commerce application
+            development company, we have developed plenty of applications for
+            multinational brands. Our area of expertise and strength is
+            e-commerce website design and development for E-Commerce businesses.
+            The look and feel of the website, including the design and layout,
+            is the primary emphasis of our experienced Application Development
+            team. How well the application is designed and managed by the
+            business owner determines how well the products catalog is kept, how
+            easy it is to handle the shopping cart and change it during the
+            shopping process, and how easy it is to make a secure payment.
           </Paragraph>
 
           <div className={classList.btn_group_contact}>
@@ -138,7 +144,7 @@ const index = () => {
               color="black"
               backgroundColor="transparent"
               style={{ border: "1px solid black", borderRadius: "6px" }}>
-              +1 (212)-343-1105
+              {phoneNumber}
             </Button>
           </div>
         </ReuseableRow>

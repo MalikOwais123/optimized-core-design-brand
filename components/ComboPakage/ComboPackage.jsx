@@ -3,11 +3,12 @@ import Header from "../Header/Header";
 import PackageList from "../PackageList/PackageList";
 import Button from "../Button/Button";
 import Discount from "../../assets/images/offerSale.png";
-import { useState } from 'react';
-import Modal from '../Modal/Modal';
-import ContactFormModal from '../ContactFormModal/ContactFormModal';
-import GetAQuotModal from '../GetAQuotModal/GetAQuotModal';
-import Image from "next/image"
+import { useState } from "react";
+import Modal from "../Modal/Modal";
+import ContactFormModal from "../ContactFormModal/ContactFormModal";
+import GetAQuotModal from "../GetAQuotModal/GetAQuotModal";
+import Image from "next/image";
+import { phoneNumber } from "../../utils/Data/Data";
 
 const ComboPackage = ({ showPrice = true }) => {
   var [showQuotModal, setShowQuoteModal] = useState(false);
@@ -94,14 +95,22 @@ const ComboPackage = ({ showPrice = true }) => {
         <div className={classList.packages_items}>
           <div
             className={`${classList.header_items} ${classList.centralize_txt}`}>
-            <div onClick={() => setShowQuoteModal(true)} className={classList.discount}>
-            <Image src={Discount.src} width={200} height={160} objectFit="contain" alt="" />
+            <div
+              onClick={() => setShowQuoteModal(true)}
+              className={classList.discount}>
+              <Image
+                src={Discount.src}
+                width={200}
+                height={160}
+                objectFit="contain"
+                alt=""
+              />
             </div>
             <Header fontWeight="semi-bold" variant="h3">
               Combo Packages
             </Header>
             <Header fontWeight="bold" variant="h1">
-              <span style={{color: "#B72A12"}} >Growth Seeker</span> Package
+              <span style={{ color: "#B72A12" }}>Growth Seeker</span> Package
             </Header>
           </div>
         </div>
@@ -126,8 +135,8 @@ const ComboPackage = ({ showPrice = true }) => {
         </div>
         <div className={classList.packages_items}>
           <div className={classList.inner_items}>
-            <a href="tel:+1 (917) 451-3258">Call Now +1 (917) 451-3258</a>
-            <Button onClick={() => setModal(true)} >Order Now</Button>
+            <a href={`tel:${phoneNumber}`}>Call Now {phoneNumber}</a>
+            <Button onClick={() => setModal(true)}>Order Now</Button>
           </div>
         </div>
       </div>

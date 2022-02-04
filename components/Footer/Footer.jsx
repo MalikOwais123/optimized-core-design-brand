@@ -6,6 +6,7 @@ import logo from "../../assets/images/logo.svg";
 import Paragraph from "../Paragraph/Paragraph";
 import NavLink from "../Navlinks/Navlinks";
 import { useWindowSize } from "../../utils/Data/helpers";
+import { phoneNumber } from "../../utils/Data/Data";
 
 const Footer = () => {
   const device = useWindowSize();
@@ -35,8 +36,7 @@ const Footer = () => {
                 </NavLink>
                 <NavLink href="mobile-application-services">
                   <li>
-                    <span>
-                    Mobile Application</span>
+                    <span>Mobile Application</span>
                   </li>
                 </NavLink>
                 <NavLink href="website-application-services">
@@ -90,7 +90,7 @@ const Footer = () => {
                   </a>
                 </li>
                 <li>
-                  Tel: <a href="tel:+1 (212)-343-1105">+1 (212)-343-1105</a>
+                  Tel: <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
                 </li>
                 <li>
                   Fax: <a href="tel:5167866597">+1 (917) 423-7108</a>

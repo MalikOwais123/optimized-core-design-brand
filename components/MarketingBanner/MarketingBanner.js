@@ -12,6 +12,7 @@ import { openLiveChat } from "../../utils/Data/helpers";
 import { useState } from "react";
 import GetAQuotModal from "../GetAQuotModal/GetAQuotModal";
 import Image from "next/image";
+import { phoneNumber } from "../../utils/Data/Data";
 
 function MarketingBanner() {
   var [showQuotModal, setShowQuoteModal] = useState(false);
@@ -23,7 +24,13 @@ function MarketingBanner() {
           <div className={classList.mokupGrid}>
             <div className={classList.mokupBox}>
               <div className={classList.laptop_wrapper}>
-                <Image width={400} height={400} objectFit="contain" src={mockupLaptop.src} alt="" />
+                <Image
+                  width={400}
+                  height={400}
+                  objectFit="contain"
+                  src={mockupLaptop.src}
+                  alt=""
+                />
               </div>
             </div>
             <div>
@@ -77,13 +84,13 @@ function MarketingBanner() {
               fontSize={16}>
               REQUEST A QUOTE
             </AnimatedButton>
-            <a href="tel:+1 (212)-343-1105" className={classList.callNow}>
+            <a href={`tel:${phoneNumber}`} className={classList.callNow}>
               <span>
                 <Paragraph marginBottom={0} color="#000">
                   call Us Now
                 </Paragraph>
                 <Paragraph marginBottom={0} color="#000">
-                  +1 (212)-343-1105
+                  {phoneNumber}
                 </Paragraph>
               </span>
               <Image src={phone2.src} width={50} height={50} alt="" />

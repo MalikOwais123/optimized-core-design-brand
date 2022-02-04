@@ -17,6 +17,7 @@ import location from "../../assets/images/logo/location.png";
 import email from "../../assets/images/logo/email.png";
 import { openLiveChat } from "../../utils/Data/helpers";
 import ContactPageForm from "../ContactPageForm/ContactPageForm";
+import { phoneNumber } from "../../utils/Data/Data";
 
 const MapServicesContact = () => {
   return (
@@ -44,10 +45,10 @@ const MapServicesContact = () => {
             <div className={classList.list}>
               <img src={phone.src} alt="" />
               <Paragraph style={{ marginBottom: "0px" }}>
-                <a href="tel:+1 (212)-343-1105" className={classList.callnow}>
+                <a href={`tel:${phoneNumber}`} className={classList.callnow}>
                   {" "}
-                  +1 (212)-343-1105
-                </a>
+                  {phoneNumber}
+                </a>{" "}
               </Paragraph>
             </div>
             <div className={classList.list}>
