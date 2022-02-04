@@ -74,7 +74,7 @@ const index = () => {
         />
       </Head>
       <WebsiteServices2
-        headingContent1="#1 Website Services"
+        headingContent1="#1 Website Service"
         headingContent2="Globally Recognized Website Service"
         paraContent="We're a nationally recognized firm that specializes in website service for SMEs and big corporations. We are helping global brands create websites that are as attractive as they are practical. Your website is one of the most effective marketing tools. We can provide you a website service that will help you in engaging with your visitors, increasing conversions, or improving your user experience."
       />
