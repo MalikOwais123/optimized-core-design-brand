@@ -42,7 +42,7 @@ const ContactHeader = () => {
           </div>
           <div className={classList.contact_info}>
             <img src={call.src} alt="" />
-            <a href="tel:+1 (917) 451-3258">+1 (917) 451-3258</a>
+            <a href="tel:+1 (212)-343-1105">+1 (212)-343-1105</a>
           </div>
           <div className={classList.contact_info_btn}>
             <img src={chatLogo.src} alt="" />

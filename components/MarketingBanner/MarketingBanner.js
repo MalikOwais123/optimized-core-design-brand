@@ -77,13 +77,13 @@ function MarketingBanner() {
               fontSize={16}>
               REQUEST A QUOTE
             </AnimatedButton>
-            <a href="tel:+1 (917) 451-3258" className={classList.callNow}>
+            <a href="tel:+1 (212)-343-1105" className={classList.callNow}>
               <span>
                 <Paragraph marginBottom={0} color="#000">
                   call Us Now
                 </Paragraph>
                 <Paragraph marginBottom={0} color="#000">
-                  +1 (917) 451-3258
+                  +1 (212)-343-1105
                 </Paragraph>
               </span>
               <Image src={phone2.src} width={50} height={50} alt="" />

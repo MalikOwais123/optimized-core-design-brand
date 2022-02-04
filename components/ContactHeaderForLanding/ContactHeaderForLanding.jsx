@@ -30,7 +30,7 @@ const ContactHeaderForLanding = () => {
           </div>
           <div className={classList.contact_info}>
             <Image src={call.src} alt="" width={15} height={15} />
-            <a href="tel:+1 (917) 451-3258">+1 (917) 451-3258</a>
+            <a href="tel:+1 (212)-343-1105">+1 (212)-343-1105</a>
           </div>
           <div className={classList.contact_info_btn}>
             <Image src={chatLogo.src} alt="" width={28} height={28}  />

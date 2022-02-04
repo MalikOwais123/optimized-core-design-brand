@@ -125,9 +125,9 @@ const ContactForm = () => {
           </Header>
           <Paragraph fontWeight="semi-bold">
             Leave your details below or call us on
-            <a href="tel:+1 (917) 451-3258" className={classList.callnow}>
+            <a href="tel:+1 (212)-343-1105" className={classList.callnow}>
               {" "}
-              +1 (917) 451-3258
+              +1 (212)-343-1105
             </a>{" "}
             and let`s chat about your business, your goals, and how we can help
             you grow.

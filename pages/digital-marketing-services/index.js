@@ -95,13 +95,13 @@ const index = () => {
             Get Started
           </Button>
           </a>
-          <a href="tel:+1 (917) 451-3258">
+          <a href="tel:+1 (212)-343-1105">
           <Button
             hoverLight={true}
             color="black"
             backgroundColor="transparent"
             style={{ border: "1px solid black", borderRadius: "6px" }}>
-            +1 (917) 451-3258
+            +1 (212)-343-1105
           </Button>
           </a>
           </div>
@@ -138,13 +138,13 @@ const index = () => {
             Get Started
           </Button>
           </a>
-          <a href="tel:+1 (917) 451-3258">
+          <a href="tel:+1 (212)-343-1105">
           <Button
             hoverLight={true}
             color="black"
             backgroundColor="transparent"
             style={{ border: "1px solid black", borderRadius: "6px" }}>
-            +1 (917) 451-3258
+            +1 (212)-343-1105
           </Button>
           </a>
           </div>

@@ -126,7 +126,7 @@ const ComboPackage = ({ showPrice = true }) => {
         </div>
         <div className={classList.packages_items}>
           <div className={classList.inner_items}>
-            <a href="tel:+1 (917) 451-3258">Call Now +1 (917) 451-3258</a>
+            <a href="tel:+1 (212)-343-1105">Call Now +1 (212)-343-1105</a>
             <Button onClick={() => setModal(true)} >Order Now</Button>
           </div>
         </div>

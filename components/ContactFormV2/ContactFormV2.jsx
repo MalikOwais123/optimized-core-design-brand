@@ -16,7 +16,7 @@ import phone from "../../assets/images/logo/phone.png";
 import location from "../../assets/images/logo/location.png";
 import email from "../../assets/images/logo/email.png";
 import { openLiveChat } from "../../utils/Data/helpers";
-import ContactPageForm from '../ContactPageForm/ContactPageForm';
+import ContactPageForm from "../ContactPageForm/ContactPageForm";
 
 const MapServicesContact = () => {
   return (
@@ -24,29 +24,52 @@ const MapServicesContact = () => {
       <Section background={"#F7F7F8"}>
         <div className={classList.contactMapMain}>
           <div className={classList.content}>
-            <Button onClick={()=>openLiveChat()} hover={true} style={{ marginBottom: "20px" }}>Talk to us</Button>
+            <Button
+              onClick={() => openLiveChat()}
+              hover={true}
+              style={{ marginBottom: "20px" }}>
+              Talk to us
+            </Button>
             <Header fontWeight="bold" fontSize="40">
               Contact Us Right Now!
             </Header>
             <Paragraph fontWeight="semi-bold" fontSize="25">
               Your project Take the next step
             </Paragraph>
-            <Paragraph style={{marginBottom:"25px"}}>
+            <Paragraph style={{ marginBottom: "25px" }}>
               We help new manufacturing companies enter the market, and
               companies with a history of gaining a modern face in the digital
               environment.
             </Paragraph>
             <div className={classList.list}>
               <img src={phone.src} alt="" />
-              <Paragraph style={{marginBottom:"0px"}}>
-              <a href="tel:+1 (917) 451-3258" className={classList.callnow}> +1 (917) 451-3258</a></Paragraph>
+              <Paragraph style={{ marginBottom: "0px" }}>
+                <a href="tel:+1 (212)-343-1105" className={classList.callnow}>
+                  {" "}
+                  +1 (212)-343-1105
+                </a>
+              </Paragraph>
             </div>
             <div className={classList.list}>
               <img src={email.src} alt="" />
-              <Paragraph style={{marginBottom:"0px"}}><a href="mailto:info@thecoredesigns.com" className={classList.callnow}>info@thecoredesigns.com</a> </Paragraph>
-            </div><div className={classList.list}>
+              <Paragraph style={{ marginBottom: "0px" }}>
+                <a
+                  href="mailto:info@thecoredesigns.com"
+                  className={classList.callnow}>
+                  info@thecoredesigns.com
+                </a>{" "}
+              </Paragraph>
+            </div>
+            <div className={classList.list}>
               <img src={location.src} alt="" />
-              <Paragraph style={{marginBottom:"0px"}}><a target="_blank" href="https://tinyurl.com/2p9hx5wx" className={classList.callnow}>99 Wall Street # 1161 New York, NY 10005</a> </Paragraph>
+              <Paragraph style={{ marginBottom: "0px" }}>
+                <a
+                  target="_blank"
+                  href="https://tinyurl.com/2p9hx5wx"
+                  className={classList.callnow}>
+                  99 Wall Street # 1161 New York, NY 10005
+                </a>{" "}
+              </Paragraph>
             </div>
           </div>
           <div className={classList.contactFormArea}>

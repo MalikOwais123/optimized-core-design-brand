@@ -15,7 +15,7 @@ const ContactOption = () => {
       </div>
       <div className={classList.contact_option_call_us}>
         <div className={classList.call_us}>
-          <AiFillPhone /> <a href="tel:+1 (917) 451-3258">+1 (917) 451-3258</a>
+          <AiFillPhone /> <a href="tel:+1 (212)-343-1105">+1 (212)-343-1105</a>
         </div>
       </div>
     </>

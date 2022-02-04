@@ -82,12 +82,12 @@ const index = () => {
             Get Started
           </Button>
           <Button
-            onClick={() => window.open("tel:+1 (917) 451-3258")}
+            onClick={() => window.open("tel:+1 (212)-343-1105")}
             hoverLight={true}
             color="black"
             backgroundColor="transparent"
             style={{ border: "1px solid black", borderRadius: "6px" }}>
-            +1 (917) 451-3258
+            +1 (212)-343-1105
           </Button>
         </div>
       </ReuseableRow>
