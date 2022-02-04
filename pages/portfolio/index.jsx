@@ -15,6 +15,7 @@ import { useState } from "react";
 import GetAQuotModal from "../../components/GetAQuotModal/GetAQuotModal";
 import { openLiveChat } from "../../utils/Data/helpers";
 import Head from "next/head";
+import { phoneNumber } from "../../utils/Data/Data";
 
 const index = () => {
   var [showQuotModal, setShowQuoteModal] = useState(false);
@@ -81,14 +82,15 @@ const index = () => {
             }}>
             Get Started
           </Button>
-          <Button
-            onClick={() => window.open("tel:+1 (212)-343-1105")}
-            hoverLight={true}
-            color="black"
-            backgroundColor="transparent"
-            style={{ border: "1px solid black", borderRadius: "6px" }}>
-            +1 (212)-343-1105
-          </Button>
+          <a href={`tel:${phoneNumber}`}>
+            <Button
+              hoverLight={true}
+              color="black"
+              backgroundColor="transparent"
+              style={{ border: "1px solid black", borderRadius: "6px" }}>
+              {phoneNumber}
+            </Button>
+          </a>
         </div>
       </ReuseableRow>
       <TestimonialV2 />

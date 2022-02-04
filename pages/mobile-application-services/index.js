@@ -19,7 +19,7 @@ import mobile4 from "../../assets/images/mobImages/4.png";
 import NavLink from "../../components/Navlinks/Navlinks";
 
 import Head from "next/head";
-import { mobileApplicationPortfolio } from "../../utils/Data/Data";
+import { mobileApplicationPortfolio, phoneNumber } from "../../utils/Data/Data";
 
 const index = () => {
   return (
@@ -96,7 +96,7 @@ const index = () => {
               color="black"
               backgroundColor="transparent"
               style={{ border: "1px solid black", borderRadius: "6px" }}>
-              +1 (212)-343-1105
+              {phoneNumber}
             </Button>
           </div>
         </ReuseableRow>
@@ -145,7 +145,7 @@ const index = () => {
               color="black"
               backgroundColor="transparent"
               style={{ border: "1px solid black", borderRadius: "6px" }}>
-              +1 (212)-343-1105
+              {phoneNumber}
             </Button>
           </div>
         </ReuseableRow>

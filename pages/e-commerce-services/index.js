@@ -20,9 +20,8 @@ import Logos from "../../components/Logos/Logos";
 import BannerMultiLogo from "../../components/BannerMultiLogo/BannerMultiLogo";
 import ShowCaseWrapper from "../../components/ShowCaseWrapper/ShowCaseWrapper";
 import Head from "next/head";
-import { eCommercePortfolio } from '../../utils/Data/Data';
+import { eCommercePortfolio, phoneNumber } from "../../utils/Data/Data";
 import NavLink from "../../components/Navlinks/Navlinks";
-
 
 const ListItem = [
   " Exceptional customer service",
@@ -47,7 +46,10 @@ const index = () => {
 "
           />
         </Head>
-        <ReuseableRow cover={true} backgroundImage={bgWebDesign} contentImage={eCommerce1}>
+        <ReuseableRow
+          cover={true}
+          backgroundImage={bgWebDesign}
+          contentImage={eCommerce1}>
           <Header color="white" fontWeight="bold" fontSize="45">
             Custom E-Commerce Website Design Service
           </Header>
@@ -57,8 +59,13 @@ const index = () => {
             creating the best E-Commerce website
           </Paragraph>
           <div>
-          <NavLink href="/contact">
-            <Button backgroundColor="#FFFFFF" color="#1D2228" hoverLight={true}>Get Started</Button>
+            <NavLink href="/contact">
+              <Button
+                backgroundColor="#FFFFFF"
+                color="#1D2228"
+                hoverLight={true}>
+                Get Started
+              </Button>
             </NavLink>
           </div>
           <BannerMultiLogo />
@@ -66,8 +73,7 @@ const index = () => {
         <ReuseableRow
           backgroundImage={"none"}
           contentImage={eCommerce2}
-          imageClass={classList.widthUnset}
-        >
+          imageClass={classList.widthUnset}>
           <Paragraph>Digital Service Agency</Paragraph>
           <Header fontWeight="bold" fontSize="30">
             Leading E-Commerce website design company.
@@ -89,27 +95,24 @@ const index = () => {
           <div className={classList.btn_group_contact}>
             <a
               style={{ textDecoration: "none", color: "inherit" }}
-              href="/contact"
-            >
+              href="/contact">
               <Button
                 hover={true}
                 color="white"
                 style={{
                   marginRight: "10px",
                   borderRadius: "6px",
-                }}
-              >
+                }}>
                 Get Started
               </Button>
             </a>
-            <a href="tel:+1 (212)-343-1105">
+            <a href={`tel:${phoneNumber}`}>
               <Button
                 hoverLight={true}
                 color="black"
                 backgroundColor="transparent"
-                style={{ border: "1px solid black", borderRadius: "6px" }}
-              >
-                +1 (212)-343-1105
+                style={{ border: "1px solid black", borderRadius: "6px" }}>
+                {phoneNumber}
               </Button>
             </a>
           </div>
@@ -125,8 +128,7 @@ const index = () => {
         <ReuseableRow
           backgroundImage={"none"}
           contentImage={eCommerce3}
-          imageClass={classList.widthUnset}
-        >
+          imageClass={classList.widthUnset}>
           <Paragraph>Custom Website Design</Paragraph>
           <Header fontWeight="bold" fontSize="30">
             The Best Ecommerce Web Development Services
@@ -151,31 +153,27 @@ const index = () => {
           <div className={classList.btn_group_contact}>
             <a
               style={{ textDecoration: "none", color: "inherit" }}
-              href="/contact"
-            >
+              href="/contact">
               <a
                 style={{ textDecoration: "none", color: "inherit" }}
-                href="/contact"
-              >
+                href="/contact">
                 <Button
                   hover={true}
                   color="white"
                   style={{
                     marginRight: "10px",
                     borderRadius: "6px",
-                  }}
-                >
+                  }}>
                   Get Started
                 </Button>
               </a>
-              <a href="tel+1 (212)-343-1105">
+              <a href={`tel:${phoneNumber}`}>
                 <Button
                   hoverLight={true}
                   color="black"
                   backgroundColor="transparent"
-                  style={{ border: "1px solid black", borderRadius: "6px" }}
-                >
-                  +1 (212)-343-1105
+                  style={{ border: "1px solid black", borderRadius: "6px" }}>
+                  {phoneNumber}
                 </Button>
               </a>
             </a>
