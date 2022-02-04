@@ -93,7 +93,7 @@ const Footer = () => {
                   Tel: <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
                 </li>
                 <li>
-                  Fax: <a href="tel:5167866597">+1 (917) 423-7108</a>
+                  Fax: <a href="tel:+1 (212) 343-9069">+1 (212) 343-9069</a>
                 </li>
                 <li>
                   <a className={classList.pointer}>
