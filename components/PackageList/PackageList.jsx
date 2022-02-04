@@ -5,8 +5,17 @@ import Paragraph from "../Paragraph/Paragraph";
 
 const PackageList = (props) => {
   const { title, services } = props;
+
+  const addClassNameByValue = ()=> {
+   let bool = services.some((ser)=> {
+      if(ser === "Youtube Page Design") {
+        return true;
+      }
+    })
+    return bool
+  }
   return (
-    <div className={classList.package_list}>
+    <div className={`${addClassNameByValue() ? classList.remove_spacing_y : "akjsdl"} ${classList.package_list}`}>
       {title?.length && (
         <Header fontWeight="bold" fontSize={20}>
           {title}

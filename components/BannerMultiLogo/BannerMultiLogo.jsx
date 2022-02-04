@@ -6,12 +6,15 @@ import clutchLogo from "../../assets/images/logo/bannerLogo/clutch.webp";
 import topDigitalLogo from "../../assets/images/logo/bannerLogo/top-digital-agency.webp";
 import trustPilot from "../../assets/images/logo/bannerLogo/tttt.webp";
 import goodFirmsLogo from "../../assets/images/logo/bannerLogo/good-firms.webp";
+import BBB from "../../assets/images/logo/bannerLogo/bbb.webp";
 // grayscale
 import topDesignLogoGray from "../../assets/images/logo/bannerLogo/top-design-gray.webp";
 import clutchLogoGray from "../../assets/images/logo/bannerLogo/clutch_gray.webp";
 import topDigitalLogoGray from "../../assets/images/logo/bannerLogo/top-digital-agency-gray.webp";
 import trustPilotGray from "../../assets/images/logo/bannerLogo/tttt-gray.webp";
 import goodFirmsLogoGray from "../../assets/images/logo/bannerLogo/good-firms-gray.webp";
+import BBBGray from "../../assets/images/logo/bannerLogo/bbb_gray.webp";
+
 import Section from "../Section/Section";
 import { useWindowSize } from "../../utils/Data/helpers";
 import  Image  from 'next/image';
@@ -26,6 +29,7 @@ const BannerMultiLogo = ({ fixBottom = false }) => {
       <Section style={{ padding: "10px 0" }}>
         <div className={classList.test}>
           <MultiSlider
+          desktop={6}
             autoPlay={
               dimension === "tablet" || dimension === "mobile" ? true : false
             }
@@ -91,6 +95,29 @@ const BannerMultiLogo = ({ fixBottom = false }) => {
                   alt=""
                 />
               </div>
+            </div>
+            <div className={classList.logo_wrapper}>
+              <div>
+                <Image
+                  objectFit="contain"
+                  height={100}
+                  width={100}
+                  className={classList.first}
+                  src={BBB.src}
+                  alt=""
+                />
+              </div>
+                <div>
+                <Image
+                  objectFit="contain"
+                  height={100}
+                  width={100}
+                  className={classList.second}
+                  src={BBBGray.src}
+                  alt=""
+                />
+
+                </div>
             </div>
             <div className={classList.logo_wrapper}>
               <div>

@@ -20,4 +20,20 @@
       margin: 0 10px 0 0;
     }
   }
+
 }
+
+@media screen and (max-width:540px) {
+
+  .package_list{
+    .list_items{
+      margin:10px 0 0 0;
+    }
+  }
+  
+  .remove_spacing_y {
+    margin-bottom: 0;
+  }
+  
+}
+
