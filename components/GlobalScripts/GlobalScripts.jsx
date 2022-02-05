@@ -27,7 +27,7 @@ const GlobalScripts = () => {
         }}
       />
 
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -48,7 +48,7 @@ const GlobalScripts = () => {
           });
           `,
         }}
-      />
+      /> */}
       <Script
         strategy="afterInteractive"
         src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
