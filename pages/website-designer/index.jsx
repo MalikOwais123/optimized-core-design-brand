@@ -57,9 +57,9 @@ const index = () => {
     <>
       <Head>
         <title>Website designer | The Core Designs</title>
-        <script
+        {/* <script
           defer
-          src="https://www.googletagmanager.com/gtag/js?id=AW-10795784072"></script>
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10795784072"></script> */}
         {/* <Script
         strategy="afterInteractive"
           dangerouslySetInnerHTML={{
