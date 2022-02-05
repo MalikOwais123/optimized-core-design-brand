@@ -4,7 +4,7 @@ import Script from "next/script";
 const GlobalScripts = () => {
   return (
     <>
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -25,7 +25,7 @@ const GlobalScripts = () => {
           });
           `,
         }}
-      />
+      /> */}
 
       {/* <Script
         strategy="afterInteractive"
