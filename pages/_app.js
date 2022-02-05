@@ -1,4 +1,4 @@
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 import Navbar from "../components/Navbar/Navbar";
 import "../styles/globals.scss";
 import Script from "next/script";
@@ -10,10 +10,12 @@ import ContactHeaderForLanding from "../components/ContactHeaderForLanding/Conta
 
 import { openLiveChat } from "../utils/Data/helpers";
 import { useEffect } from "react";
-
-const Footer = dynamic(() => import('../components/Footer/Footer'))
-const Copyright = dynamic(() => import('../components/Copyright/Copyright'))
-const CopyrightForLanding = dynamic(() => import('../components/CopyrightForLanding/CopyrightForLanding'))
+import Head from "next/head";
+const Footer = dynamic(() => import("../components/Footer/Footer"));
+const Copyright = dynamic(() => import("../components/Copyright/Copyright"));
+const CopyrightForLanding = dynamic(() =>
+  import("../components/CopyrightForLanding/CopyrightForLanding")
+);
 
 const isLandingPage = (pathname) => {
   const urls = [
@@ -33,55 +35,46 @@ const isLandingPage = (pathname) => {
 
 function MyApp({ Component, pageProps }) {
   const { pathname } = useRouter();
-  useEffect(()=>{
-    window.zESettings ={
-      "event": "chat_message",
-      "condition": [
+  useEffect(() => {
+    window.zESettings = {
+      event: "chat_message",
+      condition: [
         "and",
-        [
-          "eq",
-          "@visitor_source_type",
-          "sunco_web"
-        ],
+        ["eq", "@visitor_source_type", "sunco_web"],
         [
           "and",
-          [
-            "eq",
-            "@visitor_served",
-            false
-          ],
-          [
-            "gt",
-            "@visitor_previous_chats",
-            0
-          ],
-          [
-            "eq",
-            "@visitor_requesting_chat",
-            false
-          ]
-        ]
+          ["eq", "@visitor_served", false],
+          ["gt", "@visitor_previous_chats", 0],
+          ["eq", "@visitor_requesting_chat", false],
+        ],
       ],
-      "actions": [
-        [
-          "sendMessageToVisitor",
-          "Sales Support",
-          "How May I help you?"
-        ]
-      ]
-    }
-    
-    
-  },[])
+      actions: [
+        ["sendMessageToVisitor", "Sales Support", "How May I help you?"],
+      ],
+    };
+  }, []);
   return (
-    <div style={{position:"relative"}}>
+    <div style={{ position: "relative" }}>
+      <Head>
+        {/* <script src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" defer/>
+      <script src="https://tools.luckyorange.com/core/lo.js?site-id=c08d05c9" defer/>
+      <script src="https://www.clickcease.com/monitor/stat.js" defer/> */}
+        {/* <Script strategy="afterInteractive" src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" />
+      <Script strategy="afterInteractive" src="https://tools.luckyorange.com/core/lo.js?site-id=c08d05c9"/>
+      <Script strategy="afterInteractive" src="https://www.clickcease.com/monitor/stat.js"/> */}
+      </Head>
       <ContactWithUs />
-      {isLandingPage(pathname) ? <ContactHeaderForLanding /> : <ContactHeader />}
+      {isLandingPage(pathname) ? (
+        <ContactHeaderForLanding />
+      ) : (
+        <ContactHeader />
+      )}
       {!isLandingPage(pathname) && <Navbar />}
       <div
         style={{
           paddingTop: isLandingPage(pathname) ? "40px" : "110px",
-        }}>
+        }}
+      >
         <Component {...pageProps} />
       </div>
       {/* <Script
@@ -89,10 +82,10 @@ function MyApp({ Component, pageProps }) {
         id="ze-snippet"
         src="https://static.zdassets.com/ekr/snippet.js?key=026cd8b7-0c2c-42c5-a8ef-6bd02caf68fb"
         // onLoad={openLiveChat}
-      />
-      <Script
+      /> */}
+      {/* <Script
         id="google-analytics"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
         src="https://www.googletagmanager.com/gtag/js?id=G-391VCNVG9G"
         onLoad={() => {
           window.dataLayer = window.dataLayer || [];
@@ -100,15 +93,37 @@ function MyApp({ Component, pageProps }) {
           gtag('js', new Date());
           gtag('config', 'G-391VCNVG9G');
         }}
+      /> */}
+      <Script
+        strategy="afterInteractive"
+        src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
       />
-   
-      <Script strategy="afterInteractive" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" />
-      <Script strategy="afterInteractive" src="https://tools.luckyorange.com/core/lo.js?site-id=c08d05c9"/>
-      <Script strategy="afterInteractive" src="https://www.clickcease.com/monitor/stat.js"/>
- */}
-
+      <Script
+        strategy="afterInteractive"
+        src="https://tools.luckyorange.com/core/lo.js?site-id=c08d05c9"
+      />
+      <Script
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: `
+          document.addEventListener("DOMContentLoaded", function(event) {
+          setTimeout(function() {
+          var script = document.createElement('script'); 
+          script.defer = true;
+          script.type = 'text/javascript';
+          var target = 'https://www.clickcease.com/monitor/stat.js'; 
+          script.src = target;
+          var elem = document.head;
+          elem.appendChild(script);
+      }, 0)
+  `,
+        }}
+      />
+      {/* <Script
+        strategy="afterInteractive"
+        src="https://www.clickcease.com/monitor/stat.js"
+      /> */}
       {isLandingPage(pathname) ? null : <Footer />}
-
       {isLandingPage(pathname) ? <CopyrightForLanding /> : <Copyright />}
     </div>
   );
