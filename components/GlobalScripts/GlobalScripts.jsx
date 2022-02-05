@@ -36,6 +36,12 @@ const GlobalScripts = () => {
         strategy="afterInteractive"
         src="https://tools.luckyorange.com/core/lo.js?site-id=c08d05c9"
       />
+       <Script
+        strategy="afterInteractive"
+        id="ze-snippet"
+        src="https://static.zdassets.com/ekr/snippet.js?key=026cd8b7-0c2c-42c5-a8ef-6bd02caf68fb"
+        // onLoad={openLiveChat}
+      />
     </>
   );
 };
