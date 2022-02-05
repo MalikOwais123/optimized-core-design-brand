@@ -2,7 +2,6 @@ import { useState } from "react";
 import Form from "../Form/Form";
 import classList from "./ContactWithUs.module.scss";
 import { AiFillGift } from "react-icons/ai";
-import Header from "./../Header/Header";
 
 const ContactWithUs = () => {
   const [form, setForm] = useState(false);

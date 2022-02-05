@@ -2,7 +2,7 @@ import React from "react";
 import classList from "./ContactOption.module.scss";
 import { AiOutlineMessage, AiFillPhone } from "react-icons/ai";
 import { openLiveChat } from "../../utils/Data/helpers";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const ContactOption = () => {
   return (

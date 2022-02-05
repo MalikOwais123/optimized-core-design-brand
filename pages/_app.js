@@ -1,16 +1,19 @@
-import ContactOption from "../components/ContactOption/ContactOption";
-import Footer from "../components/Footer/Footer";
+import dynamic from 'next/dynamic'
 import Navbar from "../components/Navbar/Navbar";
 import "../styles/globals.scss";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import ContactHeader from "../components/ContactHeader/ContactHeader";
 import ContactWithUs from "../components/ContactWithUs/ContactWithUs";
-import Copyright from "./../components/Copyright/Copyright";
+
 import ContactHeaderForLanding from "../components/ContactHeaderForLanding/ContactHeaderForLanding";
-import CopyrightForLanding from "../components/CopyrightForLanding/CopyrightForLanding";
+
 import { openLiveChat } from "../utils/Data/helpers";
 import { useEffect } from "react";
+
+const Footer = dynamic(() => import('../components/Footer/Footer'))
+const Copyright = dynamic(() => import('../components/Copyright/Copyright'))
+const CopyrightForLanding = dynamic(() => import('../components/CopyrightForLanding/CopyrightForLanding'))
 
 const isLandingPage = (pathname) => {
   const urls = [
@@ -79,10 +82,9 @@ function MyApp({ Component, pageProps }) {
         style={{
           paddingTop: isLandingPage(pathname) ? "40px" : "110px",
         }}>
-        {/* <ContactOption />  */}
         <Component {...pageProps} />
       </div>
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         id="ze-snippet"
         src="https://static.zdassets.com/ekr/snippet.js?key=026cd8b7-0c2c-42c5-a8ef-6bd02caf68fb"
@@ -103,7 +105,7 @@ function MyApp({ Component, pageProps }) {
       <Script strategy="afterInteractive" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" />
       <Script strategy="afterInteractive" src="https://tools.luckyorange.com/core/lo.js?site-id=c08d05c9"/>
       <Script strategy="afterInteractive" src="https://www.clickcease.com/monitor/stat.js"/>
-
+ */}
 
       {isLandingPage(pathname) ? null : <Footer />}
 

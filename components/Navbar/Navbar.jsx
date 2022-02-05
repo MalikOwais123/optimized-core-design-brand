@@ -1,13 +1,17 @@
 import React, { useEffect, useState } from "react";
+import dynamic from 'next/dynamic'
 import NavLink from "./../Navlinks/Navlinks";
-import Slider from "../Slider/Slider";
 import { HiMenu } from "react-icons/hi";
 import Logo from "../../assets/images/logo/logo.svg";
-import Dropdown from "../DropDown/DropDown";
 import classList from "./Navbar.module.scss";
 import ContactHeader from "../ContactHeader/ContactHeader";
 import Button from "../Button/Button";
-import GetAQuotModal from "../GetAQuotModal/GetAQuotModal";
+
+//Dyanmic imports
+const GetAQuotModal = dynamic(() => import('../GetAQuotModal/GetAQuotModal'))
+const Slider = dynamic(() => import('../Slider/Slider'))
+const Dropdown = dynamic(() => import('./../DropDown/DropDown'))
+
 
 var services = [
   {

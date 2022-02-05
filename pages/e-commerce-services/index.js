@@ -20,7 +20,8 @@ import Logos from "../../components/Logos/Logos";
 import BannerMultiLogo from "../../components/BannerMultiLogo/BannerMultiLogo";
 import ShowCaseWrapper from "../../components/ShowCaseWrapper/ShowCaseWrapper";
 import Head from "next/head";
-import { eCommercePortfolio, phoneNumber } from "../../utils/Data/Data";
+import { eCommercePortfolio } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 import NavLink from "../../components/Navlinks/Navlinks";
 
 const ListItem = [

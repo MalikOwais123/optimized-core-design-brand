@@ -10,10 +10,9 @@ import CustomSelect from "../CustomSelect/CustomSelect";
 import Link from "next/link";
 import {
   businessOption,
-  industryOptions,
   budgetOption,
-  phoneNumber,
 } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 import ShowMessage from "../ShowMessage/ShowMessage";
 import { post } from "../../utils/Data/helpers";
 const ContactForm = () => {
@@ -297,7 +296,8 @@ const ContactForm = () => {
                     marginLeft: "5px",
                     textDecoration: "underline",
                     cursor: "pointer",
-                  }}>
+                  }}
+                >
                   Privacy policy
                 </span>
               </Link>
@@ -305,11 +305,13 @@ const ContactForm = () => {
           </div>
           <div className={classList.form_row}>
             <div
-              className={`${classList.flex_cols} ${classList.button_styles}`}>
+              className={`${classList.flex_cols} ${classList.button_styles}`}
+            >
               <Button
                 htmlType="button"
                 onClick={(e) => handleFormSubmit(e)}
-                hover={true}>
+                hover={true}
+              >
                 Submit
               </Button>
             </div>
@@ -320,7 +322,8 @@ const ContactForm = () => {
         <ShowMessage
           modal={isSubmitted}
           setModal={setIsSubmitted}
-          infoType="success">
+          infoType="success"
+        >
           Successfully submitted
         </ShowMessage>
       )}

@@ -2,11 +2,9 @@ import classList from "./Footer.module.scss";
 import Section from "../Section/Section";
 import Header from "../Header/Header";
 import paymentcards from "../../assets/images/paymentcards.svg";
-import logo from "../../assets/images/logo.svg";
-import Paragraph from "../Paragraph/Paragraph";
 import NavLink from "../Navlinks/Navlinks";
 import { useWindowSize } from "../../utils/Data/helpers";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const Footer = () => {
   const device = useWindowSize();

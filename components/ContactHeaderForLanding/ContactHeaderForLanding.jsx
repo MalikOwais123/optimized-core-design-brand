@@ -8,7 +8,7 @@ import { openLiveChat } from "../../utils/Data/helpers";
 import logo from "../../assets/images/logo.svg";
 import NavLink from "./../Navlinks/Navlinks";
 import Image from "next/image";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const ContactHeaderForLanding = () => {
   return (

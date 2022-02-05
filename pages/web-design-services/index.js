@@ -19,7 +19,9 @@ import webDesign4 from "../../assets/images/sample/webDesign4.png";
 import Logos from "../../components/Logos/Logos";
 import BannerMultiLogo from "../../components/BannerMultiLogo/BannerMultiLogo";
 import Head from "next/head";
-import { phoneNumber, webDesignPortfolio } from "./../../utils/Data/Data";
+import { phoneNumber } from "./../../utils/Data/globalVariables";
+import { webDesignPortfolio } from "./../../utils/Data/Data";
+
 import NavLink from "../../components/Navlinks/Navlinks";
 
 const ListItem = [

@@ -12,7 +12,7 @@ import { openLiveChat } from "../../utils/Data/helpers";
 import { useState } from "react";
 import GetAQuotModal from "../GetAQuotModal/GetAQuotModal";
 import Image from "next/image";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 function MarketingBanner() {
   var [showQuotModal, setShowQuoteModal] = useState(false);

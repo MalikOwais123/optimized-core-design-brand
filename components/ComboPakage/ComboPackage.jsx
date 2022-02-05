@@ -8,7 +8,7 @@ import Modal from "../Modal/Modal";
 import ContactFormModal from "../ContactFormModal/ContactFormModal";
 import GetAQuotModal from "../GetAQuotModal/GetAQuotModal";
 import Image from "next/image";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const ComboPackage = ({ showPrice = true }) => {
   var [showQuotModal, setShowQuoteModal] = useState(false);

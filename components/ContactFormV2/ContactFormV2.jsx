@@ -1,11 +1,8 @@
 // **** LIBS IMPORTS ****
 import React from "react";
-import dynamic from "next/dynamic";
-const Map = dynamic(() => import("../Map/Map"), { ssr: false });
 
 // **** REUSABLE COMPONENTS ****
 import Section from "../Section/Section";
-import Form from "../Form/Form";
 
 // **** STYLE ****
 import classList from "./ContactFormV2.module.scss";
@@ -17,7 +14,7 @@ import location from "../../assets/images/logo/location.png";
 import email from "../../assets/images/logo/email.png";
 import { openLiveChat } from "../../utils/Data/helpers";
 import ContactPageForm from "../ContactPageForm/ContactPageForm";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const MapServicesContact = () => {
   return (

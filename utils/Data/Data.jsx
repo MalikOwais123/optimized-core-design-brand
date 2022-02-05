@@ -18,7 +18,6 @@ import four from "../../assets/gifs/four.gif";
 import five from "../../assets/gifs/five.gif";
 import six from "../../assets/gifs/six.gif";
 
-export const phoneNumber = "+1 (212)-343-1105";
 export const refundPolicyList = [
   "You've picked a special or customized package.",
   "The primary design concept has been accepted (for any service).",

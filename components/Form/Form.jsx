@@ -6,7 +6,9 @@ import InputField from "../InputField/InputField";
 import Paragraph from "../Paragraph/Paragraph";
 import TextArea from "../TextArea/TextArea";
 import classList from "./Form.module.scss";
-import ShowMessage from '../ShowMessage/ShowMessage';
+import dynamic from 'next/dynamic'
+// import ShowMessage from '../ShowMessage/ShowMessage';
+const ShowMessage = dynamic(() => import('../ShowMessage/ShowMessage'))
 
 const Form = ({
   heading,

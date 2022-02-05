@@ -22,7 +22,9 @@ import Head from "next/head";
 import NavLink from "../../components/Navlinks/Navlinks";
 
 import Section from "../../components/Section/Section";
-import { brandingPortfolio, phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
+import { brandingPortfolio } from "../../utils/Data/Data";
+
 
 const ListItem = [
   " Exceptional customer service",
