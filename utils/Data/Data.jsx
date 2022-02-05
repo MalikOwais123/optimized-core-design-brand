@@ -2011,6 +2011,13 @@ export const termsdata = [
     list: null,
   },
   {
+    heading: "Validity of Refund",
+    content: [
+      "100% Money back Guaranty is valid till 30 days of order placement, provided that all other terms are applied. Money Back Guarantee is valid only if you have not requested revisions for any design sample/concept within your order. Once you request a revision/change in the provided design sample/concepts, you agreed to proceed further with our services and cannot claim any refunds.",
+      "Refund will be processed in 30 days."
+    ]
+  },
+  {
     heading: "Disclaimer",
     content: [
       "To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions relating to our website and the use of this website. Nothing in this disclaimer will:",
@@ -2029,7 +2036,7 @@ export const termsdata = [
       "As long as the website and the information and services on the website are provided free of charge, we will not be liable for any loss or damage of any nature.",
     ],
     list: null,
-  },
+  }
 ];
 
 export const businessOption = [
