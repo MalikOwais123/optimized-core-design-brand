@@ -6,7 +6,6 @@ import Section from "../Section/Section";
 import classList from "./WebsiteServices2.module.scss";
 import BannerMultiLogo from "../BannerMultiLogo/BannerMultiLogo";
 import { useState } from 'react';
-// import Wizard from "../Wizard/Wizard";
 import dynamic from 'next/dynamic'
 const Wizard = dynamic(() => import('../../components/Wizard/Wizard'))
 

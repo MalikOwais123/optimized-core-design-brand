@@ -14,9 +14,6 @@ const GlobalScripts = () => {
               var script = document.createElement('script');
               //script.defer = true; 
               script.type = 'text/javascript';
-              script.onload = function() {
-                console.log("hello clickease!!")
-              }
               var target = 'https://www.clickcease.com/monitor/stat.js';
               script.src = target;
               var elem = document.head;
@@ -40,9 +37,6 @@ const GlobalScripts = () => {
               var script = document.createElement('script');
               //script.defer = true; 
               script.type = 'text/javascript';
-              script.onload = function() {
-                console.log("hello clickease!!")
-              }
               var target = 'https://www.clickcease.com/monitor/stat.js';
               script.src = target;
               var elem = document.head;

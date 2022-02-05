@@ -1,11 +1,16 @@
 import { useState } from "react";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 import {
   budgetOption,
   businessOption,
   industryOptions,
 } from "../../utils/Data/globalVariables";
-import { post, validateEmail, validatePhone } from "../../utils/Data/helpers";
+import {
+  post,
+  trigger,
+  validateEmail,
+  validatePhone,
+} from "../../utils/Data/helpers";
 import Button from "../Button/Button";
 import CustomSelect from "../CustomSelect/CustomSelect";
 import Header from "../Header/Header";
@@ -13,8 +18,7 @@ import InputField from "../InputField/InputField";
 import Paragraph from "../Paragraph/Paragraph";
 import TextArea from "../TextArea/TextArea";
 import classList from "./FormV2.module.scss";
-const ShowMessage = dynamic(() => import('../ShowMessage/ShowMessage'))
-
+const ShowMessage = dynamic(() => import("../ShowMessage/ShowMessage"));
 
 const Form = ({ heading, description, buttonText, className, headerClass }) => {
   // Input hanlders
@@ -33,7 +37,6 @@ const Form = ({ heading, description, buttonText, className, headerClass }) => {
   const [messageErr, setMessageErr] = useState("");
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-
 
   const validateForm = () => {
     if (!name) {
@@ -77,25 +80,30 @@ const Form = ({ heading, description, buttonText, className, headerClass }) => {
 
   const submitFormHanlder = async (e) => {
     e.preventDefault();
-      try {
-        const data = {
-          name,
-          email,
-          projectDescription: message,
-          budget: budget,
-          business: businessName,
-          industry,
-          phoneNo: phone,
-        };
-        const res = await post("/contact", data);
-        if (res.statusCode === 201 || res.status) {
-          setIsSubmitted(true);
-        }
-        console.log("res", res);
-      } catch (error) {
-        setIsSubmitted(false);
-        console.log(error);
+    try {
+      const data = {
+        name,
+        email,
+        projectDescription: message,
+        budget: budget,
+        business: businessName,
+        industry,
+        phoneNo: phone,
+      };
+      const res = await post("/contact", data);
+      if (res.statusCode === 201 || res.status) {
+        setIsSubmitted(true);
       }
+      trigger({
+        action: "lead generated",
+        category: "generate_lead",
+        label: "service sold",
+        value: data,
+      });
+    } catch (error) {
+      setIsSubmitted(false);
+      console.log(error);
+    }
   };
 
   const inputChangeHandler = (event) => {
@@ -186,18 +194,20 @@ const Form = ({ heading, description, buttonText, className, headerClass }) => {
           htmlType="submit"
           color="white"
           hover={true}
-          style={{ marginBottom: "0px", marginTop: "10px" }}>
+          style={{ marginBottom: "0px", marginTop: "10px" }}
+        >
           {buttonText}
         </Button>
       </form>
       {isSubmitted && (
-          <ShowMessage
-            modal={isSubmitted}
-            setModal={setIsSubmitted}
-            infoType="success">
-            Successfully submitted
-          </ShowMessage>
-        )}
+        <ShowMessage
+          modal={isSubmitted}
+          setModal={setIsSubmitted}
+          infoType="success"
+        >
+          Successfully submitted
+        </ShowMessage>
+      )}
     </>
   );
 };

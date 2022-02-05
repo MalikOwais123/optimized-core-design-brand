@@ -13,13 +13,33 @@ class MainDocument extends Document {
           <title>The Core Designs</title>
 
           <link lazyload rel="preconnect" href="https://fonts.googleapis.com" />
-          <link lazyload rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+          <link
+            lazyload
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossorigin
+          />
           <link
             lazyload
             href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           />
           <link rel="icon" type="image/png" href="/favicon.png" />
+          <script
+            defer
+            src="https://www.googletagmanager.com/gtag/js?id=AW-10795784072"
+          ></script>
+          <script
+            defer
+            dangerouslySetInnerHTML={{
+              __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-10795784072');
+`,
+            }}
+          />
         </Head>
         <body>
           <Main />
