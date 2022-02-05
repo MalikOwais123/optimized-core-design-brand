@@ -55,8 +55,8 @@ export const openLiveChat = () => {
     //   console.log('The widget has been opened!');
     // });
     // zE('webWidget', 'open');
-    zE('webWidget:on', 'open', function() {
-      console.log('The widget has been opened!');
+    zE("webWidget:on", "open", function () {
+      console.log("The widget has been opened!");
     });
   } catch (error) {
     console.log(error);
@@ -128,3 +128,11 @@ export const put = (url, data, params) =>
 export const del = (url, data) => request({ method: "delete", url, data });
 export const patch = (url, data, params) =>
   request({ method: "patch", url, data, ...params });
+
+export const trigger = ({ action, category, label, value }) => {
+  window.gtag("event", action, {
+    event_category: category,
+    event_label: label,
+    value: value,
+  });
+};
