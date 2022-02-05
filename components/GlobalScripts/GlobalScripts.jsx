@@ -27,7 +27,7 @@ const GlobalScripts = () => {
         }}
       /> */}
 
-      {/* <Script
+      <Script
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -37,7 +37,7 @@ const GlobalScripts = () => {
               var script = document.createElement('script');
               //script.defer = true; 
               script.type = 'text/javascript';
-              var target = 'https://www.clickcease.com/monitor/stat.js';
+              var target = 'https://tools.luckyorange.com/core/lo.js?site-id=c08d05c9';
               script.src = target;
               var elem = document.head;
               elem.appendChild(script);
@@ -48,15 +48,15 @@ const GlobalScripts = () => {
           });
           `,
         }}
-      /> */}
+      />
       <Script
         strategy="afterInteractive"
         src="https://widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js"
       />
-      <Script
+      {/* <Script
         strategy="afterInteractive"
         src="https://tools.luckyorange.com/core/lo.js?site-id=c08d05c9"
-      />
+      /> */}
     </>
   );
 };
