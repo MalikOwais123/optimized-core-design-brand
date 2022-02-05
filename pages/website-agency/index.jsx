@@ -5,9 +5,7 @@ import WebsiteServices2 from "../../components/WebsiteServices2/WebsiteServices2
 import Head from "next/head";
 import Script from "next/script";
 import dynamic from 'next/dynamic'
-// import DesktopLanding from "../../components/DesktopLanding/DesktopLanding";
 const DesktopLanding = dynamic(() => import('../../components/DesktopLanding/DesktopLanding'))
-// import MobileLanding from "../../components/MobileLanding/MobileLanding";
 const MobileLanding = dynamic(() => import('../../components/MobileLanding/MobileLanding'))
 
 const index = () => {

@@ -6,8 +6,10 @@ import Section from "../Section/Section";
 import classList from "./WebsiteServices2.module.scss";
 import BannerMultiLogo from "../BannerMultiLogo/BannerMultiLogo";
 import { useState } from 'react';
+// import Wizard from "../Wizard/Wizard";
 import dynamic from 'next/dynamic'
-const Wizard = dynamic(() => import('../Wizard/Wizard'))
+const Wizard = dynamic(() => import('../../components/Wizard/Wizard'))
+
 
 
 
@@ -66,7 +68,7 @@ const WebsiteServices2 = ({
         </Section>
         <BannerMultiLogo fixBottom={true} />
       </div>
-      <Wizard show={wizard} onHide={() => setWizard(false)} />
+      {wizard && <Wizard show={wizard} onHide={() => setWizard(false)} />}
     </>
   );
 };
