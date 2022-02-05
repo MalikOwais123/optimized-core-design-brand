@@ -1,9 +1,10 @@
 import { useState } from "react";
+import dynamic from 'next/dynamic'
 import {
   budgetOption,
   businessOption,
   industryOptions,
-} from "../../utils/Data/Data";
+} from "../../utils/Data/globalVariables";
 import { post, validateEmail, validatePhone } from "../../utils/Data/helpers";
 import Button from "../Button/Button";
 import CustomSelect from "../CustomSelect/CustomSelect";
@@ -12,7 +13,9 @@ import InputField from "../InputField/InputField";
 import Paragraph from "../Paragraph/Paragraph";
 import TextArea from "../TextArea/TextArea";
 import classList from "./FormV2.module.scss";
-import ShowMessage from '../ShowMessage/ShowMessage';
+// import ShowMessage from '../ShowMessage/ShowMessage';
+const ShowMessage = dynamic(() => import('../ShowMessage/ShowMessage'))
+
 
 const Form = ({ heading, description, buttonText, className, headerClass }) => {
   // Input hanlders

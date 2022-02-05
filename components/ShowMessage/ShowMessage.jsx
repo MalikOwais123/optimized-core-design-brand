@@ -2,8 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 import ReactDom from "react-dom";
 import classList from "./ShowMessage.module.scss";
-import Header from "../Header/Header";
-import { FaFacebookF, FaInstagramSquare, FaTwitter,FaCheckCircle } from "react-icons/fa";
+import { FaCheckCircle } from "react-icons/fa";
 
 const Background = ({
   children,

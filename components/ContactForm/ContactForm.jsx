@@ -11,7 +11,7 @@ import Link from "next/link";
 import {
   businessOption,
   budgetOption,
-} from "../../utils/Data/Data";
+} from "../../utils/Data/globalVariables";
 import { phoneNumber } from "../../utils/Data/globalVariables";
 import ShowMessage from "../ShowMessage/ShowMessage";
 import { post } from "../../utils/Data/helpers";

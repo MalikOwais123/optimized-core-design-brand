@@ -9,6 +9,7 @@ import ContactFormModal from "../ContactFormModal/ContactFormModal";
 import GetAQuotModal from "../GetAQuotModal/GetAQuotModal";
 import Image from "next/image";
 import { phoneNumber } from "../../utils/Data/globalVariables";
+import Section from "../Section/Section";
 
 const ComboPackage = ({ showPrice = true }) => {
   var [showQuotModal, setShowQuoteModal] = useState(false);
@@ -90,14 +91,16 @@ const ComboPackage = ({ showPrice = true }) => {
   const [modal, setModal] = useState(false);
 
   return (
-    <>
+    <Section>
       <div className={classList.packages_wrapper} id="ComboPackages">
         <div className={classList.packages_items}>
           <div
-            className={`${classList.header_items} ${classList.centralize_txt}`}>
+            className={`${classList.header_items} ${classList.centralize_txt}`}
+          >
             <div
               onClick={() => setShowQuoteModal(true)}
-              className={classList.discount}>
+              className={classList.discount}
+            >
               <Image
                 src={Discount.src}
                 width={200}
@@ -147,7 +150,7 @@ const ComboPackage = ({ showPrice = true }) => {
         show={showQuotModal}
         onHide={() => setShowQuoteModal(false)}
       />
-    </>
+    </Section>
   );
 };
 
