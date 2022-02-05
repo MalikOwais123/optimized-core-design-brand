@@ -7,7 +7,7 @@ import PackageListTest from "../PackageListTest/PackageListTest";
 import Paragraph from "../Paragraph/Paragraph";
 import images from "../../assets/images/discount.png";
 import Image from "next/image";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const ComboPackageTest = ({ showPrice = true }) => {
   const logoDesign = [

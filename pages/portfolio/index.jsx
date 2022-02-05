@@ -15,7 +15,7 @@ import { useState } from "react";
 import GetAQuotModal from "../../components/GetAQuotModal/GetAQuotModal";
 import { openLiveChat } from "../../utils/Data/helpers";
 import Head from "next/head";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const index = () => {
   var [showQuotModal, setShowQuoteModal] = useState(false);

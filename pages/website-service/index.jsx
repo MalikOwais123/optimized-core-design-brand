@@ -2,10 +2,11 @@ import WebsiteServices2 from "../../components/WebsiteServices2/WebsiteServices2
 import { useWindowSize } from "../../utils/Data/helpers";
 import landingImage1 from "../../assets/images/landingImages/serviceLanding1.webp";
 import landingImage2 from "../../assets/images/landingImages/serviceLanding2.webp";
-import DesktopLanding from "../../components/DesktopLanding/DesktopLanding";
-import MobileLanding from "../../components/MobileLanding/MobileLanding";
 import Script from "next/script";
 import Head from "next/head";
+import dynamic from 'next/dynamic'
+const MobileLanding = dynamic(() => import('../../components/MobileLanding/MobileLanding'))
+const DesktopLanding = dynamic(() => import('../../components/DesktopLanding/DesktopLanding'))
 
 const index = () => {
   const device = useWindowSize();
@@ -58,10 +59,10 @@ const index = () => {
     <>
       <Head>
         <title>Website service | The Core Designs</title>
-        <script
+        {/* <script
           defer
-          src="https://www.googletagmanager.com/gtag/js?id=AW-10795784072"></script>
-        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10795784072"></script> */}
+        {/* <Script
         strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -71,7 +72,7 @@ const index = () => {
     gtag('config', 'AW-10795784072');
   `,
           }}
-        />
+        /> */}
       </Head>
       <WebsiteServices2
         headingContent1="#1 Website Service"

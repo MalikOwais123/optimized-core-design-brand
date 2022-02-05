@@ -21,7 +21,7 @@ import BannerMultiLogo from "../../components/BannerMultiLogo/BannerMultiLogo";
 import ShowCase from "../../components/ShowCase/ShowCase";
 import NavLink from "../../components/Navlinks/Navlinks";
 import Head from "next/head";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const ListItem = [
   " Exceptional customer service",

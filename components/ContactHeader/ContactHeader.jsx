@@ -5,7 +5,7 @@ import chatLogo from "../../assets/images/logo/chatLogo.svg";
 import call from "../../assets/images/logo/call.png";
 import message from "../../assets/images/logo/message.png";
 import { openLiveChat } from "../../utils/Data/helpers";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const ContactHeader = () => {
   return (

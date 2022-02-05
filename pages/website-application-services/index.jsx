@@ -18,7 +18,7 @@ import branding3 from "../../assets/images/webImages/3.png";
 import branding4 from "../../assets/images/webImages/4.png";
 import NavLink from "../../components/Navlinks/Navlinks";
 import Head from "next/head";
-import { phoneNumber } from "../../utils/Data/Data";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const index = () => {
   return (

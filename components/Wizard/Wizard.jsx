@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import classList from "./Wizard.module.scss";
-import Modal from "../Modal/Modal";
 import Button from "../Button/Button";
 import Header from "../Header/Header";
 import { post } from "../../utils/Data/helpers";
-import ShowMessage from "../ShowMessage/ShowMessage";
+import dynamic from 'next/dynamic'
+const Modal = dynamic(() => import('../../components/Modal/Modal'))
+const ShowMessage = dynamic(() => import('../../components/ShowMessage/ShowMessage'))
+
+
 
 const DetailForm = ({ submit, prevStep, title }) => {
   const [name, setName] = useState("");

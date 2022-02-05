@@ -3,15 +3,14 @@ import FormV2 from "../FormV2/FormV2";
 import Header from "../Header/Header";
 import Paragraph from "../Paragraph/Paragraph";
 import Section from "../Section/Section";
-import UsableRow from "../useAbleRow/UsableRow";
 import classList from "./WebsiteServices2.module.scss";
-import bg from "../../assets/images/sample/bg.svg";
-import Logos from "../Logos/Logos";
-import logo from "../../assets/images/logo/logo1.svg";
 import BannerMultiLogo from "../BannerMultiLogo/BannerMultiLogo";
 import { useState } from 'react';
-import Wizard from '../Wizard/Wizard';
-import { useEffect } from 'react';
+// import Wizard from "../Wizard/Wizard";
+import dynamic from 'next/dynamic'
+const Wizard = dynamic(() => import('../../components/Wizard/Wizard'))
+
+
 
 
 const WebsiteServices2 = ({
@@ -24,19 +23,12 @@ const WebsiteServices2 = ({
 
 
   const [wizard, setWizard] = useState(false)
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     // TODO: add a condition to check if the user is logged in
-  //     setWizard(true)
-  //   }, 200);
-  // },[])
   return (
     <>
       <div className={`${classList.mainBanner} ${customClass}`}>
         <Section extraClass={classList.sectionClass}>
           <div className={classList.IAmHome}>
             <div className={classList.content}>
-              {/* <img src={logo.src} alt="" className={classList.logo} /> */}
               <Header
                 color="white"
                 fontWeight={"bold"}>
@@ -76,7 +68,7 @@ const WebsiteServices2 = ({
         </Section>
         <BannerMultiLogo fixBottom={true} />
       </div>
-      <Wizard show={wizard} onHide={() => setWizard(false)} />
+      {wizard && <Wizard show={wizard} onHide={() => setWizard(false)} />}
     </>
   );
 };
