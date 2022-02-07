@@ -72,6 +72,7 @@ const GlobalScripts = () => {
         }}
       />
       <Script
+        id="ze-snippet"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
           __html: `
@@ -81,7 +82,7 @@ const GlobalScripts = () => {
               var script = document.createElement('script');
               //script.defer = true; 
               script.type = 'text/javascript';
-              script.id = 'ze-snippet'
+              script.id = "ze-snippet"
               var target = 'https://static.zdassets.com/ekr/snippet.js?key=026cd8b7-0c2c-42c5-a8ef-6bd02caf68fb';
               script.src = target;
               var elem = document.head;
@@ -94,11 +95,6 @@ const GlobalScripts = () => {
           `,
         }}
       />
-      {/* <Script
-        src="https://static.zdassets.com/ekr/snippet.js?key=026cd8b7-0c2c-42c5-a8ef-6bd02caf68fb"
-        strategy="lazyOnload"
-        id="ze-snippet"
-      /> */}
     </>
   );
 };
