@@ -51,7 +51,6 @@ function MyApp({ Component, pageProps }) {
   }, []);
   return (
     <div style={{ position: "relative" }}>
-    <a href='https://www.clickcease.com' rel='nofollow'><img src='https://monitor.clickcease.com/stats/stats.aspx' alt='ClickCease'/></a>
       <ContactWithUs />
       {isLandingPage(pathname) ? (
         <ContactHeaderForLanding />
