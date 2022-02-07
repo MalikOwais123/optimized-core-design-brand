@@ -72,7 +72,7 @@ const GlobalScripts = () => {
         }}
       />
       {/* <Script
-        strategy="afterInteractive"
+        strategy="beforeInteractive"
         dangerouslySetInnerHTML={{
           __html: `
           document.addEventListener("DOMContentLoaded", function(event) {
@@ -93,7 +93,8 @@ const GlobalScripts = () => {
           `,
         }}
       /> */}
-      <Script src="https://static.zdassets.com/ekr/snippet.js?key=026cd8b7-0c2c-42c5-a8ef-6bd02caf68fb" strategy="afterInteractive" />
+      <Script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=026cd8b7-0c2c-42c5-a8ef-6bd02caf68fb" strategy="beforeInteractive"></Script>
+      
     </>
   );
 };
