@@ -11,6 +11,7 @@ const UseInput = (props) => {
     name,
     placeholder = "Enter Your Name",
     error = false,
+    required = false,
     getFieldValue,
   } = props;
 
@@ -33,8 +34,8 @@ const UseInput = (props) => {
 
   const handleInputChange = (e) => {
     const { value } = e.target;
-    setValue(e.target.value);
-    getFieldValue(value);
+    setValue(value);
+    // getFieldValue(value);
   };
 
   return (
@@ -44,6 +45,7 @@ const UseInput = (props) => {
           borderType
         )}`}>
         <input
+          className={classList.defaultClass}
           style={{
             borderColor: borderColor,
           }}
@@ -52,6 +54,8 @@ const UseInput = (props) => {
           onChange={(e) => handleInputChange(e)}
           name={name}
           value={value}
+          // required={required}
+          rules
         />
         <span
           style={{ color: placeholderColor }}
@@ -61,7 +65,10 @@ const UseInput = (props) => {
 
         {/* ERROR MESSAGE SPACE */}
         {error && (
-          <span className={classList.errorMessage} aria-live="polite">
+          <span
+            id={classList.errorMessage}
+            className={classList.errorMessage}
+            aria-live="polite">
             The email is invalid
           </span>
         )}
