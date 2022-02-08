@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "../Header/Header";
+import Paragraph from "../Paragraph/Paragraph";
 // import en1 from "../../public/assets/images/icons/ea/ea-1.svg";
 // import homePageImage2 from "./../../public/assets/images/home/8.png";
 import classList from "./blogCard.module.scss";
@@ -14,11 +16,16 @@ const BlogCard = (props) => {
     <div>
       <div onClick={onClick} className={classList.blog_post}>
         <div>
-          <p className={classList.user_title}>{postedBy}</p>
+          <Paragraph className={classList.user_title}>{postedBy}</Paragraph>
           <img className={classList.user_photo} src={userImage} alt="" />
           <img className={classList.blog_thumb} src={blogImage} alt="" />
-          <p className={classList.date}>{date}</p>
-          <h1 className={classList.title}>{blogTitle}</h1>
+          <Paragraph className={classList.date}>{date}</Paragraph>
+          <Header className={classList.title} fontWeight="semi-bold">
+            {blogTitle}
+          </Header>
+          {/* <Paragraph
+            dangerouslySetInnerHTML={createMarkup(blogDesc)}
+            className={classList.desc}></Paragraph> */}
           <p
             dangerouslySetInnerHTML={createMarkup(blogDesc)}
             className={classList.desc}></p>

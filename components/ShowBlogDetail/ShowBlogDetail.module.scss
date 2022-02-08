@@ -1,11 +1,19 @@
 .showDetailsWrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    background-color: #fafafa;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  .showDetails {
+    .showDetailsImage {
+      img {
+        border-radius: 20px;
+        width: 100%;
+        margin: 0 0 40px 0;
+      }
+    }
+  }
 }
