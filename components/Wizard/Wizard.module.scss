@@ -2,30 +2,37 @@
 
 .wizard_form_wrapper {
   width: 100vw;
-  max-width: 400px;
+  max-width: 500px;
   // height: 500px;
-  border-radius: 10px;
+  border-radius: 20px;
   background: $clr-white;
+  background: #cba8ff;
   display: flex;
   flex-direction: column;
-  padding: 20px;
-
-
+  padding: 50px 20px 50px 30px;
+  position: relative;
+  .close {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+  }
   .details {
-    display:flex;
+    display: flex;
     flex-direction: column;
 
     input {
-      width:100%;
+      width: 100%;
       min-height: 42px;
       box-shadow: 0 0 10px #d4d4d4;
       padding: 10px;
-      margin:0 0 20px 0;
-      border-radius:8px;
+      margin: 0 0 20px 0;
+      border-radius: 8px;
       outline: none;
-      transition:.3s;
+      transition: 0.3s;
       // border: solid 2px transparent;
-
 
       &:focus {
         box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.411);
@@ -38,7 +45,9 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
-
+    .contentWrepper {
+      margin-bottom: 20px;
+    }
     .container {
       display: block;
       position: relative;
@@ -50,6 +59,7 @@
       -ms-user-select: none;
       user-select: none;
       margin-bottom: 15px;
+      margin-left: 10px;
     }
 
     .container input {
@@ -64,7 +74,7 @@
       left: 0;
       height: 20px;
       width: 20px;
-      background-color: #eee;
+      background-color: #e9e3e3;
       border-radius: 50%;
       transition: 0.5s;
       // border: 1px solid black;
@@ -75,7 +85,7 @@
     }
 
     .container input:checked ~ .checkmark {
-      background-color: $dark;
+      background-color: #301b92;
     }
 
     .checkmark:after {
@@ -96,8 +106,6 @@
       border-radius: 50%;
       background: white;
     }
-
-
   }
 
   .submit_action {
