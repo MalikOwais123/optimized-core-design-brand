@@ -66,12 +66,6 @@ function MyApp({ Component, pageProps }) {
         <Component {...pageProps} />
       </div>
       <GlobalScripts/>
-      {/* <Script
-        strategy="afterInteractive"
-        id="ze-snippet"
-        src="https://static.zdassets.com/ekr/snippet.js?key=026cd8b7-0c2c-42c5-a8ef-6bd02caf68fb"
-        // onLoad={openLiveChat}
-      /> */}
     
       {isLandingPage(pathname) ? null : <Footer />}
       {isLandingPage(pathname) ? <CopyrightForLanding /> : <Copyright />}

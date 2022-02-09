@@ -1,5 +1,5 @@
 import classList from "./Logos.module.scss";
-import topDesignLogo from "../../assets/images/logo/bannerLogo/top-design.svg";
+import topDesignLogo from "../../assets/images/logo/bannerLogo/top-design.webp";
 import clutchLogo from "../../assets/images/logo/bannerLogo/clutch.svg";
 import topDigitalLogo from "../../assets/images/logo/bannerLogo/top-digital-agency.svg";
 import trustPilot from "../../assets/images/logo/bannerLogo/tttt.svg";

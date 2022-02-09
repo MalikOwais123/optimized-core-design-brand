@@ -91,15 +91,15 @@ const Form = ({ heading, description, buttonText, className, headerClass }) => {
         phoneNo: phone,
       };
       const res = await post("/contact", data);
-      if (res.statusCode === 201 || res.status) {
-        setIsSubmitted(true);
-      }
       trigger({
         action: "lead generated",
         category: "generate_lead",
         label: "service sold",
         value: data,
       });
+      if (res.statusCode === 201 || res.status) {
+        setIsSubmitted(true);
+      }
     } catch (error) {
       setIsSubmitted(false);
       console.log(error);

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import classList from "./Wizard.module.scss";
 import Button from "../Button/Button";
 import Header from "../Header/Header";
-import { post } from "../../utils/Data/helpers";
-import dynamic from 'next/dynamic'
-const Modal = dynamic(() => import('../../components/Modal/Modal'))
-const ShowMessage = dynamic(() => import('../../components/ShowMessage/ShowMessage'))
-
-
+import { post, trigger } from "../../utils/Data/helpers";
+import dynamic from "next/dynamic";
+const Modal = dynamic(() => import("../../components/Modal/Modal"));
+const ShowMessage = dynamic(() =>
+  import("../../components/ShowMessage/ShowMessage")
+);
 
 const DetailForm = ({ submit, prevStep, title }) => {
   const [name, setName] = useState("");
@@ -24,29 +24,29 @@ const DetailForm = ({ submit, prevStep, title }) => {
           fontSize={20}>
           {title}
         </Header>
-   
-          <input
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            name="name"
-            type="text"
-            placeholder="Enter Name"
-          />
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            name="email"
-            type="email"
-            placeholder="Enter Email"
-          />
-          <input
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            name="phone"
-            type="text"
-            placeholder="Phone Number"
-          />
-          <div className={classList.submit_action}>
+
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          name="name"
+          type="text"
+          placeholder="Enter Name"
+        />
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          name="email"
+          type="email"
+          placeholder="Enter Email"
+        />
+        <input
+          value={phone}
+          onChange={(e) => setPhone(e.target.value)}
+          name="phone"
+          type="text"
+          placeholder="Phone Number"
+        />
+        <div className={classList.submit_action}>
           <Button
             onClick={prevStep}
             hoverLight={true}
@@ -57,13 +57,12 @@ const DetailForm = ({ submit, prevStep, title }) => {
           </Button>
           <Button
             hover={validate}
-            backgroundColor={!validate && "gray"}
+            backgroundColor={!validate && "#301b92"}
             disabled={!validate}
             onClick={() => submit({ fullName: name, email, phone })}>
             Submit
           </Button>
-          </div>
-        
+        </div>
       </div>
     </>
   );
@@ -87,11 +86,11 @@ const WizardFrom = ({
   return (
     <>
       <div className={classList.wizard}>
-        <div>
+        <div className={classList.contentWrepper}>
           <Header
             style={{ marginBottom: 30 }}
             fontWeight="semi-bold"
-            fontSize={20}>
+            fontSize={22}>
             {title}
           </Header>
           {data.fields.map((v, i) => (
@@ -121,7 +120,7 @@ const WizardFrom = ({
             onClick={nextSetter}
             type="button"
             hover={Boolean(val)}
-            backgroundColor={!Boolean(val) && "gray"}>
+            backgroundColor={!Boolean(val) ? "#301b9280" : "#301b92"}>
             Next
           </Button>
         </div>
@@ -155,6 +154,12 @@ const Wizard = (props) => {
       // console.log(data);
       // console.log("data", data);
       const res = await post("/wizard", data);
+      trigger({
+        action: "lead generated",
+        category: "generate_lead",
+        label: "service sold",
+        value: data,
+      });
       if (res.status) {
         setIsSubmitted(true);
       }
@@ -273,6 +278,9 @@ const Wizard = (props) => {
   return (
     <Modal modal={show} setModal={onHide}>
       <div className={classList.wizard_form_wrapper}>
+        <span className={classList.close} onClick={onHide}>
+          X
+        </span>
         {steps === 1 && (
           <WizardFrom
             title="What type of business is this for?"
