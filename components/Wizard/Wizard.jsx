@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import classList from "./Wizard.module.scss";
 import Button from "../Button/Button";
 import Header from "../Header/Header";
-import { post } from "../../utils/Data/helpers";
+import { post, trigger } from "../../utils/Data/helpers";
 import dynamic from "next/dynamic";
 const Modal = dynamic(() => import("../../components/Modal/Modal"));
 const ShowMessage = dynamic(() =>
@@ -14,7 +14,6 @@ const DetailForm = ({ submit, prevStep, title }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const validate = Boolean(name) && Boolean(email) && Boolean(phone);
-  console.log(validate, "checking logicc");
   return (
     <>
       <div className={classList.details}>
@@ -149,6 +148,12 @@ const Wizard = (props) => {
       // console.log(data);
       // console.log("data", data);
       const res = await post("/wizard", data);
+      trigger({
+        action: "lead generated",
+        category: "generate_lead",
+        label: "service sold",
+        value: data,
+      });
       if (res.status) {
         setIsSubmitted(true);
       }
