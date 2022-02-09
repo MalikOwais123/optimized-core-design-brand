@@ -6,7 +6,7 @@
   // height: 500px;
   border-radius: 20px;
   background: $clr-white;
-  // background: #cba8ff;
+  background: #cba8ff;
   display: flex;
   flex-direction: column;
   padding: 50px 20px 50px 30px;
@@ -18,7 +18,6 @@
     font-size: 14px;
     color: black;
     cursor: pointer;
-    font-weight: bold;
   }
   .details {
     display: flex;
@@ -86,7 +85,7 @@
     }
 
     .container input:checked ~ .checkmark {
-      background-color: $redish;
+      background-color: #301b92;
     }
 
     .checkmark:after {

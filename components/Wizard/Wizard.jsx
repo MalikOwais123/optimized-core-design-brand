@@ -14,6 +14,7 @@ const DetailForm = ({ submit, prevStep, title }) => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const validate = Boolean(name) && Boolean(email) && Boolean(phone);
+  console.log(validate, "checking logicc");
   return (
     <>
       <div className={classList.details}>
@@ -21,8 +22,7 @@ const DetailForm = ({ submit, prevStep, title }) => {
           style={{ marginBottom: 30 }}
           fontWeight="semi-bold"
           fontSize={20}>
-          {title[0]} <span style={{ color: "#B72A12" }}>{title[1]}</span>{" "}
-          {title[2]}
+          {title}
         </Header>
 
         <input
@@ -57,10 +57,10 @@ const DetailForm = ({ submit, prevStep, title }) => {
           </Button>
           <Button
             hover={validate}
-            backgroundColor={!validate && "gray"}
+            backgroundColor={!validate && "#301b92"}
             disabled={!validate}
             onClick={() => submit({ fullName: name, email, phone })}>
-            Avail Offer
+            Submit
           </Button>
         </div>
       </div>
@@ -68,9 +68,16 @@ const DetailForm = ({ submit, prevStep, title }) => {
   );
 };
 
-const WizardFrom = ({ data, steps, nextStep, prevStep, onHide, submit }) => {
+const WizardFrom = ({
+  data,
+  steps,
+  nextStep,
+  prevStep,
+  title = "",
+  onHide,
+  submit,
+}) => {
   const [val, setVal] = useState(data.value);
-  const { title } = data;
   const nextSetter = () => {
     data.setter(val);
     nextStep();
@@ -84,8 +91,7 @@ const WizardFrom = ({ data, steps, nextStep, prevStep, onHide, submit }) => {
             style={{ marginBottom: 30 }}
             fontWeight="semi-bold"
             fontSize={22}>
-            {title[0]} <span style={{ color: "#B72A12" }}>{title[1]}</span>{" "}
-            {title[2]}
+            {title}
           </Header>
           {data.fields.map((v, i) => (
             <label className={classList.container}>
@@ -114,7 +120,7 @@ const WizardFrom = ({ data, steps, nextStep, prevStep, onHide, submit }) => {
             onClick={nextSetter}
             type="button"
             hover={Boolean(val)}
-            backgroundColor={!Boolean(val) && "gray"}>
+            backgroundColor={!Boolean(val) ? "#301b9280" : "#301b92"}>
             Next
           </Button>
         </div>
@@ -173,7 +179,7 @@ const Wizard = (props) => {
   const data = [
     {
       type: "business",
-      title: ["What type of", "business", "is this for?"],
+      title: "What type of business is this for",
       setter: setBusiness,
       value: business,
       fields: [
@@ -209,7 +215,7 @@ const Wizard = (props) => {
     },
     {
       type: "industry",
-      title: ["What", "industry", "do you operate for?"],
+      title: "What industry do you operate for",
       setter: setIndustry,
       value: industry,
       fields: [
@@ -241,7 +247,7 @@ const Wizard = (props) => {
     },
     {
       type: "budget",
-      title: ["What is your", "estimated budget", "for this project?"],
+      title: "What s your estimated budget or this project",
       setter: setBudget,
       value: budget,
       fields: [
@@ -276,6 +282,7 @@ const Wizard = (props) => {
         </span>
         {steps === 1 && (
           <WizardFrom
+            title="What type of business is this for?"
             steps={steps}
             data={data[0]}
             prevStep={prevStep}
@@ -285,6 +292,7 @@ const Wizard = (props) => {
         )}
         {steps === 2 && (
           <WizardFrom
+            title="What industry do you operate in?"
             steps={steps}
             data={data[1]}
             prevStep={prevStep}
@@ -302,6 +310,7 @@ const Wizard = (props) => {
         )}
         {steps === 3 && (
           <WizardFrom
+            title="What is your estimated budget for this project?"
             steps={steps}
             data={data[2]}
             prevStep={prevStep}
@@ -312,7 +321,7 @@ const Wizard = (props) => {
         )}
         {steps === 4 && (
           <DetailForm
-            title={["Grab our", "50%", "Discount!"]}
+            title="Enter Your Details"
             prevStep={prevStep}
             submit={submit}
           />
