@@ -3,20 +3,18 @@ import landingImage1 from "../../assets/images/landingImages/agencyLanding1.webp
 import landingImage2 from "../../assets/images/landingImages/agencyLanding2.webp";
 import WebsiteServices2 from "../../components/WebsiteServices2/WebsiteServices2";
 import Head from "next/head";
-import Script from "next/script";
-import DesktopLanding from "../../components/DesktopLanding/DesktopLanding";
-import MobileLanding from "../../components/MobileLanding/MobileLanding";
+import dynamic from 'next/dynamic'
+const DesktopLanding = dynamic(() => import('../../components/DesktopLanding/DesktopLanding'))
+const MobileLanding = dynamic(() => import('../../components/MobileLanding/MobileLanding'))
 
 const index = () => {
   const device = useWindowSize();
-
   const contentStyle = {
     display: "flex",
     alignItems: "flex-start",
     justifyContent: "center",
     flexDirection: "column",
   };
-
   const landing1 = {
     image: landingImage1,
     reverse: true,
@@ -32,7 +30,6 @@ const index = () => {
     ],
     style: contentStyle,
   };
-
   const landing2 = {
     image: landingImage2,
     reverse: device === "mobile" || device === "tablet" ? true : false,
@@ -48,25 +45,10 @@ const index = () => {
     ],
     style: contentStyle,
   };
-
   return (
     <>
       <Head>
         <title>Website agency | The Core Designs</title>
-        <script
-          defer
-          src="https://www.googletagmanager.com/gtag/js?id=AW-10795784072"></script>
-        <Script
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);} 
-    gtag('js', new Date()); 
-    gtag('config', 'AW-10795784072');
-  `,
-          }}
-        />
       </Head>
       <WebsiteServices2
         headingContent1="#1 Website Agency"
@@ -81,5 +63,4 @@ const index = () => {
     </>
   );
 };
-
 export default index;

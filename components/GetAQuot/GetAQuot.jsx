@@ -10,7 +10,7 @@ import {
   businessOption,
   industryOptions,
   budgetOption,
-} from "../../utils/Data/Data";
+} from "../../utils/Data/globalVariables";
 import { post } from "../../utils/Data/helpers";
 import ShowMessage from "../ShowMessage/ShowMessage";
 

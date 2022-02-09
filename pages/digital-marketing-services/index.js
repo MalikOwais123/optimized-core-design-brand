@@ -20,7 +20,7 @@ import BannerMultiLogo from "../../components/BannerMultiLogo/BannerMultiLogo";
 import ShowCaseWrapper from "../../components/ShowCaseWrapper/ShowCaseWrapper";
 import NavLink from "../../components/Navlinks/Navlinks";
 import Head from "next/head";
-
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const ListItem = [
   "Social Media Marketing",
@@ -48,14 +48,21 @@ const index = () => {
           />
         </Head>
 
-        <ReuseableRow cover={true} backgroundImage={bgWebDesign} contentImage={seo1}>
+        <ReuseableRow
+          cover={true}
+          backgroundImage={bgWebDesign}
+          contentImage={seo1}>
           <Header color="white" fontWeight="bold" fontSize="45">
             Improve Your Rankings With Professional Marketing Services
           </Header>
           <div>
-          <NavLink href="/contact">
-
-            <Button backgroundColor="#FFFFFF" color="#1D2228" hoverLight={true}>Get Started</Button>
+            <NavLink href="/contact">
+              <Button
+                backgroundColor="#FFFFFF"
+                color="#1D2228"
+                hoverLight={true}>
+                Get Started
+              </Button>
             </NavLink>
           </div>
           <BannerMultiLogo />
@@ -84,26 +91,28 @@ const index = () => {
             visitors through the buyer's journey.
           </Paragraph>
           <div className={classList.btn_group_contact}>
-          <a style={{textDecoration: "none", color: "inherit"}} href="/contact" >
-          <Button
-            hover={true}
-            color="white"
-            style={{
-              marginRight: "10px",
-              borderRadius: "6px",
-            }}> 
-            Get Started
-          </Button>
-          </a>
-          <a href="tel:+1 (212)-343-1105">
-          <Button
-            hoverLight={true}
-            color="black"
-            backgroundColor="transparent"
-            style={{ border: "1px solid black", borderRadius: "6px" }}>
-            +1 (212)-343-1105
-          </Button>
-          </a>
+            <a
+              style={{ textDecoration: "none", color: "inherit" }}
+              href="/contact">
+              <Button
+                hover={true}
+                color="white"
+                style={{
+                  marginRight: "10px",
+                  borderRadius: "6px",
+                }}>
+                Get Started
+              </Button>
+            </a>
+            <a href={`tel:${phoneNumber}`}>
+              <Button
+                hoverLight={true}
+                color="black"
+                backgroundColor="transparent"
+                style={{ border: "1px solid black", borderRadius: "6px" }}>
+                {phoneNumber}
+              </Button>
+            </a>
           </div>
         </ReuseableRow>
         {/* <SoloPortFolio /> */}
@@ -127,26 +136,28 @@ const index = () => {
           ))}
 
           <div className={classList.btn_group_contact}>
-          <a style={{textDecoration: "none", color: "inherit"}} href="/contact" >
-          <Button
-            hover={true}
-            color="white"
-            style={{
-              marginRight: "10px",
-              borderRadius: "6px",
-            }}> 
-            Get Started
-          </Button>
-          </a>
-          <a href="tel:+1 (212)-343-1105">
-          <Button
-            hoverLight={true}
-            color="black"
-            backgroundColor="transparent"
-            style={{ border: "1px solid black", borderRadius: "6px" }}>
-            +1 (212)-343-1105
-          </Button>
-          </a>
+            <a
+              style={{ textDecoration: "none", color: "inherit" }}
+              href="/contact">
+              <Button
+                hover={true}
+                color="white"
+                style={{
+                  marginRight: "10px",
+                  borderRadius: "6px",
+                }}>
+                Get Started
+              </Button>
+            </a>
+            <a href={`tel:${phoneNumber}`}>
+              <Button
+                hoverLight={true}
+                color="black"
+                backgroundColor="transparent"
+                style={{ border: "1px solid black", borderRadius: "6px" }}>
+                {phoneNumber}
+              </Button>
+            </a>
           </div>
         </ReuseableRow>
         <TestimonialV2 />

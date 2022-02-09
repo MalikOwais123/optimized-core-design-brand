@@ -19,9 +19,10 @@ import webDesign4 from "../../assets/images/sample/webDesign4.png";
 import Logos from "../../components/Logos/Logos";
 import BannerMultiLogo from "../../components/BannerMultiLogo/BannerMultiLogo";
 import Head from "next/head";
-import {webDesignPortfolio} from "./../../utils/Data/Data"
-import NavLink from "../../components/Navlinks/Navlinks";
+import { phoneNumber } from "./../../utils/Data/globalVariables";
+import { webDesignPortfolio } from "./../../utils/Data/Data";
 
+import NavLink from "../../components/Navlinks/Navlinks";
 
 const ListItem = [
   "Improved User Experience",
@@ -55,7 +56,9 @@ const index = () => {
         </Paragraph>
         <div>
           <NavLink href="/contact">
-          <Button backgroundColor="#FFFFFF" color="#1D2228" hoverLight={true}>Get Started</Button>
+            <Button backgroundColor="#FFFFFF" color="#1D2228" hoverLight={true}>
+              Get Started
+            </Button>
           </NavLink>
         </div>
         <BannerMultiLogo />
@@ -94,13 +97,13 @@ const index = () => {
               Get Started
             </Button>
           </a>
-          <a href="tel:+1 (212)-343-1105">
+          <a href={`tel:${phoneNumber}`}>
             <Button
               hoverLight={true}
               color="black"
               backgroundColor="transparent"
               style={{ border: "1px solid black", borderRadius: "6px" }}>
-              +1 (212)-343-1105
+              {phoneNumber}
             </Button>
           </a>
         </div>
@@ -140,13 +143,13 @@ const index = () => {
               Get Started
             </Button>
           </a>
-          <a href="tel:+1 (212)-343-1105">
+          <a href={`tel:${phoneNumber}`}>
             <Button
               hoverLight={true}
               color="black"
               backgroundColor="transparent"
               style={{ border: "1px solid black", borderRadius: "6px" }}>
-              +1 (212)-343-1105
+              {phoneNumber}
             </Button>
           </a>
         </div>

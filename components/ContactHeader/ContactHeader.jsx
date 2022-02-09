@@ -5,6 +5,7 @@ import chatLogo from "../../assets/images/logo/chatLogo.svg";
 import call from "../../assets/images/logo/call.png";
 import message from "../../assets/images/logo/message.png";
 import { openLiveChat } from "../../utils/Data/helpers";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 
 const ContactHeader = () => {
   return (
@@ -42,7 +43,7 @@ const ContactHeader = () => {
           </div>
           <div className={classList.contact_info}>
             <img src={call.src} alt="" />
-            <a href="tel:+1 (212)-343-1105">+1 (212)-343-1105</a>
+            <a href={`tel:${phoneNumber}`}>{phoneNumber}</a>
           </div>
           <div className={classList.contact_info_btn}>
             <img src={chatLogo.src} alt="" />

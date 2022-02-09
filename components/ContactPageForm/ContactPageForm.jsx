@@ -3,7 +3,7 @@ import {
   budgetOption,
   businessOption,
   industryOptions,
-} from "../../utils/Data/Data";
+} from "../../utils/Data/globalVariables";
 import { post, validateEmail, validatePhone } from "../../utils/Data/helpers";
 import Button from "../Button/Button";
 import CustomSelect from "../CustomSelect/CustomSelect";

@@ -4,8 +4,9 @@ import { useWindowSize } from "../../utils/Data/helpers";
 import WebsiteServices2 from "../../components/WebsiteServices2/WebsiteServices2";
 import Head from "next/head";
 import Script from "next/script";
-import DesktopLanding from "../../components/DesktopLanding/DesktopLanding";
-import MobileLanding from "../../components/MobileLanding/MobileLanding";
+import dynamic from 'next/dynamic'
+const DesktopLanding = dynamic(() => import('../../components/DesktopLanding/DesktopLanding'))
+const MobileLanding = dynamic(() => import('../../components/MobileLanding/MobileLanding'))
 
 const index = () => {
   const device = useWindowSize();
@@ -56,10 +57,10 @@ const index = () => {
     <>
       <Head>
         <title>Website designer | The Core Designs</title>
-        <script
+        {/* <script
           defer
-          src="https://www.googletagmanager.com/gtag/js?id=AW-10795784072"></script>
-        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-10795784072"></script> */}
+        {/* <Script
         strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
@@ -69,7 +70,7 @@ const index = () => {
     gtag('config', 'AW-10795784072');
   `,
           }}
-        />
+        /> */}
       </Head>
       <WebsiteServices2
         headingContent1="#1 Website Designer"

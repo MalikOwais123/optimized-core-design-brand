@@ -10,9 +10,9 @@ import CustomSelect from "../CustomSelect/CustomSelect";
 import Link from "next/link";
 import {
   businessOption,
-  industryOptions,
   budgetOption,
-} from "../../utils/Data/Data";
+} from "../../utils/Data/globalVariables";
+import { phoneNumber } from "../../utils/Data/globalVariables";
 import ShowMessage from "../ShowMessage/ShowMessage";
 import { post } from "../../utils/Data/helpers";
 const ContactForm = () => {
@@ -125,9 +125,9 @@ const ContactForm = () => {
           </Header>
           <Paragraph fontWeight="semi-bold">
             Leave your details below or call us on
-            <a href="tel:+1 (212)-343-1105" className={classList.callnow}>
+            <a href={`tel:${phoneNumber}`} className={classList.callnow}>
               {" "}
-              +1 (212)-343-1105
+              {phoneNumber}
             </a>{" "}
             and let`s chat about your business, your goals, and how we can help
             you grow.
@@ -296,7 +296,8 @@ const ContactForm = () => {
                     marginLeft: "5px",
                     textDecoration: "underline",
                     cursor: "pointer",
-                  }}>
+                  }}
+                >
                   Privacy policy
                 </span>
               </Link>
@@ -304,11 +305,13 @@ const ContactForm = () => {
           </div>
           <div className={classList.form_row}>
             <div
-              className={`${classList.flex_cols} ${classList.button_styles}`}>
+              className={`${classList.flex_cols} ${classList.button_styles}`}
+            >
               <Button
                 htmlType="button"
                 onClick={(e) => handleFormSubmit(e)}
-                hover={true}>
+                hover={true}
+              >
                 Submit
               </Button>
             </div>
@@ -319,7 +322,8 @@ const ContactForm = () => {
         <ShowMessage
           modal={isSubmitted}
           setModal={setIsSubmitted}
-          infoType="success">
+          infoType="success"
+        >
           Successfully submitted
         </ShowMessage>
       )}
