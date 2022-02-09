@@ -136,3 +136,16 @@ export const trigger = ({ action, category, label, value }) => {
     value: value,
   });
 };
+
+export const executeScroll = (ref) => {
+  window.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+  ref.current.scrollTo({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+};
