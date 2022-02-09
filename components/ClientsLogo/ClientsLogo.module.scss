@@ -16,6 +16,9 @@
   .slider_items {
     padding:20px;
     transition: 300ms ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     // height: 100px;
 
     &:hover {
