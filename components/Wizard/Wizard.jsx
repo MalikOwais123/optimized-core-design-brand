@@ -179,16 +179,32 @@ const Wizard = (props) => {
       value: business,
       fields: [
         {
-          type: "personal project",
-          value: "personal project",
+          type: "Personal project",
+          value: "ersonal project",
         },
         {
-          type: "my project",
-          value: "my project",
+          type: "Sole trader/self-employed",
+          value: "Sole trader/self-employed",
         },
         {
-          type: "your project",
-          value: "your project",
+          type: "Small business (1 - 9 employees) ",
+          value: "Small business (1 - 9 employees)",
+        },
+        {
+          type: "Medium Business (10 - 29 employees) ",
+          value: "Medium business (10 - 29 employees)",
+        },
+        {
+          type: "Large Business (30 - 99 employees) ",
+          value: "Large business (30 - 99 employees)",
+        },
+        {
+          type: "Extra Large Business (100 or more employees) ",
+          value: "Extra Large business (100 or more employees)",
+        },
+        {
+          type: "Charity/non-profit ",
+          value: "Charity/non-profit",
         },
       ],
     },
@@ -199,16 +215,28 @@ const Wizard = (props) => {
       value: industry,
       fields: [
         {
-          type: "personal industry",
-          value: "personal industry",
+          type: "Business services",
+          value: "Business services",
         },
         {
-          type: "my industry",
-          value: "my industry",
+          type: "Creative industries",
+          value: "Creative industries",
         },
         {
-          type: "your industry",
-          value: "your industry",
+          type: "Entertainment & events",
+          value: "Entertainment & events",
+        },
+        {
+          type: "Financial services",
+          value: "Financial services",
+        },
+        {
+          type: "Health & fitness",
+          value: "Health & fitness",
+        },
+        {
+          type: "Home services",
+          value: "Home services",
         },
       ],
     },
@@ -219,20 +247,29 @@ const Wizard = (props) => {
       value: budget,
       fields: [
         {
-          type: "personal budget",
-          value: "personal budget",
+          type: "Less than $500",
+          value: "Less than $500",
         },
         {
-          type: "my budget",
+          type: "$500 - $ 999",
           value: "my budget",
         },
         {
-          type: "your budget",
-          value: "your budget",
+          type: "$1,000 - $1,999",
+          value: "$1,000 - $1,999",
+        },
+        {
+          type: "$3,000 - $4,999",
+          value: "$3,000 - $4,999",
+        },
+        {
+          type: "$5,000 or more",
+          value: "$5,000 or more",
         },
       ],
     },
   ];
+  
   return (
     <Modal modal={show} setModal={onHide}>
       <div className={classList.wizard_form_wrapper}>
