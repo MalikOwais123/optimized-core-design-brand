@@ -14,6 +14,11 @@ import topDigitalLogoGray from "../../assets/images/logo/bannerLogo/top-digital-
 import trustPilotGray from "../../assets/images/logo/bannerLogo/tttt-gray.webp";
 import goodFirmsLogoGray from "../../assets/images/logo/bannerLogo/good-firms-gray.webp";
 import BBBGray from "../../assets/images/logo/bannerLogo/bbb_gray.webp";
+import agencySpotter from "../../assets/images/logo/bannerLogo/agencyspotter.webp";
+import agencySpotterGray from "../../assets/images/logo/bannerLogo/agencyspotter_gray.webp";
+import guarantee from "../../assets/images/logo/bannerLogo/guarantee.webp";
+import guaranteeGray from "../../assets/images/logo/bannerLogo/guarantee_gray.webp";
+
 
 import Section from "../Section/Section";
 import { useWindowSize } from "../../utils/Data/helpers";
@@ -21,6 +26,15 @@ import  Image  from 'next/image';
 
 const BannerMultiLogo = ({ fixBottom = false }) => {
   const dimension = useWindowSize();
+  const sliderProps = {
+    mobile: 1,
+    desktop: 5,
+    tablet: 4,
+    superLargeDesktop: 5,
+    autoPlay: true,
+    swipe : true,
+    showDots: false,
+};
 
   return (
     <div
@@ -28,12 +42,7 @@ const BannerMultiLogo = ({ fixBottom = false }) => {
       className={classList.banner_slider_wrapper}>
       <Section style={{ padding: "10px 0" }}>
         <div className={classList.test}>
-          <MultiSlider
-          desktop={6}
-            autoPlay={
-              dimension === "tablet" || dimension === "mobile" ? true : false
-            }
-            showDots={false}>
+          <MultiSlider {...sliderProps}>
             <div className={classList.logo_wrapper}>
               <div>
                 <Image
@@ -162,6 +171,53 @@ const BannerMultiLogo = ({ fixBottom = false }) => {
 
                 </div>
             </div>
+            
+            <div className={classList.logo_wrapper}>
+              <div>
+                <Image
+                  objectFit="contain"
+                  height={80}
+                  width={80}
+                  className={`${classList.first} ${classList.adjust}`}
+                  src={agencySpotter.src}
+                  alt=""
+                />
+              </div>
+              <div>
+                <Image
+                  objectFit="contain"
+                  height={80}
+                  width={80}
+                  className={`${classList.second} ${classList.adjust}`}
+                  src={agencySpotterGray.src}
+                  alt=""
+                />
+              </div>
+            </div>
+
+            <div className={classList.logo_wrapper}>
+              <div>
+                <Image
+                  objectFit="contain"
+                  height={80}
+                  width={80}
+                  className={`${classList.first} ${classList.adjust}`}
+                  src={guarantee.src}
+                  alt=""
+                />
+              </div>
+              <div>
+                <Image
+                  objectFit="contain"
+                  height={80}
+                  width={80}
+                  className={`${classList.second} ${classList.adjust}`}
+                  src={guaranteeGray.src}
+                  alt=""
+                />
+              </div>
+            </div>
+
           </MultiSlider>
         </div>
       </Section>
