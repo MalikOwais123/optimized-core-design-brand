@@ -4,6 +4,7 @@ import classList from "./blogs.module.scss";
 import Section from "../../components/Section/Section";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+import BlogSlider from "../../components/BlogSlider/BlogSlider";
 
 const InfiniteScroll = dynamic(
   () => import("../../components/InfiniteScroll/InfiniteScroll"),
@@ -48,6 +49,7 @@ const Blog = () => {
   return (
     <>
       <Section>
+        <BlogSlider blogsData={blogsData} handleBlogClick={handleBlogClick} />
         <div className={classList.blog_wrapper}>
           {/* <InfiniteScroll
             length={blogsData?.length ?? 0}
