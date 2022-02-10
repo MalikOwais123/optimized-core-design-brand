@@ -67,6 +67,10 @@ const index = ({ data }) => {
     }
   }, [page]);
 
+  const blogStyle = {
+    padding: "0px 30px 30px 30px",
+  };
+
   return (
     <>
       <Section>
@@ -90,6 +94,7 @@ const index = ({ data }) => {
                     blogTitle={blog?.title}
                     blogDesc={blog?.content}
                     key={blog?.id}
+                    style={blogStyle}
                   />
                 </div>
               ))}
