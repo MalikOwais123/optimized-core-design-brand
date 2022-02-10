@@ -4,6 +4,7 @@ import classList from "./blogs.module.scss";
 import Section from "../../components/Section/Section";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+import BlogSlider from "../../components/BlogSlider/BlogSlider";
 
 const InfiniteScroll = dynamic(
   () => import("../../components/InfiniteScroll/InfiniteScroll"),
@@ -41,13 +42,16 @@ const Blog = () => {
   };
 
   const handleBlogClick = (id) => {
+    console.log("id", id);
     const blog = blogsData.find((blog) => blog.id === id);
+    console.log("BLOG BY ID ", blog);
     router.push(`/blogs/${blog.id}`, null, { shallow: true });
   };
 
   return (
     <>
       <Section>
+        <BlogSlider handleBlogClick={handleBlogClick} />
         <div className={classList.blog_wrapper}>
           {/* <InfiniteScroll
             length={blogsData?.length ?? 0}
