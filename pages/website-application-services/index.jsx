@@ -19,6 +19,7 @@ import branding4 from "../../assets/images/webImages/4.png";
 import NavLink from "../../components/Navlinks/Navlinks";
 import Head from "next/head";
 import { phoneNumber } from "../../utils/Data/globalVariables";
+import RankLogo from '../../components/RankLogo/RankLogo';
 
 const index = () => {
   return (
@@ -100,6 +101,7 @@ const index = () => {
           image={branding1}
           heading="Establishing brands with flexible services and solutions"
         />
+        <RankLogo/>
         <ComboPackage />
         <ReuseableRow
           backgroundImage={"none"}
