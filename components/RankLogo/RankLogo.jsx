@@ -35,10 +35,10 @@ const RankLogo = () => {
     ];
 
     return (
-        <Section>
+        <Section style={{paddingBottom:"0px"}}>
             <div className={classList.slider}>
                 <Header style={{width:"max-content", margin:"auto"}} fontWeight="bold"> Ranked among one of the world’s best UX firms </Header>
-                <Paragraph style={{width:"max-content", margin:"0 auto 40px auto"}}>Delivering responsive interfaces and great user experiences across different digital platforms</Paragraph>
+                <Paragraph style={{width:"max-content", margin:"10px auto 40px auto"}}>Delivering responsive interfaces and great user experiences across different digital platforms</Paragraph>
                 <div className="styled_slider_dots">
                     <MultiSlider {...sliderProps}>
                         {imagesArray?.map(({ img, height, width }, i) => (

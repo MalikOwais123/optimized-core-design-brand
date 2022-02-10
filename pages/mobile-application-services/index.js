@@ -21,6 +21,7 @@ import NavLink from "../../components/Navlinks/Navlinks";
 import Head from "next/head";
 import { phoneNumber } from "../../utils/Data/globalVariables";
 import { mobileApplicationPortfolio } from "../../utils/Data/Data";
+import RankLogo from "../../components/RankLogo/RankLogo";
 
 
 const index = () => {
@@ -110,6 +111,7 @@ const index = () => {
           image={mobile2}
           heading="Establishing brands with flexible services and solutions"
         />
+        <RankLogo/>
         <ComboPackage />
         <ReuseableRow
           backgroundImage={"none"}

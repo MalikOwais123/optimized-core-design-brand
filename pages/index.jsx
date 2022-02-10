@@ -12,6 +12,7 @@ import WebSolutions from "../components/WebSolutions/WebSolutions";
 import TestimonialV2 from "../components/TestimonialV2/TestimonialV2";
 import ContactForm from "../components/ContactForm/ContactForm";
 import CustomPakage from "../components/CustomPakage/CustomPakage";
+import RankLogo from '../components/RankLogo/RankLogo';
 
 const index = () => {
   return (
@@ -22,6 +23,7 @@ const index = () => {
       <ClientsLogo />
       <Procedure />
       <Packages />
+      <RankLogo/>
       <div className={classList.combo_wrapper}>
         <ComboPackage />
       </div>

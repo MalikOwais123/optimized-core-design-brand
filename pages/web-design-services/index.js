@@ -23,6 +23,7 @@ import { phoneNumber } from "./../../utils/Data/globalVariables";
 import { webDesignPortfolio } from "./../../utils/Data/Data";
 
 import NavLink from "../../components/Navlinks/Navlinks";
+import RankLogo from "../../components/RankLogo/RankLogo";
 
 const ListItem = [
   "Improved User Experience",
@@ -116,6 +117,7 @@ const index = () => {
         image={webDesign3}
         heading="We believe in unrivaled user experiences."
       />
+      <RankLogo/>
       <ComboPackage />
       <ReuseableRow
         backgroundImage={"none"}

@@ -14,6 +14,7 @@ const MarketingBanner = dynamic(() =>
 const CustomPakage = dynamic(() => import("../CustomPakage/CustomPakage"));
 const ContactForm = dynamic(() => import("../ContactForm/ContactForm"));
 const FirstLanding = dynamic(() => import("../FirstLanding/FirstLanding"));
+import RankLogo from '../RankLogo/RankLogo';
 
 
 const MobileLanding = ({landing1,landing2}) => {
@@ -37,6 +38,7 @@ const MobileLanding = ({landing1,landing2}) => {
             content={landing1.content}
             bulletOptions={landing1.bulletOptions}
           />
+          <RankLogo/>
           <div>
             <Section>
               <ComboPackage />

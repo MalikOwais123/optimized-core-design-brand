@@ -24,6 +24,7 @@ import NavLink from "../../components/Navlinks/Navlinks";
 import Section from "../../components/Section/Section";
 import { phoneNumber } from "../../utils/Data/globalVariables";
 import { brandingPortfolio } from "../../utils/Data/Data";
+import RankLogo from "../../components/RankLogo/RankLogo";
 
 
 const ListItem = [
@@ -127,6 +128,7 @@ const index = () => {
           image={branding4}
           heading="Establishing brands with flexible services and solutions"
         />
+        <RankLogo/>
         <ComboPackage />
         <ReuseableRow
           backgroundImage={"none"}
