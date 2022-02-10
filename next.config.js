@@ -10,4 +10,8 @@ module.exports = withBundleAnalyzer({
     // your project has ESLint errors.
     ignoreDuringBuilds: true,
   },
+  images: {
+    domains: ['joblessapp-bucket.s3.ap-southeast-1.amazonaws.com']
+  }
+
 })
