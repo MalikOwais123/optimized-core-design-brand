@@ -4,7 +4,7 @@ import BlogSlider from '../../components/BlogSlider/BlogSlider'
 const index = () => {
   return (
     <div>
-      <BlogSlider/>
+      taha
     </div>
   )
 }
