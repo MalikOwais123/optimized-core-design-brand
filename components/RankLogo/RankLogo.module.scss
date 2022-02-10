@@ -6,6 +6,9 @@
     display: flex;
     flex: 1;
     flex-wrap: wrap;
+    height: 100%;
+    display: flex;
+    align-items: center;
 
     .flex_item {
         height: 100%;
