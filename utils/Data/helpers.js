@@ -149,3 +149,34 @@ export const executeScroll = (ref) => {
     behavior: "smooth",
   });
 };
+
+// check string word length if it is more than 20 words then return words with dot notation
+export const checkStringWordLength = (str, maxCount) => {
+  const words = str.split(" ");
+  if (words.length > maxCount) {
+    return `${words.slice(0, maxCount).join(" ")}...`;
+  }
+  return str;
+};
+
+// get format date from date string
+export const getFormatDate = (date) => {
+  const newDate = new Date(date);
+  const monthNames = [
+    "Jan",
+    "Feb",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
+  return `${newDate.getDate()}/${
+    monthNames[newDate.getMonth() + 1]
+  }/${newDate.getFullYear()}`;
+};
