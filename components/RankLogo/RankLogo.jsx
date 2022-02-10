@@ -5,13 +5,13 @@ import Paragraph from "../Paragraph/Paragraph";
 import Section from "../Section/Section";
 import Image from "next/image";
 
-import AgencySpotter from "../../assets/images/rankLogo/1.webp";
-import Clutch from "../../assets/images/rankLogo/4.webp";
-import MobileApp from "../../assets/images/rankLogo/2.webp";
-import newClutch from "../../assets/images/rankLogo/5.webp";
-import FeaturedOnUpCIty from "../../assets/images/rankLogo/6.webp";
-import guarantee from "../../assets/images/rankLogo/9.webp";
-import clutchNew from "../../assets/images/rankLogo/7.webp";
+import AgencySpotter from "../../assets/images/rankLogo/5.webp";
+import Clutch from "../../assets/images/rankLogo/1.webp";
+import MobileApp from "../../assets/images/rankLogo/3.webp";
+import newClutch from "../../assets/images/rankLogo/6.webp";
+import FeaturedOnUpCIty from "../../assets/images/rankLogo/2.webp";
+import guarantee from "../../assets/images/rankLogo/7.webp";
+import clutchNew from "../../assets/images/rankLogo/4.webp";
 
 const RankLogo = () => {
     const sliderProps = {
@@ -25,12 +25,12 @@ const RankLogo = () => {
     };
 
     const imagesArray = [
+        { img: Clutch, height:160, width:160 },
         { img: AgencySpotter, height:120, width:120 },
-        { img: Clutch, height:120, width:120 },
         { img: MobileApp, height:100, width:100 },
-        { img: clutchNew, height:160, width:160 },
-        { img: FeaturedOnUpCIty, height:160, width:160 },
-        { img: newClutch, height:160, width:160 },
+        { img: clutchNew, height:120, width:160 },
+        { img: FeaturedOnUpCIty, height:100, width:160 },
+        { img: newClutch, height:120, width:160 },
         { img: guarantee, height:100, width:100 },
     ];
 
