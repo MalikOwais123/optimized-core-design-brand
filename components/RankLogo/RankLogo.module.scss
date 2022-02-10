@@ -1,6 +1,13 @@
 .slider {
     width: 100%;
-    
+    .text{
+      width:100%;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+    }
     
   .slider_wrapper {
     display: flex;
