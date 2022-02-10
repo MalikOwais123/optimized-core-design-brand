@@ -19,6 +19,13 @@ const DetailForm = ({ submit, prevStep, title, steps }) => {
   const [phone, setPhone] = useState("");
   const validate = Boolean(name) && Boolean(email) && Boolean(phone);
   console.log(validate, "checking logicc");
+  const handleName = (e) => {
+    // check name with regex
+    let result = e.target.value.match(/^[a-zA-Z ]+$/i);
+    if (result) {
+      setName(e.target.value);
+    }
+  };
   return (
     <>
       <div className={classList.wizard}>
@@ -33,7 +40,7 @@ const DetailForm = ({ submit, prevStep, title, steps }) => {
             <div className={classList.inputs}>
               <input
                 value={name}
-                onChange={(e) => setName(e.target.value)}
+                onChange={handleName}
                 name="name"
                 type="text"
                 placeholder="Enter Name"
@@ -49,7 +56,7 @@ const DetailForm = ({ submit, prevStep, title, steps }) => {
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
                 name="phone"
-                type="text"
+                type="number"
                 placeholder="Phone Number"
               />
             </div>
@@ -71,6 +78,7 @@ const DetailForm = ({ submit, prevStep, title, steps }) => {
             hover={validate}
             backgroundColor={!validate && "gray"}
             disabled={!validate}
+            customClass={`${!validate && classList.buttonDisabled}`}
             onClick={() => submit({ fullName: name, email, phone })}>
             Active Now
           </Button>
