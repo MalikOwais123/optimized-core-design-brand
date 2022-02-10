@@ -64,10 +64,10 @@ const BannerMultiLogo = ({ fixBottom = false }) => {
             coloredImage: agencySpotter,
             grayscaleImage: agencySpotterGray,
         },
-        {
-            coloredImage: guarantee,
-            grayscaleImage: guaranteeGray,
-        },
+        // {
+        //     coloredImage: guarantee,
+        //     grayscaleImage: guaranteeGray,
+        // },
     ];
 
     return (
