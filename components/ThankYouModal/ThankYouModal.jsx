@@ -3,7 +3,7 @@ import classList from "./ThankYouModal.module.scss";
 import optimize from "../../assets/images/sample/optimize.png";
 import Header from "../../components/Header/Header";
 import Button from "../../components/Button/Button";
-import backButton from "../../assets/images/icons/backButton.png";
+import thankYou from "../../assets/images/sample/thankYou.png";
 
 
 const ThankYouModal = ({show,steps,prevStep,onHide}) => {
@@ -21,37 +21,28 @@ const ThankYouModal = ({show,steps,prevStep,onHide}) => {
             <img src={optimize.src} alt="" />
           </div>
           <div className={classList.contentWrepper}>
-            <Header fontWeight="semi-bold" fontSize={20}>
-              test Title
-            </Header>
+            <img src={thankYou.src} alt="img" />
             <div className={classList.inputs}>
-            Thank you for your Information, 
-            Our Sr. Design Consultant, will Contact you Shortly.
-            Incase you with to contact him Directly Please Call this Number. (212) 343-9069 or
-            Email us at Info@thecoredesigns.com
+            Thank you for your Information, <b />
+            Our Sr. Design Consultant, will Contact you Shortly. <br />
+            Incase you with to contact him Directly Please Call this <br /> <span className={classList.phoneNumber}> Number: <a href="tel:+1 (212)-343-1105">+1 (212)-343-1105</a> or </span>
+            <span className={classList.phoneNumber}>Email us at:  <a href="mailto:info@thecoredesigns.com">info@thecoredesigns.com</a> </span>
+            You can always Discuss your project <br />Directly with on Chat
             </div>
           </div>
         </div>
         <div className={classList.offerimg}>
-          {/* <img src={discount.src} alt="" /> */}
         </div>
-        <div className={classList.submit_action}>
-          {/* <div className={classList.bacButton}>
-            {steps === 1 ? (
-              ""
-            ) : (
-              <img src={backButton.src} alt="" onClick={prevStep} />
-            )}
-          </div> */}
+        {/* <div className={classList.submit_action}> 
           <Button
-            // hover={validate}
-            // backgroundColor={!validate && "gray"}
-            // disabled={!validate}
+            hover={validate}
+            backgroundColor={!validate && "gray"}
+            disabled={!validate}
             onClick={onHide}
             >
            Dismiss
           </Button>
-        </div>
+        </div> */}
       </div>
       </div>
     </Modal>
