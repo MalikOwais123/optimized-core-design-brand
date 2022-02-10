@@ -26,12 +26,12 @@ const RankLogo = () => {
 
     const imagesArray = [
         { img: AgencySpotter, height:120, width:120 },
-        { img: Clutch, height:120, width:120 },
-        { img: MobileApp, height:100, width:100 },
+        { img: Clutch, height:100, width:100 },
+        { img: MobileApp, height:80, width:80 },
         { img: clutchNew, height:160, width:160 },
         { img: FeaturedOnUpCIty, height:160, width:160 },
         { img: newClutch, height:160, width:160 },
-        { img: guarantee, height:100, width:100 },
+        { img: guarantee, height:80, width:80 },
     ];
 
     return (
