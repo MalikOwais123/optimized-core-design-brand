@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import classList from "./Wizard.module.scss";
 import Button from "../Button/Button";
 import Header from "../Header/Header";
+import optimize from "../../assets/images/sample/optimize.png";
 import { post, trigger } from "../../utils/Data/helpers";
 import dynamic from "next/dynamic";
-import optimize from "../../assets/images/sample/optimize.png";
+import discount from "../../assets/images/sample/discount.svg";
 import backButton from "../../assets/images/icons/backButton.png";
 import WizardStepsSVG from "../WizardStepsSVG/WizardStepsSVG";
 const Modal = dynamic(() => import("../../components/Modal/Modal"));
@@ -26,35 +27,36 @@ const DetailForm = ({ submit, prevStep, title, steps }) => {
             <img src={optimize.src} alt="" />
           </div>
           <div className={classList.contentWrepper}>
-            <Header
-              style={{ marginBottom: 30 }}
-              fontWeight="semi-bold"
-              fontSize={20}>
+            <Header fontWeight="semi-bold" fontSize={20}>
               {title}
             </Header>
-
-            <input
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              name="name"
-              type="text"
-              placeholder="Enter Name"
-            />
-            <input
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              name="email"
-              type="email"
-              placeholder="Enter Email"
-            />
-            <input
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-              name="phone"
-              type="text"
-              placeholder="Phone Number"
-            />
+            <div className={classList.inputs}>
+              <input
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                name="name"
+                type="text"
+                placeholder="Enter Name"
+              />
+              <input
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                name="email"
+                type="email"
+                placeholder="Enter Email"
+              />
+              <input
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+                name="phone"
+                type="text"
+                placeholder="Phone Number"
+              />
+            </div>
           </div>
+        </div>
+        <div className={classList.offerimg}>
+          {/* <img src={discount.src} alt="" /> */}
         </div>
         <div className={classList.submit_action}>
           <div className={classList.bacButton}>
@@ -70,7 +72,7 @@ const DetailForm = ({ submit, prevStep, title, steps }) => {
             backgroundColor={!validate && "gray"}
             disabled={!validate}
             onClick={() => submit({ fullName: name, email, phone })}>
-            Submit
+            Active Now
           </Button>
         </div>
       </div>
@@ -156,7 +158,7 @@ const WizardFrom = ({
 };
 
 const Wizard = (props) => {
-  const { show, onHide } = props;
+  const { show, onHide, setThankYou } = props;
   const [steps, setSteps] = useState(1);
   const [business, setBusiness] = useState(null);
   const [industry, setIndustry] = useState(null);
@@ -169,6 +171,10 @@ const Wizard = (props) => {
   const prevStep = () => {
     setSteps((steps) => steps - 1);
   };
+  // const thankYouModal = () => {
+  //   return ;
+  // };
+
   const submit = async (details) => {
     try {
       const data = {
@@ -176,9 +182,9 @@ const Wizard = (props) => {
         operationType: industry,
         budget,
         ...details,
+        fullName: `${details.fullName} 70%`,
       };
-      // console.log(data);
-      // console.log("data", data);
+      console.log("data", data);
       const res = await post("/wizard", data);
       trigger({
         action: "lead generated",
@@ -186,12 +192,13 @@ const Wizard = (props) => {
         label: "service sold",
         value: data,
       });
+      // if (res.status) {
+      //   setIsSubmitted(true);
+      // }
       if (res.status) {
-        setIsSubmitted(true);
-      }
-      setTimeout(() => {
         onHide();
-      }, 1000);
+        setThankYou(true);
+      }
       // console.log("res", res);
     } catch (error) {
       console.log(error);
@@ -352,6 +359,7 @@ const Wizard = (props) => {
           <DetailForm
             title="Enter Your Details"
             steps={steps}
+            setSteps={setSteps}
             prevStep={prevStep}
             submit={submit}
           />

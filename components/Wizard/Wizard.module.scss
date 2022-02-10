@@ -22,43 +22,9 @@
   .details {
     display: flex;
     flex-direction: column;
-
-    input {
-      width: 100%;
-      min-height: 42px;
-      box-shadow: 0 0 10px #d4d4d4;
-      padding: 10px;
-      margin: 0 0 20px 0;
-      border-radius: 8px;
-      outline: none;
-      transition: 0.3s;
-      // border: solid 2px transparent;
-
-      &:focus {
-        box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.411);
-      }
-    }
-  }
-
-  .wizard {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    .gridWizard {
-      display: grid;
-      grid-template-columns: 40fr 70fr;
-      grid-gap: 20px;
-    }
-    .cheel {
-      img {
-        width: 100%;
-      }
-    }
-    .contentWrepper {
-      margin-bottom: 20px;
+    .inputs {
       input {
-        // width: 100%;
+        width: 100%;
         min-height: 42px;
         box-shadow: 0 0 10px #d4d4d4;
         padding: 10px;
@@ -70,6 +36,69 @@
 
         &:focus {
           box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.411);
+        }
+      }
+    }
+  }
+
+  .wizard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    .offerimg {
+      width: 100%;
+      height: 64px;
+      /* background: red; */
+      position: relative;
+      &::after {
+        content: "";
+        background: url("../../assets/images/sample/discount.svg");
+        width: 100%;
+        height: 150px;
+        z-index: 99;
+        position: absolute;
+        right: -50px;
+        top: -72px;
+        background-size: 100% 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+      }
+    }
+    .gridWizard {
+      display: grid;
+      grid-template-columns: 40fr 70fr;
+      grid-gap: 5px;
+    }
+    .cheel {
+      img {
+        width: 100%;
+      }
+    }
+    .contentWrepper {
+      margin-bottom: 20px;
+      .header {
+        margin-bottom: 30px;
+      }
+      .inputs {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        input {
+          width: 100%;
+          min-height: 42px;
+          box-shadow: 0 0 10px #d4d4d4;
+          padding: 10px;
+          margin: 0 0 20px 0;
+          border-radius: 8px;
+          outline: none;
+          transition: 0.3s;
+          // border: solid 2px transparent;
+
+          &:focus {
+            box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.411);
+          }
         }
       }
       .scrol {
@@ -156,9 +185,10 @@
       justify-content: center;
       img {
       }
-      svg {
-        font-size: 20px !important;
-      }
+    }
+    svg {
+      width: 220px;
+      margin-top: 20px;
     }
     button {
       &:first-child {
@@ -171,5 +201,54 @@
 @media screen and (max-width: 540px) {
   .wizard_form_wrapper {
     width: calc(100vw - 20px);
+    .wizard {
+      overflow-y: auto;
+      .gridWizard {
+        grid-template-columns: 1fr;
+        .cheel {
+          text-align: center;
+          img {
+            max-width: 200px;
+          }
+        }
+        .contentWrepper {
+          padding: 0px 10px;
+          & > h1 {
+            margin-bottom: 10px !important;
+          }
+          .scrol {
+            overflow: unset;
+            height: 100%;
+          }
+        }
+      }
+      .cheel {
+        position: absolute;
+        width: 30px;
+        top: 8px;
+        left: 45%;
+      }
+      .submit_action {
+        flex-direction: column;
+        margin-top: 35px;
+      }
+      .bacButton {
+        position: absolute;
+        top: 14px;
+        left: 18px;
+        width: 25px;
+        img {
+          width: 25px;
+        }
+      }
+      .offerimg {
+        &::after {
+          width: 95%;
+          height: 80px;
+          right: 10px;
+          top: -25px;
+        }
+      }
+    }
   }
 }
