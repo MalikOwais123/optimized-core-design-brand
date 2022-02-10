@@ -5,4 +5,36 @@
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 30px;
   // margin: 0 auto;
+  place-items: center;
+}
+.searchTile {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  .searchInput {
+    max-width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 	#cadbea !important;
+    input {
+      border-radius: 20px;
+      border-bottom: unset;
+    }
+  }
+  .searchSelect {
+    max-width: 300px;
+    border-radius: 20px !important;
+    box-shadow: 0 0 10px 	#cadbea !important;
+    height: 40px;
+    div {
+      border-radius: 20px !important;
+      height: 100%;
+      input {
+        border-radius: 20px;
+      }
+      svg {
+        top: 5px;
+        right: 0px;
+      }
+    }
+  }
 }
