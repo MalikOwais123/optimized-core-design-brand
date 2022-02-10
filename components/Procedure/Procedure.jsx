@@ -12,7 +12,7 @@ import research from "../../assets/images/sample/research.webp";
 import revisions from "../../assets/images/sample/revisions.webp";
 import design from "../../assets/images/sample/design.webp";
 import development from "../../assets/images/sample/development.webp";
-import  Image  from 'next/image';
+import Image from "next/image";
 
 const data = [
   {
@@ -63,7 +63,13 @@ const AnimatedImage = ({ image }) => {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 20 }}>
-      <Image src={image.src} width={350} height={350} objectFit="contain" alt="" />
+      <Image
+        src={image.src}
+        width={350}
+        height={350}
+        objectFit="contain"
+        alt=""
+      />
     </motion.div>
   );
 };

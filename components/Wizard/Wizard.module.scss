@@ -2,11 +2,11 @@
 
 .wizard_form_wrapper {
   width: 100vw;
-  max-width: 500px;
-  // height: 500px;
+  max-width: 700px;
+  max-height: 500px;
   border-radius: 20px;
   background: $clr-white;
-  background: #cba8ff;
+  // background: #cba8ff;
   display: flex;
   flex-direction: column;
   padding: 50px 20px 50px 30px;
@@ -15,7 +15,7 @@
     position: absolute;
     right: 15px;
     top: 15px;
-    font-size: 14px;
+    font-size: 16px;
     color: black;
     cursor: pointer;
   }
@@ -45,8 +45,39 @@
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
+    .gridWizard {
+      display: grid;
+      grid-template-columns: 40fr 70fr;
+      grid-gap: 20px;
+    }
+    .cheel {
+      img {
+        width: 100%;
+      }
+    }
     .contentWrepper {
       margin-bottom: 20px;
+      input {
+        // width: 100%;
+        min-height: 42px;
+        box-shadow: 0 0 10px #d4d4d4;
+        padding: 10px;
+        margin: 0 0 20px 0;
+        border-radius: 8px;
+        outline: none;
+        transition: 0.3s;
+        // border: solid 2px transparent;
+
+        &:focus {
+          box-shadow: 0 0 1px 3px rgba(0, 0, 0, 0.411);
+        }
+      }
+      .scrol {
+        overflow-y: auto;
+        height: 250px;
+        padding-top: 10px;
+        padding-right: 10px;
+      }
     }
     .container {
       display: block;
@@ -60,6 +91,9 @@
       user-select: none;
       margin-bottom: 15px;
       margin-left: 10px;
+      padding: 10px 10px 10px 35px;
+      box-shadow: 0 0 10px grey;
+      border-radius: 6px;
     }
 
     .container input {
@@ -70,8 +104,8 @@
 
     .checkmark {
       position: absolute;
-      top: 0;
-      left: 0;
+      // top: 0;
+      left: 10px;
       height: 20px;
       width: 20px;
       background-color: #e9e3e3;
@@ -85,7 +119,7 @@
     }
 
     .container input:checked ~ .checkmark {
-      background-color: #301b92;
+      background-color: $dark;
     }
 
     .checkmark:after {
@@ -110,8 +144,22 @@
 
   .submit_action {
     width: max-content;
-    margin-left: auto;
-
+    // margin-left: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    .bacButton {
+      width: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      img {
+      }
+      svg {
+        font-size: 20px !important;
+      }
+    }
     button {
       &:first-child {
         margin-right: 20px;
