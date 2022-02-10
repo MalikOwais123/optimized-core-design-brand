@@ -21,6 +21,7 @@ import ShowCaseWrapper from "../../components/ShowCaseWrapper/ShowCaseWrapper";
 import NavLink from "../../components/Navlinks/Navlinks";
 import Head from "next/head";
 import { phoneNumber } from "../../utils/Data/globalVariables";
+import RankLogo from '../../components/RankLogo/RankLogo';
 
 const ListItem = [
   "Social Media Marketing",
@@ -122,6 +123,7 @@ const index = () => {
           image={seo4}
           heading="Professional SEO Services In USA"
         />
+        <RankLogo/>
         <ComboPackage />
         <ReuseableRow
           backgroundImage={"none"}

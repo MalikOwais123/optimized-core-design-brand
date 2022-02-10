@@ -10,17 +10,18 @@ const InputField = ({
   placeholder,
   errorMessage,
   inputStyle,
+  customClass,
   ...restProps
 }) => {
   return (
     <>
-      <div className={classList.inputField}>
+      <div className={`${classList.inputField} ${customClass}`}>
         {/* <Paragraph color="#0000006e" style={{ fontSize: "14px" }}>
           {fieldName}
         </Paragraph> */}
 
         <input
-        {...restProps}
+          {...restProps}
           onChange={onChange}
           value={value}
           name={name}

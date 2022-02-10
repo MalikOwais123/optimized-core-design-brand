@@ -9,6 +9,7 @@ const CustomSelect = (props) => {
     Options = [],
     type,
     onSelect,
+    customClass,
     style = {},
   } = props;
   const [selectedValue, setSelectedValue] = useState("");
@@ -28,7 +29,7 @@ const CustomSelect = (props) => {
     <div
       className={`${classList.custom_select_wrapper} ${
         type === "light" ? classList.light : ""
-      }`}
+      } ${customClass}`}
       style={style}>
       <label htmlFor="">{label}</label>
       <div

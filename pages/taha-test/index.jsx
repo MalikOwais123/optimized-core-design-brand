@@ -1,10 +1,10 @@
 import React from 'react'
-import BlogSlider from '../../components/BlogSlider/BlogSlider'
+import RankLogo from '../../components/RankLogo/RankLogo'
 
 const index = () => {
   return (
     <div>
-      <BlogSlider/>
+    <RankLogo />
     </div>
   )
 }

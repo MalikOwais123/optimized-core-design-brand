@@ -3,6 +3,7 @@ import MultiSlider from "../MultiSlider/MultiSlider";
 import Paragraph from "../Paragraph/Paragraph";
 import Header from "../Header/Header";
 import { checkStringWordLength, getFormatDate } from "../../utils/Data/helpers";
+import Image from "next/image";
 
 const BlogSlider = ({ blogsData, handleBlogClick }) => {
   const sliderProps = {
@@ -25,7 +26,7 @@ const BlogSlider = ({ blogsData, handleBlogClick }) => {
                   style={{ cursor: "pointer" }}
                   onClick={() => handleBlogClick(id)}
                   className={classList.left}>
-                  <img src={coverPhoto} alt="sliderImage.png" />
+                  <Image height={400} width={700} objectFit="cover" src={coverPhoto} alt="sliderImage.png" />
                 </div>
                 <div className={classList.right}>
                   <Paragraph>{getFormatDate(createdAt)}</Paragraph>
