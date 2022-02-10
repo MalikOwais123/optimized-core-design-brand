@@ -42,16 +42,14 @@ const Blog = () => {
   };
 
   const handleBlogClick = (id) => {
-    console.log("id", id);
     const blog = blogsData.find((blog) => blog.id === id);
-    console.log("BLOG BY ID ", blog);
     router.push(`/blogs/${blog.id}`, null, { shallow: true });
   };
 
   return (
     <>
       <Section>
-        <BlogSlider handleBlogClick={handleBlogClick} />
+        <BlogSlider blogsData={blogsData} handleBlogClick={handleBlogClick} />
         <div className={classList.blog_wrapper}>
           {/* <InfiniteScroll
             length={blogsData?.length ?? 0}
