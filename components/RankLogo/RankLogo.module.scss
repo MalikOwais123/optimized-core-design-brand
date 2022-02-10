@@ -1,0 +1,12 @@
+.slider {
+    width: 100%;
+    .slider_wrapper {
+        display: flex;
+        flex: 1;
+        flex-wrap: wrap;
+        .flex_item {
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
