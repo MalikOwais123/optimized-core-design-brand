@@ -16,7 +16,7 @@ import clutchNew from "../../assets/images/rankLogo/clutchNew.webp";
 const RankLogo = () => {
     const sliderProps = {
         mobile: 1,
-        desktop: 7,
+        desktop: 5,
         tablet: 4,
         superLargeDesktop: 7,
         autoPlay: false,
@@ -25,20 +25,20 @@ const RankLogo = () => {
     };
 
     const imagesArray = [
-        { img: AgencySpotter, height: 80, width: 100 },
-        { img: Clutch, height: 80, width: 100 },
-        { img: MobileApp, height: 80, width: 100 },
-        { img: clutchNew, height: 80, width: 100 },
-        { img: FeaturedOnUpCIty, height: 80, width: 100 },
-        { img: newClutch, height: 80, width: 100 },
-        { img: guarantee, height: 80, width: 100 },
+        { img: AgencySpotter, height: 100, width: 100 },
+        { img: Clutch, height: 100, width: 100 },
+        { img: MobileApp, height: 100, width: 100 },
+        { img: clutchNew, height: 100, width: 100 },
+        { img: FeaturedOnUpCIty, height: 100, width: 100 },
+        { img: newClutch, height: 100, width: 100 },
+        // { img: guarantee, height: 100, width: 100 },
     ];
 
     return (
         <Section>
-            <div classname={classList.slider}>
+            <div className={classList.slider}>
                 <Header style={{width:"max-content", margin:"auto"}} fontWeight="bold"> Ranked among one of the world’s best UX firms </Header>
-                <Paragraph style={{width:"max-content", margin:"auto"}}>Delivering responsive interfaces and great user experiences across different digital platforms</Paragraph>
+                <Paragraph style={{width:"max-content", margin:"0 auto 40px auto"}}>Delivering responsive interfaces and great user experiences across different digital platforms</Paragraph>
                 <div className="styled_slider_dots">
                     <MultiSlider {...sliderProps}>
                         {imagesArray?.map(({ img, height, width }, i) => (
