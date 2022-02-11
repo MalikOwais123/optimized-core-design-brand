@@ -23,7 +23,7 @@ const index = () => {
       <ClientsLogo />
       <Procedure />
       <Packages />
-      <RankLogo/>
+      <RankLogo style={{marginBottom:"20px"}}/>
       <div className={classList.combo_wrapper}>
         <ComboPackage />
       </div>
