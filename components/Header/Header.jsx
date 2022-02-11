@@ -36,7 +36,6 @@ const Header = (props) => {
     ...restProps
   } = props;
   var fontWeightValue = fontWeightComputation(fontWeight);
-  console.log("header---",customClass);
   var VariantComponent = `${variant}`;
   return (
     <div style={{ fontSize: "16px" }}>

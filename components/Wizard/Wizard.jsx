@@ -24,6 +24,7 @@ const DetailForm = ({ submit, prevStep, title, steps }) => {
     let result = e.target.value.match(/^[a-zA-Z ]+$/i);
     if (result) {
       setName(e.target.value);
+      console.log(name, "name");
     }
   };
   return (
@@ -205,7 +206,10 @@ const Wizard = (props) => {
       // }
       if (res.status) {
         onHide();
-        setThankYou(true);
+        setThankYou({
+          show: true,
+          name: details.fullName,
+        });
       }
       // console.log("res", res);
     } catch (error) {
