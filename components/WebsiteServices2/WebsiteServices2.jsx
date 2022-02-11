@@ -8,6 +8,8 @@ import BannerMultiLogo from "../BannerMultiLogo/BannerMultiLogo";
 import { useState } from 'react';
 import dynamic from 'next/dynamic'
 const Wizard = dynamic(() => import('../../components/Wizard/Wizard'))
+import ThankYouModal from "../../components/ThankYouModal/ThankYouModal";
+
 
 
 
@@ -22,6 +24,8 @@ const WebsiteServices2 = ({
 
 
   const [wizard, setWizard] = useState(false)
+  const [thankYou,setThankYou] = useState(false)
+
   return (
     <>
       <div className={`${classList.mainBanner} ${customClass}`}>
@@ -67,7 +71,11 @@ const WebsiteServices2 = ({
         </Section>
         <BannerMultiLogo fixBottom={true} />
       </div>
-      {wizard && <Wizard show={wizard} onHide={() => setWizard(false)} />}
+      {wizard && <Wizard show={wizard} onHide={() => setWizard(false)} setThankYou={setThankYou} />}
+      {thankYou &&
+
+      <ThankYouModal show={thankYou} onHide={() => setThankYou(false)} />
+      }
     </>
   );
 };

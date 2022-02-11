@@ -35,8 +35,8 @@ const index = () => {
       <PageTitle title={"Our Packages"} />
       <Packages isPackInURL={selectedPack} />
       <TestimonialV2 />
-      <RankLogo/>
       <Section>
+      <RankLogo/>
         <ComboPackage showPrice={true} />
       </Section>
       <MarketingBanner />

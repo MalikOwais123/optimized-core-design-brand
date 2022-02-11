@@ -31,9 +31,9 @@ const DesktopLanding = ({
         content={landing1.content}
         bulletOptions={landing1.bulletOptions}
       />
-      <RankLogo />
       <div>
         <Section>
+      <RankLogo />
           <ComboPackage />
         </Section>
       </div>

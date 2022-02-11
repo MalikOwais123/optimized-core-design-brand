@@ -38,9 +38,9 @@ const MobileLanding = ({landing1,landing2}) => {
             content={landing1.content}
             bulletOptions={landing1.bulletOptions}
           />
-          <RankLogo/>
           <div>
             <Section>
+          <RankLogo/>
               <ComboPackage />
             </Section>
           </div>
