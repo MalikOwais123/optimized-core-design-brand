@@ -13,7 +13,7 @@ import FeaturedOnUpCIty from "../../assets/images/rankLogo/2.webp";
 import guarantee from "../../assets/images/rankLogo/7.webp";
 import clutchNew from "../../assets/images/rankLogo/4.webp";
 
-const RankLogo = () => {
+const RankLogo = ({style = {}}) => {
     const sliderProps = {
         mobile: 1,
         desktop: 7,
@@ -23,7 +23,7 @@ const RankLogo = () => {
         swipe: true,
         showDots: true,
     };
-
+ 
     const imagesArray = [
         { img: Clutch, height:160, width:160 },
         { img: AgencySpotter, height:120, width:120 },
@@ -35,7 +35,7 @@ const RankLogo = () => {
     ];
 
     return (
-        <Section style={{paddingBottom:"0px"}}>
+        <Section style={{paddingBottom:"0px", ...style}}>
             <div className={classList.slider}>
                 <div className={classList.text}><Header fontWeight="bold"> Ranked among one of the world’s best UX firms </Header>
                 <Paragraph style={{margin:"10px auto 40px auto"}}>Delivering responsive interfaces and great user experiences across different digital platforms</Paragraph></div>
