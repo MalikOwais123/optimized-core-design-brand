@@ -63,7 +63,7 @@ const ShowCase = ({  backgroundColor = "#008080", btnColor = "white", data}) => 
     // const finder = type || selected;
     const finder = selected;
 
-    return item.type.toLowerCase() === finder.toLowerCase();
+    return item?.type?.toLowerCase() === finder?.toLowerCase();
   });
 
   return (
@@ -159,13 +159,13 @@ const ShowCase = ({  backgroundColor = "#008080", btnColor = "white", data}) => 
                 type="entertainment">
                 Entertainment
               </StyledBtn>
-              {/* <StyledBtn
-                onClick={() => setSelected("fitness")}
+              <StyledBtn
+                onClick={() => setSelected("realstate")}
                 btnColor={btnColor}
                 selected={selected}
-                type="fitness">
-                Fitness
-              </StyledBtn> */}
+                type="realstate">
+                Real State
+              </StyledBtn>
               {/* <StyledBtn
                 onClick={() => setSelected("webApp")}
                 btnColor={btnColor}
