@@ -5,12 +5,10 @@ import Paragraph from "../Paragraph/Paragraph";
 import Section from "../Section/Section";
 import classList from "./WebsiteServices2.module.scss";
 import BannerMultiLogo from "../BannerMultiLogo/BannerMultiLogo";
-import { useState } from 'react';
-import dynamic from 'next/dynamic'
-const Wizard = dynamic(() => import('../../components/Wizard/Wizard'))
-
-
-
+import { useState } from "react";
+import dynamic from "next/dynamic";
+const Wizard = dynamic(() => import("../../components/Wizard/Wizard"));
+import ThankYouModal from "../../components/ThankYouModal/ThankYouModal";
 
 const WebsiteServices2 = ({
   customClass,
@@ -18,19 +16,19 @@ const WebsiteServices2 = ({
   headingContent2 = "DESIGNER AT YOUR SERVICE:",
   paraContent = "From enticing consumers to buy your goods or call your team, your business website plays a vital role in generating revenue. Our website designers understand the importance of your website, which is why we offer you our award-winning web designer services focus on creating unique sites that are user-friendly, boost conversions, and follow best SEO practices. Our website Designer can handle all aspects of website design, redesign, custom development, theme installation, updates, migration, support, maintenance, and even manage cloud hosting options. of sectors.",
 }) => {
+  const [wizard, setWizard] = useState(false);
+  const [thankYou, setThankYou] = useState({
+    show: false,
+    name: "",
+  });
 
-
-
-  const [wizard, setWizard] = useState(false)
   return (
     <>
       <div className={`${classList.mainBanner} ${customClass}`}>
         <Section extraClass={classList.sectionClass}>
           <div className={classList.IAmHome}>
             <div className={classList.content}>
-              <Header
-                color="white"
-                fontWeight={"bold"}>
+              <Header color="white" fontWeight={"bold"}>
                 {headingContent1}
               </Header>
               <Header
@@ -40,9 +38,7 @@ const WebsiteServices2 = ({
                 className={classList.borderHeading}>
                 {headingContent2}
               </Header>
-              <Paragraph color="white">
-                {paraContent}
-              </Paragraph>
+              <Paragraph color="white">{paraContent}</Paragraph>
               <Button
                 onClick={() => setWizard(true)}
                 color="black"
@@ -67,7 +63,20 @@ const WebsiteServices2 = ({
         </Section>
         <BannerMultiLogo fixBottom={true} />
       </div>
-      {wizard && <Wizard show={wizard} onHide={() => setWizard(false)} />}
+      {wizard && (
+        <Wizard
+          show={wizard}
+          onHide={() => setWizard(false)}
+          setThankYou={setThankYou}
+        />
+      )}
+      {thankYou && (
+        <ThankYouModal
+          show={thankYou.show}
+          onHide={() => setThankYou({ show: false, name: "" })}
+          name={thankYou.name}
+        />
+      )}
     </>
   );
 };

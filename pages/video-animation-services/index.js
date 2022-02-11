@@ -22,6 +22,7 @@ import ShowCase from "../../components/ShowCase/ShowCase";
 import NavLink from "../../components/Navlinks/Navlinks";
 import Head from "next/head";
 import { phoneNumber } from "../../utils/Data/globalVariables";
+import RankLogo from "../../components/RankLogo/RankLogo";
 
 const ListItem = [
   " Exceptional customer service",
@@ -108,6 +109,7 @@ const index = () => {
           image={videoAnimation3}
           heading="Animated Videos To Get Your Message Across"
         />
+        <RankLogo/>
         <ComboPackage />
         <ReuseableRow
           backgroundImage={"none"}
