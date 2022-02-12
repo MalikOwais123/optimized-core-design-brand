@@ -23,6 +23,7 @@ import Head from "next/head";
 import { eCommercePortfolio } from "../../utils/Data/Data";
 import { phoneNumber } from "../../utils/Data/globalVariables";
 import NavLink from "../../components/Navlinks/Navlinks";
+import RankLogo from "../../components/RankLogo/RankLogo";
 
 const ListItem = [
   " Exceptional customer service",
@@ -125,6 +126,7 @@ const index = () => {
           image={webDesign3}
           heading="We design digital shopping experiences."
         />
+        <RankLogo/>
         <ComboPackage />
         <ReuseableRow
           backgroundImage={"none"}

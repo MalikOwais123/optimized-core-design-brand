@@ -10,6 +10,7 @@ import ShowCaseWrapper from "../ShowCaseWrapper/ShowCaseWrapper";
 import WebPresenseV2 from "../WebPresenseV2/WebPresenseV2";
 import CustomPakage from "../CustomPakage/CustomPakage";
 import ContactForm from "../ContactForm/ContactForm";
+import RankLogo from '../RankLogo/RankLogo';
 
 const DesktopLanding = ({
     landing1,
@@ -32,6 +33,7 @@ const DesktopLanding = ({
       />
       <div>
         <Section>
+      <RankLogo />
           <ComboPackage />
         </Section>
       </div>

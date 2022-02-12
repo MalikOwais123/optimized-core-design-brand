@@ -15,6 +15,7 @@ import Packages from "../../components/Packages/Packages";
 import MarketingBanner from "../../components/MarketingBanner/MarketingBanner";
 import { useRouter } from "next/router";
 import Head  from "next/head";
+import RankLogo from '../../components/RankLogo/RankLogo';
 
 const index = () => {
   const [selectedPack, setSelectedPack] = useState(null);
@@ -35,6 +36,7 @@ const index = () => {
       <Packages isPackInURL={selectedPack} />
       <TestimonialV2 />
       <Section>
+      <RankLogo/>
         <ComboPackage showPrice={true} />
       </Section>
       <MarketingBanner />
