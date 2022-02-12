@@ -17,7 +17,7 @@ const PricingPlanCard = ({
   type = "simple",
   netAmount,
   discountPrice,
-  packageInfo
+  packageInfo,
 }) => {
   const [modal, setModal] = React.useState(false);
   const discountPriceStyle = {
@@ -37,13 +37,24 @@ const PricingPlanCard = ({
           <img className={classList.elite_image} src={eliteCard.src} alt="" />
         )}
         <div className={classList.wrapperTitle}>
-          <Header color="white" fontWeight="bold" fontSize={16} style={{ margin: "0px", background: "teal", padding: "4px 20px", borderRadius: "10px", letterSpacing: "3px", width: "100%" }}>
+          <Header
+            color="#ff0000"
+            fontWeight="bold"
+            fontSize={16}
+            style={{
+              margin: "0px",
+              background: "#00FF00",
+              padding: "4px 20px",
+              borderRadius: "10px",
+              letterSpacing: "3px",
+              width: "100%",
+            }}>
             {title}
           </Header>
           {/* <h1 className={classList.title}></h1> */}
         </div>
         <div className={classList.wrapperAmount}>
-          <Header  fontWeight="bold" className={classList.dollar}>
+          <Header fontWeight="bold" className={classList.dollar}>
             $
           </Header>
           <Header
@@ -78,7 +89,8 @@ const PricingPlanCard = ({
                 Live Chat
               </Button>
               <Button
-              backgroundColor="teal"
+                backgroundColor="#00FF00"
+                color="#ff0000"
                 hover={true}
                 style={{
                   borderRadius: "30px",
@@ -107,7 +119,10 @@ const PricingPlanCard = ({
           </>
         )}
         <Modal modal={modal} setModal={setModal}>
-          <ContactFormModal onHide={() => setModal(false)} packageInfo={packageInfo} />
+          <ContactFormModal
+            onHide={() => setModal(false)}
+            packageInfo={packageInfo}
+          />
         </Modal>
       </div>
     </>

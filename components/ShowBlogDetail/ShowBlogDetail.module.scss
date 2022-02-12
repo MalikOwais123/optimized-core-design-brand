@@ -16,4 +16,20 @@
       }
     }
   }
+  .text_area {
+    display: flex;
+    flex-direction: column;
+
+    textarea {
+      outline: navajowhite;
+      box-shadow: 0 0 10px #d4d4d4;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 8px 0 0 0;
+      width: 100%;
+      min-height: 200px;
+      resize: none;
+
+    }
+  }
 }

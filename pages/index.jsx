@@ -12,18 +12,18 @@ import WebSolutions from "../components/WebSolutions/WebSolutions";
 import TestimonialV2 from "../components/TestimonialV2/TestimonialV2";
 import ContactForm from "../components/ContactForm/ContactForm";
 import CustomPakage from "../components/CustomPakage/CustomPakage";
-import RankLogo from '../components/RankLogo/RankLogo';
+import RankLogo from "../components/RankLogo/RankLogo";
 
 const index = () => {
   return (
     <>
       <MainBanner />
       <WebPresenseV2 />
-      <ShowCaseWrapper />
+      <ShowCaseWrapper btnColor="red" />
       <ClientsLogo />
       <Procedure />
       <Packages />
-      <RankLogo style={{marginBottom:"20px"}}/>
+      <RankLogo style={{ marginBottom: "20px" }} />
       <div className={classList.combo_wrapper}>
         <ComboPackage />
       </div>

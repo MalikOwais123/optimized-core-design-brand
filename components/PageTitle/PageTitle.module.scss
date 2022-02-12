@@ -13,14 +13,15 @@
   background-image: url("../../assets/images/sample/page-title-bg.png");
   background-size: cover;
 }
+.bgPayment {
+  background-image: url("../../assets/images/sample/headerImage.webp") !important;
+  background-size: cover;
+}
 
-
-@media screen and (max-width:540px) {
-
+@media screen and (max-width: 540px) {
   .page_title_wrapper {
     h1 {
       font-size: 30px !important;
     }
   }
-  
 }
