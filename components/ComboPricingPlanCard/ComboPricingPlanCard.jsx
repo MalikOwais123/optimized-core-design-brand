@@ -36,13 +36,24 @@ const ComboPricingPlanCard = ({
           <img className={classList.elite_image} src={eliteCard.src} alt="" />
         )}
         <div className={classList.wrapperTitle}>
-          <Header color="white" fontWeight="bold" fontSize={16} style={{ margin: "0px", background: "teal", padding: "4px 20px", borderRadius: "10px", letterSpacing: "3px", width: "100%" }}>
+          <Header
+            color="white"
+            fontWeight="bold"
+            fontSize={16}
+            style={{
+              margin: "0px",
+              background: "#00FF00",
+              padding: "4px 20px",
+              borderRadius: "10px",
+              letterSpacing: "3px",
+              width: "100%",
+            }}>
             {title}
           </Header>
           {/* <h1 className={classList.title}></h1> */}
         </div>
         <div className={classList.wrapperAmount}>
-          <Header  fontWeight="bold" className={classList.dollar}>
+          <Header fontWeight="bold" className={classList.dollar}>
             $
           </Header>
           <Header
@@ -77,7 +88,7 @@ const ComboPricingPlanCard = ({
                 Live Chat
               </Button>
               <Button
-              backgroundColor="teal"
+                backgroundColor="#00FF00"
                 hover={true}
                 style={{
                   borderRadius: "30px",
