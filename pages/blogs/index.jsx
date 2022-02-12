@@ -7,7 +7,7 @@ import { useRouter } from "next/router";
 import BlogSlider from "../../components/BlogSlider/BlogSlider";
 import InputField from "../../components/InputField/InputField";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
-import PageTitle from '../../components/PageTitle/PageTitle';
+import PageTitle from "../../components/PageTitle/PageTitle";
 
 const InfiniteScroll = dynamic(
   () => import("../../components/InfiniteScroll/InfiniteScroll"),
@@ -98,7 +98,12 @@ const Blog = () => {
     "We help our clients elevate their business through engaging brand identities and innovative digital marketing techniques. Looking to expand your brand reach and maximize your ROI? Let us help you create an innovative, effective, responsive, intuitive, SEO-friendly, attractive, and eye-catching web presence to capture more clients.";
   return (
     <>
-      <PageTitle title="Who we are" content={para} woodenImage={false} />
+      <PageTitle
+        title="BLOG"
+        content={""}
+        woodenImage={false}
+        bgPayment={true}
+      />
       <Section>
         <div className={classList.searchTile}>
           <input

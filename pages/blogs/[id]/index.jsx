@@ -77,7 +77,7 @@ const index = ({ data }) => {
 
   return (
     <>
-      <PageTitle title="Who we are" content={para} woodenImage={false} />
+      <PageTitle title="BLOG" content={""} woodenImage={false} />
       <Section>
         <div className={classList.showBlogDetialMain}>
           <ShowBlogDetail data={singleBlogData} />
