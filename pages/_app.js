@@ -6,7 +6,7 @@ import ContactHeader from "../components/ContactHeader/ContactHeader";
 import ContactWithUs from "../components/ContactWithUs/ContactWithUs";
 import ContactHeaderForLanding from "../components/ContactHeaderForLanding/ContactHeaderForLanding";
 import { useEffect } from "react";
-import GlobalScripts from "../components/GlobalScripts/GlobalScripts";
+// import GlobalScripts from "../components/GlobalScripts/GlobalScripts";
 const Footer = dynamic(() => import("../components/Footer/Footer"));
 const Copyright = dynamic(() => import("../components/Copyright/Copyright"));
 const CopyrightForLanding = dynamic(() =>
@@ -65,7 +65,7 @@ function MyApp({ Component, pageProps }) {
       >
         <Component {...pageProps} />
       </div>
-      <GlobalScripts/>
+      {/* <GlobalScripts/> */}
     
       {isLandingPage(pathname) ? null : <Footer />}
       {isLandingPage(pathname) ? <CopyrightForLanding /> : <Copyright />}
