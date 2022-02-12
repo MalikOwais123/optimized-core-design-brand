@@ -131,6 +131,7 @@ const InfiniteScroll = dynamic(
           {getFilteredBlogData()?.map((blog) => (
             <div key={blog.id}>
               <BlogCard
+                blogId={blog.id}
                 postedBy={`Posted by ${" "} ${blog?.postedBy.fullName}`}
                 userImage={blog?.postedBy.photo}
                 blogImage={blog?.coverPhoto}

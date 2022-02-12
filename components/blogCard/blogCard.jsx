@@ -5,6 +5,9 @@ import Paragraph from "../Paragraph/Paragraph";
 // import homePageImage2 from "./../../public/assets/images/home/8.png";
 import classList from "./blogCard.module.scss";
 import { getFormatDate } from "../../utils/Data/helpers";
+import { BiMessage } from "react-icons/bi";
+import { AiOutlineShareAlt } from "react-icons/ai";
+import { BiDotsVerticalRounded } from "react-icons/bi";
 const BlogCard = (props) => {
   const {
     postedBy,
@@ -15,6 +18,7 @@ const BlogCard = (props) => {
     blogDesc,
     onClick,
     style,
+    blogId,
   } = props;
 
   const createMarkup = (html) => {
@@ -23,23 +27,50 @@ const BlogCard = (props) => {
 
   return (
     <div>
-      <div style={style} onClick={onClick} className={classList.blog_post}>
+      <div style={style} className={classList.blog_post}>
+        <div className={classList.blog_options}>
+          <BiDotsVerticalRounded className={classList.dots_vertical} />
+          <div className={classList.dropdown_wrapper}>
+            <button>Edit</button>
+            <button>Delete</button>
+          </div>
+        </div>
         <div>
           <Paragraph className={classList.user_title}>{postedBy}</Paragraph>
           <img className={classList.user_photo} src={userImage} alt="" />
-          <img className={classList.blog_thumb} src={blogImage} alt="" />
-          <Paragraph className={classList.date}>
-            {getFormatDate(date)}
-          </Paragraph>
-          <Header className={classList.title} fontWeight="semi-bold">
-            {blogTitle}
-          </Header>
-          {/* <Paragraph
+          <img
+            onClick={onClick}
+            className={classList.blog_thumb}
+            src={blogImage}
+            alt=""
+          />
+          <div className={classList.content_wrapper}>
+            <div className={classList.actions}>
+              <div className={classList.flex_actions}>
+                <Paragraph fontSize={14}>
+                  {" "}
+                  <BiMessage /> 22.1k Comments
+                </Paragraph>
+                <Paragraph
+                  onClick={() => console.log(blogId, "blogId")}
+                  fontSize={14}>
+                  <AiOutlineShareAlt /> Share
+                </Paragraph>
+              </div>
+              <Paragraph className={classList.date}>
+                {getFormatDate(date)}
+              </Paragraph>
+            </div>
+            <Header className={classList.title} fontWeight="semi-bold">
+              {blogTitle}
+            </Header>
+            {/* <Paragraph
             dangerouslySetInnerHTML={createMarkup(blogDesc)}
             className={classList.desc}></Paragraph> */}
-          <p
-            dangerouslySetInnerHTML={createMarkup(blogDesc)}
-            className={classList.desc}></p>
+            <p
+              dangerouslySetInnerHTML={createMarkup(blogDesc)}
+              className={classList.desc}></p>
+          </div>
         </div>
       </div>
     </div>
