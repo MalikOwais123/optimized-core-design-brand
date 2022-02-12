@@ -45,6 +45,7 @@ const BlogCard = (props) => {
                   <BiMessage /> 22.1k Comments
                 </Paragraph>
                 <Paragraph
+                  customClass={classList.share_icon}
                   onClick={() => console.log(blogId, "blogId")}
                   fontSize={14}>
                   <AiOutlineShareAlt /> Share
