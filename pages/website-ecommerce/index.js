@@ -9,6 +9,8 @@ import dynamic from "next/dynamic";
 import { useWindowSize } from "../../utils/Data/helpers";
 import landingImage1 from "../../assets/images/landingImages/eCommerceLanding1.webp";
 import landingImage2 from "../../assets/images/landingImages/eCommerceLanding2.webp";
+import Head from "next/head";
+
 
 const index = () => {
   const device = useWindowSize();
@@ -39,6 +41,9 @@ const index = () => {
   };
   return (
     <>
+      <Head>
+        <title>Website eCommerce | The Core Designs</title>
+      </Head>
       <WebsiteServices2
         headingContent1="#1 eCommerce Website"
         headingContent2="We're the eCommerce website making team you need to succeed online"

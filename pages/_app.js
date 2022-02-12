@@ -24,6 +24,7 @@ const isLandingPage = (pathname) => {
     "website-creator",
     "website-service",
     "website-builders",
+    "website-ecommerce"
   ];
 
   return urls.some((url) => pathname.includes(url));
