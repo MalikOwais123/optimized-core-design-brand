@@ -37,7 +37,7 @@ const ComboPricingPlanCard = ({
         )}
         <div className={classList.wrapperTitle}>
           <Header
-            color="white"
+            color="#ff0000"
             fontWeight="bold"
             fontSize={16}
             style={{
@@ -89,6 +89,7 @@ const ComboPricingPlanCard = ({
               </Button>
               <Button
                 backgroundColor="#00FF00"
+                color="red"
                 hover={true}
                 style={{
                   borderRadius: "30px",
