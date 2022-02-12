@@ -7,30 +7,31 @@ import { useRouter } from "next/router";
 import BlogSlider from "../../components/BlogSlider/BlogSlider";
 import InputField from "../../components/InputField/InputField";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
+import PageTitle from '../../components/PageTitle/PageTitle';
 
 const InfiniteScroll = dynamic(
   () => import("../../components/InfiniteScroll/InfiniteScroll"),
   {
     ssr: false,
   }
-  );
-  
-  const Blog = () => {
-    const [blogsData, setBlogsData] = useState([]);
-    const [blogSliderData, setBlogSliderData] = useState([]);
-    const [searchInput, setSearchInput] = useState("");
-    const [blogCategory, setBlogCategory] = useState("");
-    const [page, setPage] = useState(1);
-    const router = useRouter();
-    const categoryOptions = [
-      { label: "industry", value: "industry" },
-      { label: "tech", value: "tech" },
-      { label: "smart phone", value: "smart phone" },
-      { label: "tablet", value: "tablet" },
-      { label: "desktop", value: "desktop" },
-      { label: "mobile", value: "mobile" },
-      { label: "web", value: "web" },
-    ];
+);
+
+const Blog = () => {
+  const [blogsData, setBlogsData] = useState([]);
+  const [blogSliderData, setBlogSliderData] = useState([]);
+  const [searchInput, setSearchInput] = useState("");
+  const [blogCategory, setBlogCategory] = useState("");
+  const [page, setPage] = useState(1);
+  const router = useRouter();
+  const categoryOptions = [
+    { label: "industry", value: "industry" },
+    { label: "tech", value: "tech" },
+    { label: "smart phone", value: "smart phone" },
+    { label: "tablet", value: "tablet" },
+    { label: "desktop", value: "desktop" },
+    { label: "mobile", value: "mobile" },
+    { label: "web", value: "web" },
+  ];
 
   useEffect(() => {
     // FETCH INITIALL BLOGS
@@ -60,7 +61,6 @@ const InfiniteScroll = dynamic(
     const blog = blogsData.find((blog) => blog.id === id);
     router.push(`/blogs/${blog.id}`, null, { shallow: true });
   };
-
 
   const handleSearchInput = (e) => {
     setSearchInput(e.target.value);
@@ -94,9 +94,11 @@ const InfiniteScroll = dynamic(
       );
     }
   }; // END OF FILTERED BLOGS BY TITLE OR CATEGORY
-
+  const para =
+    "We help our clients elevate their business through engaging brand identities and innovative digital marketing techniques. Looking to expand your brand reach and maximize your ROI? Let us help you create an innovative, effective, responsive, intuitive, SEO-friendly, attractive, and eye-catching web presence to capture more clients.";
   return (
     <>
+      <PageTitle title="Who we are" content={para} woodenImage={false} />
       <Section>
         <div className={classList.searchTile}>
           <input

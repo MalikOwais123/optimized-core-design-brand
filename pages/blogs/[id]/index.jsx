@@ -5,6 +5,7 @@ import BlogCard from "../../../components/blogCard/blogCard";
 import classList from "./index.module.scss";
 import Section from "../../../components/Section/Section";
 import { useRouter } from "next/router";
+import PageTitle from "../../../components/PageTitle/PageTitle";
 import dynamic from "next/dynamic";
 const InfiniteScroll = dynamic(
   () => import("../../../components/InfiniteScroll/InfiniteScroll"),
@@ -71,8 +72,12 @@ const index = ({ data }) => {
     padding: "0px 30px 30px 30px",
   };
 
+  const para =
+    "We help our clients elevate their business through engaging brand identities and innovative digital marketing techniques. Looking to expand your brand reach and maximize your ROI? Let us help you create an innovative, effective, responsive, intuitive, SEO-friendly, attractive, and eye-catching web presence to capture more clients.";
+
   return (
     <>
+      <PageTitle title="Who we are" content={para} woodenImage={false} />
       <Section>
         <div className={classList.showBlogDetialMain}>
           <ShowBlogDetail data={singleBlogData} />
