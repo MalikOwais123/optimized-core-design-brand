@@ -19,7 +19,7 @@
   .text_area {
     display: flex;
     flex-direction: column;
-
+    margin: 40px 0;
     textarea {
       outline: navajowhite;
       box-shadow: 0 0 10px #d4d4d4;
@@ -29,7 +29,6 @@
       width: 100%;
       min-height: 200px;
       resize: none;
-
     }
   }
 }

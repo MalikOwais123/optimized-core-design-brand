@@ -8,6 +8,7 @@ import BlogSlider from "../../components/BlogSlider/BlogSlider";
 import InputField from "../../components/InputField/InputField";
 import CustomSelect from "../../components/CustomSelect/CustomSelect";
 import PageTitle from "../../components/PageTitle/PageTitle";
+import { fetchResponse } from "../../utils/Data/helpers";
 
 const InfiniteScroll = dynamic(
   () => import("../../components/InfiniteScroll/InfiniteScroll"),
@@ -39,19 +40,25 @@ const Blog = () => {
   }, []);
 
   const fetchAllBlogs = async () => {
-    const blogs = await fetch(`http://localhost:8001/blogs`);
-    const blogsData = await blogs.json();
-    setBlogsData(blogsData);
+    try {
+      const { data: items } = await fetchResponse(
+        `https://backend-develop.thecoredesigns.com/blogs`
+      );
+      setBlogsData(items);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const fetchInitiallBlogs = async () => {
     try {
-      const blogs = await fetch(
-        `http://localhost:8001/blogs?_page=${page}&_limit=4`
+      const {
+        data: { items },
+      } = await fetchResponse(
+        `https://backend-develop.thecoredesigns.com/blogs?page=1&limit=6`
       );
-      const blogsData = await blogs.json();
-      setBlogSliderData(blogsData);
-      setBlogsData(blogsData);
+      setBlogSliderData(items);
+      setBlogsData(items);
     } catch (error) {
       console.log(error);
     }
@@ -70,6 +77,7 @@ const Blog = () => {
     setBlogCategory(e);
   };
 
+  console.log("blogsData", blogsData);
   const getFilteredBlogData = () => {
     // CHECK IF BOTH NOT EXIST
     if (!searchInput && !blogCategory) {
@@ -122,7 +130,7 @@ const Blog = () => {
         </div>
 
         {/* SHOW BLOG SLIDER */}
-        {blogSliderData.length > 1 && (
+        {blogSliderData?.length > 1 && (
           <BlogSlider
             blogsData={blogSliderData}
             handleBlogClick={handleBlogClick}
@@ -138,15 +146,16 @@ const Blog = () => {
           {getFilteredBlogData()?.map((blog) => (
             <div key={blog.id}>
               <BlogCard
-                blogId={blog.id}
-                postedBy={`Posted by ${" "} ${blog?.postedBy.fullName}`}
-                userImage={blog?.postedBy.photo}
-                blogImage={blog?.coverPhoto}
+                postedBy={`Posted by ${" "} ${blog?.fullName || ""}`}
+                userImage={blog?.photo}
+                blogImage={blog?.blogPhoto?.[0]?.url}
                 date={blog?.createdAt}
                 blogTitle={blog?.title}
                 blogDesc={blog?.content}
-                onClick={() => handleBlogClick(blog.id)}
                 key={blog?.id}
+                blogId={blog?.id}
+                commentCount={blog?.commentCount}
+                onClick={() => handleBlogClick(blog.id)}
               />
             </div>
           ))}

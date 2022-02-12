@@ -28,13 +28,6 @@ const BlogCard = (props) => {
   return (
     <div>
       <div style={style} className={classList.blog_post}>
-        <div className={classList.blog_options}>
-          <BiDotsVerticalRounded className={classList.dots_vertical} />
-          <div className={classList.dropdown_wrapper}>
-            <button>Edit</button>
-            <button>Delete</button>
-          </div>
-        </div>
         <div>
           <Paragraph className={classList.user_title}>{postedBy}</Paragraph>
           <img className={classList.user_photo} src={userImage} alt="" />
