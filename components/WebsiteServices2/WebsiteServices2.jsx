@@ -8,8 +8,7 @@ import BannerMultiLogo from "../BannerMultiLogo/BannerMultiLogo";
 import { useState } from "react";
 import dynamic from "next/dynamic";
 const Wizard = dynamic(() => import("../../components/Wizard/Wizard"));
-import ThankYouModal from "../../components/ThankYouModal/ThankYouModal";
-
+const ThankYouModal = dynamic(() => import("../../components/ThankYouModal/ThankYouModal"));
 const WebsiteServices2 = ({
   customClass,
   headingContent1 = "#1 Website Development",
@@ -70,7 +69,7 @@ const WebsiteServices2 = ({
           setThankYou={setThankYou}
         />
       )}
-      {thankYou && (
+      {thankYou.show && (
         <ThankYouModal
           show={thankYou.show}
           onHide={() => setThankYou({ show: false, name: "" })}
