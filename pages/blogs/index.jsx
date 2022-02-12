@@ -13,15 +13,27 @@ const InfiniteScroll = dynamic(
   {
     ssr: false,
   }
-);
-
-const Blog = () => {
-  const [blogsData, setBlogsData] = useState([]);
-  const [page, setPage] = useState(1);
-  const router = useRouter();
+  );
+  
+  const Blog = () => {
+    const [blogsData, setBlogsData] = useState([]);
+    const [blogSliderData, setBlogSliderData] = useState([]);
+    const [searchInput, setSearchInput] = useState("");
+    const [blogCategory, setBlogCategory] = useState("");
+    const [page, setPage] = useState(1);
+    const router = useRouter();
+    const categoryOptions = [
+      { label: "industry", value: "industry" },
+      { label: "tech", value: "tech" },
+      { label: "smart phone", value: "smart phone" },
+      { label: "tablet", value: "tablet" },
+      { label: "desktop", value: "desktop" },
+      { label: "mobile", value: "mobile" },
+      { label: "web", value: "web" },
+    ];
 
   useEffect(() => {
-    // fetch all blogs list
+    // FETCH INITIALL BLOGS
     fetchInitiallBlogs();
   }, []);
 
@@ -37,6 +49,7 @@ const Blog = () => {
         `http://localhost:8001/blogs?_page=${page}&_limit=4`
       );
       const blogsData = await blogs.json();
+      setBlogSliderData(blogsData);
       setBlogsData(blogsData);
     } catch (error) {
       console.log(error);
@@ -48,58 +61,74 @@ const Blog = () => {
     router.push(`/blogs/${blog.id}`, null, { shallow: true });
   };
 
-  const businessOption = [
-    { label: "Personal Project", value: "personalProject" },
-    { label: "Sole trader/self-employed", value: "sole" },
-    {
-      label: "Small business (1 to 9 Employees)",
-      value: "smallBusiness",
-    },
-    {
-      label: "Medium business (10 to 29 Employees)",
-      value: "mediumBusiness",
-    },
-    {
-      label: "Large business (30 to 99 Employees)",
-      value: "largeBusiness",
-    },
-    {
-      label: "Extra large business (100 or more Employees)",
-      value: "extraLargeBusiness",
-    },
-    { label: "Charity/Non-profit", value: "charity" },
-    { label: "Other", value: "other" },
-  ];
+
+  const handleSearchInput = (e) => {
+    setSearchInput(e.target.value);
+  };
+
+  const handleSelectChange = (e) => {
+    setBlogCategory(e);
+  };
+
+  const getFilteredBlogData = () => {
+    // CHECK IF BOTH NOT EXIST
+    if (!searchInput && !blogCategory) {
+      return blogsData;
+    }
+    // CHECK IF SEARCH INPUT EXIST
+    if (searchInput && !blogCategory) {
+      return blogsData.filter((blog) =>
+        blog.title.toLowerCase().includes(searchInput.toLowerCase())
+      );
+    }
+    // CHECK IF BLOG CATEGORY EXIST
+    if (!searchInput && blogCategory) {
+      return blogsData.filter((blog) => blog.category === blogCategory);
+    }
+    // CHECK IF BOTH EXIST
+    if (searchInput && blogCategory) {
+      return blogsData.filter(
+        (blog) =>
+          blog.title.toLowerCase().includes(searchInput.toLowerCase()) &&
+          blog.category === blogCategory
+      );
+    }
+  }; // END OF FILTERED BLOGS BY TITLE OR CATEGORY
 
   return (
     <>
       <Section>
         <div className={classList.searchTile}>
-          <InputField
-            type="text"
-            // value={searchInput}
-            customClass={classList.searchInput}
-            placeholder="Search"
-            onChange={(e) => console.log(e)}
+          <input
+            value={searchInput}
+            onChange={handleSearchInput}
             name="searchInput"
-            // inputStyle={{ borderBottom: "1px solid black" }}
+            type="text"
+            placeholder="Search"
           />
           <CustomSelect
             placeholder="Category"
-            type="light"
-            Options={businessOption}
-            onSelect={(e) => console.log(e)}
+            Options={categoryOptions}
+            onSelect={handleSelectChange}
             customClass={classList.searchSelect}
           />
         </div>
-        <BlogSlider blogsData={blogsData} handleBlogClick={handleBlogClick} />
+
+        {/* SHOW BLOG SLIDER */}
+        {blogSliderData.length > 1 && (
+          <BlogSlider
+            blogsData={blogSliderData}
+            handleBlogClick={handleBlogClick}
+          />
+        )}
+
         <div className={classList.blog_wrapper}>
           {/* <InfiniteScroll
             length={blogsData?.length ?? 0}
             inverse={false}
             page={page}
             setPage={setPage}> */}
-          {blogsData?.map((blog) => (
+          {getFilteredBlogData()?.map((blog) => (
             <div key={blog.id}>
               <BlogCard
                 postedBy={`Posted by ${" "} ${blog?.postedBy.fullName}`}
