@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import dynamic from 'next/dynamic'
+import dynamic from "next/dynamic";
 import NavLink from "./../Navlinks/Navlinks";
 import { HiMenu } from "react-icons/hi";
 import Logo from "../../assets/images/logo/logo.svg";
@@ -8,10 +8,9 @@ import ContactHeader from "../ContactHeader/ContactHeader";
 import Button from "../Button/Button";
 
 //Dyanmic imports
-const GetAQuotModal = dynamic(() => import('../GetAQuotModal/GetAQuotModal'))
-const Slider = dynamic(() => import('../Slider/Slider'))
-const Dropdown = dynamic(() => import('./../DropDown/DropDown'))
-
+const GetAQuotModal = dynamic(() => import("../GetAQuotModal/GetAQuotModal"));
+const Slider = dynamic(() => import("../Slider/Slider"));
+const Dropdown = dynamic(() => import("./../DropDown/DropDown"));
 
 var services = [
   {
@@ -37,7 +36,7 @@ var services = [
   {
     name: "Digital Marketing",
     to: "/digital-marketing-services",
-  }
+  },
 ];
 
 const Navbar = () => {
@@ -91,6 +90,7 @@ const Navbar = () => {
             </div>
             <NavLink href="/packages">Packages</NavLink>
             <NavLink href="/portfolio">Portfolio</NavLink>
+            <NavLink href="/blogs">Blogs</NavLink>
             <NavLink href="/about">About</NavLink>
             <NavLink href="/contact">Contact</NavLink>
           </div>
