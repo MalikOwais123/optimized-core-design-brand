@@ -100,6 +100,7 @@ const Form = ({ heading, description, buttonText, className, headerClass }) => {
       if (res.statusCode === 201 || res.status) {
         setIsSubmitted(true);
       }
+      console.log("Test submit for")
     } catch (error) {
       setIsSubmitted(false);
       console.log(error);
@@ -121,7 +122,7 @@ const Form = ({ heading, description, buttonText, className, headerClass }) => {
 
   return (
     <>
-      <form className={`${classList.formWidth} ${className}`}>
+      <form className={`${classList.formWidth} ${className}`} onSubmit={submitFormHanlder}>
         <Header customClass={headerClass} fontWeight="semi-bold">
           {heading}
         </Header>
@@ -190,7 +191,6 @@ const Form = ({ heading, description, buttonText, className, headerClass }) => {
           inputStyle={{ borderBottom: "1px solid black" }}
         />
         <Button
-          onClick={submitFormHanlder}
           htmlType="submit"
           color="white"
           hover={true}

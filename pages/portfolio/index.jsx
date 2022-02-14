@@ -53,7 +53,7 @@ const index = () => {
           </Button>
         </div>
       </ReuseableRow>
-      <ShowCaseWrapper backgroundColor="white" btnColor="black" />
+      <ShowCaseWrapper  />
       <ReuseableRow
         backgroundImage={"none"}
         contentImage={man}

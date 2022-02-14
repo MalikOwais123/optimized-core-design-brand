@@ -158,6 +158,19 @@ export const checkStringWordLength = (str, maxCount) => {
   }
   return str;
 };
+export const fetchResponse = async (url) => {
+  try {
+    var res = await fetch(url);
+    var data = await res.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const createMarkup = (html) => {
+  return { __html: html };
+};
 
 // get format date from date string
 export const getFormatDate = (date) => {

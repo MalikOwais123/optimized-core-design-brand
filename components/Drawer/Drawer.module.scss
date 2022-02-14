@@ -19,8 +19,8 @@
 .drawer_wrapper {
   display: flex;
   flex-direction: column;
-  width: 350px;
-  min-width: 350px;
+  width: 400px;
+  min-width: 400px;
   height: calc(100vh - 65px);
   overflow-y: auto;
   background-color: #fff;
@@ -77,6 +77,7 @@
 @media screen and (max-width: 767px) {
   .drawer_wrapper {
     width: 100%;
+    min-width: 100%;
     position: absolute;
     top: 136px;
     z-index: 100;

@@ -53,7 +53,7 @@ var services = [
   {
     name: "Digital Marketing",
     to: "/digital-marketing-services",
-  }
+  },
 ];
 
 const Slider = ({ setNavbar, navbar }) => {
@@ -112,6 +112,13 @@ const Slider = ({ setNavbar, navbar }) => {
                 href={"/portfolio"}
                 activeClassName={classList.active_link}>
                 Portfolio
+              </NavLinks>
+            </div>
+          </div>
+          <div className={classList.slider_list_item}>
+            <div onClick={() => setNavbar(false)}>
+              <NavLinks href={"/blogs"} activeClassName={classList.active_link}>
+                Blogs
               </NavLinks>
             </div>
           </div>

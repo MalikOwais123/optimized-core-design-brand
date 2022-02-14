@@ -5,7 +5,9 @@ import BlogCard from "../../../components/blogCard/blogCard";
 import classList from "./index.module.scss";
 import Section from "../../../components/Section/Section";
 import { useRouter } from "next/router";
+import PageTitle from "../../../components/PageTitle/PageTitle";
 import dynamic from "next/dynamic";
+import { fetchResponse } from "../../../utils/Data/helpers";
 const InfiniteScroll = dynamic(
   () => import("../../../components/InfiniteScroll/InfiniteScroll"),
   {
@@ -29,22 +31,24 @@ const index = ({ data }) => {
 
   const getPaginatedBlogs = async (page) => {
     try {
-      const blogs = await fetch(
-        `http://localhost:8001/blogs?_page=${page}&_limit=4`
+      const {
+        data: { items },
+      } = await fetchResponse(
+        `https://backend-develop.thecoredesigns.com/blogs?page=${page}&limit=6`
       );
-      const blogsDataRes = await blogs.json();
-      setBlogsData([...blogsData, ...blogsDataRes]);
+      setBlogsData([...blogsData, ...items]);
     } catch (error) {
       console.log(error);
     }
   };
   const fetchInitiallBlogs = async () => {
     try {
-      const blogs = await fetch(
-        `http://localhost:8001/blogs?_page=${page}&_limit=4`
+      const {
+        data: { items },
+      } = await fetchResponse(
+        `https://backend-develop.thecoredesigns.com/blogs?page=1&limit=6`
       );
-      const blogsData = await blogs.json();
-      setBlogsData(blogsData);
+      setBlogsData(items);
     } catch (error) {
       console.log(error);
     }
@@ -67,8 +71,21 @@ const index = ({ data }) => {
     }
   }, [page]);
 
+  const blogStyle = {
+    padding: "0px 30px 30px 30px",
+  };
+
+  const para =
+    "We help our clients elevate their business through engaging brand identities and innovative digital marketing techniques. Looking to expand your brand reach and maximize your ROI? Let us help you create an innovative, effective, responsive, intuitive, SEO-friendly, attractive, and eye-catching web presence to capture more clients.";
+
   return (
     <>
+      <PageTitle
+        title="BLOG"
+        content={""}
+        woodenImage={false}
+        bgPayment={true}
+      />
       <Section>
         <div className={classList.showBlogDetialMain}>
           <ShowBlogDetail data={singleBlogData} />
@@ -82,14 +99,16 @@ const index = ({ data }) => {
               {blogsData?.map((blog) => (
                 <div key={blog.id}>
                   <BlogCard
-                    onClick={() => handleBlogClick(blog.id)}
-                    postedBy={`Posted by ${" "} ${blog?.postedBy.fullName}`}
-                    userImage={blog?.postedBy.photo}
-                    blogImage={blog?.coverPhoto}
+                    postedBy={`Posted by ${" "} ${blog?.fullName || ""}`}
+                    userImage={blog?.photo}
+                    blogImage={blog?.blogPhoto?.[0]?.url}
                     date={blog?.createdAt}
                     blogTitle={blog?.title}
                     blogDesc={blog?.content}
                     key={blog?.id}
+                    blogId={blog?.id}
+                    commentCount={blog?.commentCount}
+                    onClick={() => handleBlogClick(blog.id)}
                   />
                 </div>
               ))}
@@ -109,8 +128,10 @@ export async function getServerSideProps(context) {
     var { id: blogId } = query;
     if (blogId) {
       //fetch and send job and jobs
-      const blogById = await fetch(`http://localhost:8001/blogs/${blogId}`);
-      blog = await blogById.json();
+      const { data } = await fetchResponse(
+        `https://backend-develop.thecoredesigns.com/blogs/${blogId}`
+      );
+      blog = data;
     }
     return {
       props: {

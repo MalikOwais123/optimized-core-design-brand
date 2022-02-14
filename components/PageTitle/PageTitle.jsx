@@ -5,13 +5,19 @@ import Section from "../Section/Section";
 import classList from "./PageTitle.module.scss";
 
 const PageTitle = (props) => {
-  const { title, content = "", woodenImage = "dark" } = props;
+  const {
+    title,
+    content = "",
+    woodenImage = "dark",
+    bgPayment ,
+  } = props;
+  console.log(bgPayment, "bgPayment");
   return (
     <>
       <div
         className={`${classList.page_title_wrapper} ${
           woodenImage === "dark" ? classList.dark : classList.bg_image
-        }`}>
+        } ${bgPayment === true && classList.bgPayment}`}>
         <Section>
           <Header
             fontWeight="bold"
