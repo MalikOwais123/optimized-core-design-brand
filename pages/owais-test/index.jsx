@@ -68,7 +68,7 @@ const index = () => {
       <Section>
         <CustomerFeedBackGifsBanner />
       </Section> */}
-      <Button onClick={scrollToFieldHandler}>Scroll to Name</Button>
+      {/* <Button onClick={scrollToFieldHandler}>Scroll to Name</Button>
       <Section>
         <UseInput
           getFieldValue={(e) => {
@@ -92,10 +92,10 @@ const index = () => {
           }}
           placeholder="Enter Your Link"
         />
-      </Section>
+      </Section> */}
 
       {/* FORM ELEMENT */}
-      <Section>
+      {/* <Section>
         <UseForm
           form={formRef}
           onFinish={(e) => {
@@ -124,7 +124,9 @@ const index = () => {
         <Button onClick={setFieldHandler}>Set FieldValue</Button>
         <Button onClick={getFieldValuesHandler}>getFieldValues</Button>
         <Button onClick={resetFieldHanlder}>reset Name</Button>
-      </Section>
+      </Section> */}
+
+      
     </>
   );
 };

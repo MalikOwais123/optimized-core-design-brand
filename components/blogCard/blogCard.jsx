@@ -1,13 +1,11 @@
 import React from "react";
 import Header from "../Header/Header";
 import Paragraph from "../Paragraph/Paragraph";
-// import en1 from "../../public/assets/images/icons/ea/ea-1.svg";
-// import homePageImage2 from "./../../public/assets/images/home/8.png";
 import classList from "./blogCard.module.scss";
 import { getFormatDate } from "../../utils/Data/helpers";
 import { BiMessage } from "react-icons/bi";
 import { AiOutlineShareAlt } from "react-icons/ai";
-import { BiDotsVerticalRounded } from "react-icons/bi";
+
 const BlogCard = (props) => {
   const {
     postedBy,
@@ -19,6 +17,7 @@ const BlogCard = (props) => {
     onClick,
     style,
     blogId,
+    commentCount,
   } = props;
 
   const createMarkup = (html) => {
@@ -42,7 +41,7 @@ const BlogCard = (props) => {
               <div className={classList.flex_actions}>
                 <Paragraph fontSize={14}>
                   {" "}
-                  <BiMessage /> 22.1k Comments
+                  <BiMessage /> {commentCount} Comments
                 </Paragraph>
                 <Paragraph
                   customClass={classList.share_icon}
