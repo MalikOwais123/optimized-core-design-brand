@@ -58,8 +58,11 @@ const AnimatedCards = ({ item, setCurrentImage, setShowModal, index }) => (
 );
 
 const ShowCase = ({
-  backgroundColor = "#00FF00",
-  btnColor = "red",
+  // backgroundColor = "#00FF00",
+  backgroundColor = "#659DBD",
+  // backgroundColor = "#D79922",
+  btnColor = "white",
+  // btnColor= "white",
   data,
 }) => {
   const [selected, setSelected] = useState("airline");
@@ -210,7 +213,7 @@ const ShowCase = ({
           )}
           {data && (
             <Header
-              color="#ff0000"
+              color="white"
               fontWeight="bold"
               style={{ marginBottom: "20px" }}>
               PORTFOLIO

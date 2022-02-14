@@ -19,7 +19,7 @@ const index = () => {
     <>
       <MainBanner />
       <WebPresenseV2 />
-      <ShowCaseWrapper btnColor="red" />
+      <ShowCaseWrapper btnColor="white" />
       <ClientsLogo />
       <Procedure />
       <Packages />

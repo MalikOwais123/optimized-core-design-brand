@@ -38,12 +38,12 @@ const PricingPlanCard = ({
         )}
         <div className={classList.wrapperTitle}>
           <Header
-            color="#ff0000"
+            color="white"
             fontWeight="bold"
             fontSize={16}
             style={{
               margin: "0px",
-              background: "#00FF00",
+              background: "#E52525",
               padding: "4px 20px",
               borderRadius: "10px",
               letterSpacing: "3px",
@@ -89,8 +89,8 @@ const PricingPlanCard = ({
                 Live Chat
               </Button>
               <Button
-                backgroundColor="#00FF00"
-                color="#ff0000"
+                backgroundColor="#E52525"
+                color="white"
                 hover={true}
                 style={{
                   borderRadius: "30px",
