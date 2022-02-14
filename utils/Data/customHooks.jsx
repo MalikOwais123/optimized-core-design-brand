@@ -20,7 +20,7 @@ export default function usePagination(query, pageNumber) {
       url: "https://backend-develop.thecoredesigns.com/blogs",
       params: {
         search: query.search,
-        // blogCategoryId: query.blogCategoryId,
+        blogCategoryId: query.blogCategoryId,
         page: pageNumber,
         limit: 6,
       },

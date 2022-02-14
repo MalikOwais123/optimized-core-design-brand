@@ -11,6 +11,7 @@ import usePagination from "../../utils/Data/customHooks";
 
 const Blog = () => {
   const [blogSliderData, setBlogSliderData] = useState([]);
+  const [blogCategoryOptions, setBlogCategoryOptions] = useState({});
   // PAGINATION LOGICS
   const [pageNumber, setPageNumber] = useState(1);
   const [queryParams, setQueryParams] = useState({
@@ -31,7 +32,29 @@ const Blog = () => {
   useEffect(() => {
     // FETCH INITIALL BLOGS
     fetchInitiallBlogs();
+    getAllCategories();
   }, []);
+
+  const getAllCategories = async () => {
+    try {
+      const {
+        status,
+        data: { items },
+      } = await fetchResponse(
+        `https://backend-develop.thecoredesigns.com/blog-category?page=1&limit=50`
+      );
+      if (status) {
+        const tempOptions = items.map((v) => ({
+          label: v.title,
+          value: v.id,
+        }));
+        console.log("tempOptions",tempOptions);
+        setBlogCategoryOptions(tempOptions);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   const fetchInitiallBlogs = async () => {
     try {
@@ -51,9 +74,11 @@ const Blog = () => {
     router.push(`/blogs/${blog.id}`, null, { shallow: true });
   };
 
-
   // SEACH PAGINATION LOGICS
-  const { books, hasMore, loading, error } = usePagination(queryParams, pageNumber);
+  const { books, hasMore, loading, error } = usePagination(
+    queryParams,
+    pageNumber
+  );
 
   const observer = useRef();
   const lastBookElementRef = useCallback(
@@ -109,7 +134,7 @@ const Blog = () => {
           />
           <CustomSelect
             placeholder="Category"
-            Options={categoryOptions}
+            Options={blogCategoryOptions}
             onSelect={handleSelectChange}
             customClass={classList.searchSelect}
           />
