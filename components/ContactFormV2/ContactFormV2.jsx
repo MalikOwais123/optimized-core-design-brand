@@ -22,12 +22,12 @@ const MapServicesContact = () => {
       <Section background={"#F7F7F8"}>
         <div className={classList.contactMapMain}>
           <div className={classList.content}>
-            <Button
+            {/* <Button
               onClick={() => openLiveChat()}
               hover={true}
               style={{ marginBottom: "20px" }}>
               Talk to us
-            </Button>
+            </Button> */}
             <Header fontWeight="bold" fontSize="40">
               Contact Us Right Now!
             </Header>
