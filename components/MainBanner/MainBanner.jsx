@@ -16,14 +16,14 @@ const Video = ({
   const videoPlayer = useRef(null);
   return (
     <>
-      <div
+      {/* <div
         src={thumbnail.src}
         style={{
           backgroundImage: `url(${videoThumbnail.src})`,
           opacity: videoLoader ? "0" : "1",
           transition: "all 300ms ease-out",
         }}
-        className={classList.banner_thumbnail}></div>
+        className={classList.banner_thumbnail}></div> */}
       <video
         ref={videoPlayer}
         className={classList.banner_video}
