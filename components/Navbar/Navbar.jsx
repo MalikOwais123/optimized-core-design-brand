@@ -6,7 +6,6 @@ import Logo from "../../assets/images/logo/logo.svg";
 import classList from "./Navbar.module.scss";
 import ContactHeader from "../ContactHeader/ContactHeader";
 import Button from "../Button/Button";
-
 //Dyanmic imports
 const GetAQuotModal = dynamic(() => import("../GetAQuotModal/GetAQuotModal"));
 const Slider = dynamic(() => import("../Slider/Slider"));

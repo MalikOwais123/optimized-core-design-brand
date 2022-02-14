@@ -55,7 +55,8 @@ function MarketingBanner() {
           <div className={classList.chatLine}>
             <div
               className={classList.support}
-              onClick={openLiveChat}
+              // onClick={openLiveChat}
+              onClick={() => setShowQuoteModal(true)}
               style={{ cursor: "pointer" }}>
               <Image src={liveChat.src} width={52} height={42} alt="" />
               <div className={classList.chatIcon}>
@@ -64,10 +65,11 @@ function MarketingBanner() {
                 </Paragraph>
                 <Paragraph
                   style={{ cursor: "pointer" }}
-                  onClick={openLiveChat}
+                  // onClick={openLiveChat}
+                  onClick={() => setShowQuoteModal(true)}
                   marginBottom={0}
                   color="#000">
-                  Live Chat
+                  Get a quote
                 </Paragraph>
               </div>
             </div>

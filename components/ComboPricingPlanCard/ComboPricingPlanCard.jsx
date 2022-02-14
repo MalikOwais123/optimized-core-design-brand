@@ -9,6 +9,9 @@ import Modal from "../Modal/Modal";
 import ContactFormModal from "../ContactFormModal/ContactFormModal";
 import eliteCard from "../../assets/images/icons/bestsaller.png";
 import { openLiveChat } from "../../utils/Data/helpers";
+import dynamic from "next/dynamic";
+
+const GetAQuotModal = dynamic(() => import("../GetAQuotModal/GetAQuotModal"));
 
 const ComboPricingPlanCard = ({
   children,
@@ -19,6 +22,8 @@ const ComboPricingPlanCard = ({
   discountPrice,
 }) => {
   const [modal, setModal] = React.useState(false);
+  var [showQuotModal, setShowQuoteModal] = React.useState(false);
+
   const discountPriceStyle = {
     marginBottom: "6px",
     marginLeft: "6px",
@@ -84,8 +89,12 @@ const ComboPricingPlanCard = ({
                   borderRadius: "30px",
                 }}
                 color="white"
-                onClick={openLiveChat}>
-                Live Chat
+                // onClick={openLiveChat}
+                onClick={() => setShowQuoteModal(true)}
+                hover={true}
+                >
+                {/* Live Chat */}
+                Get a quote
               </Button>
               <Button
                 backgroundColor="#E52525"
@@ -105,8 +114,12 @@ const ComboPricingPlanCard = ({
               <Button
                 style={{ border: "solid 1px #fff", borderRadius: "30px" }}
                 color="#000"
-                onClick={() => setModal(true)}>
-                Live Chat
+                // onClick={() => setModal(true)}
+                onClick={() => setShowQuoteModal(true)}
+                hover={true}
+                >
+                {/* Live Chat */}
+                Get a quote
               </Button>
               <Button
                 style={{ border: "solid 1px #fff", borderRadius: "30px" }}
@@ -120,6 +133,10 @@ const ComboPricingPlanCard = ({
         <Modal modal={modal} setModal={setModal}>
           <ContactFormModal />
         </Modal>
+        <GetAQuotModal
+        show={showQuotModal}
+        onHide={() => setShowQuoteModal(false)}
+      />
       </div>
     </>
   );

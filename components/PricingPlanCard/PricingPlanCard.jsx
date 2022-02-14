@@ -9,6 +9,11 @@ import Modal from "../Modal/Modal";
 import ContactFormModal from "../ContactFormModal/ContactFormModal";
 import eliteCard from "../../assets/images/icons/bestsaller.png";
 import { openLiveChat } from "../../utils/Data/helpers";
+import { useState } from "react";
+
+import dynamic from "next/dynamic";
+//Dyanmic imports
+const GetAQuotModal = dynamic(() => import("../GetAQuotModal/GetAQuotModal"));
 
 const PricingPlanCard = ({
   children,
@@ -26,6 +31,7 @@ const PricingPlanCard = ({
     textDecorationLine: "line-through",
     textDecorationColor: "#B72A12",
   };
+  var [showQuotModal, setShowQuoteModal] = useState(false);
 
   return (
     <>
@@ -85,8 +91,10 @@ const PricingPlanCard = ({
                   borderRadius: "30px",
                 }}
                 color="white"
-                onClick={openLiveChat}>
-                Live Chat
+                // onClick={openLiveChat}
+                onClick={() => setShowQuoteModal(true)}
+                >
+                Get a quote
               </Button>
               <Button
                 backgroundColor="#E52525"
@@ -106,8 +114,10 @@ const PricingPlanCard = ({
               <Button
                 style={{ border: "solid 1px #fff", borderRadius: "30px" }}
                 color="#000"
-                onClick={() => setModal(true)}>
-                Live Chat
+                // onClick={() => setModal(true)}
+                onClick={() => setShowQuoteModal(true)}
+                >
+                Get a quote
               </Button>
               <Button
                 style={{ border: "solid 1px #fff", borderRadius: "30px" }}
@@ -124,6 +134,10 @@ const PricingPlanCard = ({
             packageInfo={packageInfo}
           />
         </Modal>
+        <GetAQuotModal
+        show={showQuotModal}
+        onHide={() => setShowQuoteModal(false)}
+      />
       </div>
     </>
   );

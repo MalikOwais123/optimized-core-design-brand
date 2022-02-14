@@ -9,8 +9,12 @@ import logo from "../../assets/images/logo.svg";
 import NavLink from "./../Navlinks/Navlinks";
 import Image from "next/image";
 import { phoneNumber } from "../../utils/Data/globalVariables";
+import { useState } from "react";
+import dynamic from "next/dynamic";
+const GetAQuotModal = dynamic(() => import("../GetAQuotModal/GetAQuotModal"));
 
 const ContactHeaderForLanding = () => {
+  var [showQuotModal, setShowQuoteModal] = useState(false);
   return (
     <div className={classList.contact_header_wrapper}>
       <Section padding={0}>
@@ -35,10 +39,14 @@ const ContactHeaderForLanding = () => {
           </div>
           <div className={classList.contact_info_btn}>
             <Image src={chatLogo.src} alt="" width={28} height={28} />
-            <a onClick={openLiveChat}>Live Chat</a>
+            <a onClick={() => setShowQuoteModal(true)}>Get a quote</a>
           </div>
         </div>
       </Section>
+      <GetAQuotModal
+        show={showQuotModal}
+        onHide={() => setShowQuoteModal(false)}
+      />
     </div>
   );
 };

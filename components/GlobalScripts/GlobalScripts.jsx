@@ -90,7 +90,7 @@ const GlobalScripts = () => {
               } catch (error) {
               console.log(error)
               }
-            }, 3000)
+            }, 2000)
           });
           `,
         }}
