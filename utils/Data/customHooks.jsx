@@ -4,11 +4,11 @@ import axios from "axios";
 export default function usePagination(query, pageNumber) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [books, setBooks] = useState([]);
+  const [data, setData] = useState([]);
   const [hasMore, setHasMore] = useState(false);
 
   useEffect(() => {
-    setBooks([]);
+    setData([]);
   }, [query]);
 
   useEffect(() => {
@@ -28,9 +28,8 @@ export default function usePagination(query, pageNumber) {
       cancelToken: new axios.CancelToken((c) => (cancel = c)),
     })
       .then((res) => {
-        setBooks((prevBooks) => {
+        setData((prevBooks) => {
           return [...prevBooks, ...res.data.data.items];
-          // ...new Set([...prevBooks, ...res.data.items.map((b) => b.title)]),
         });
         setHasMore(res.data.data.meta.itemCount > 0);
         setLoading(false);
@@ -42,5 +41,5 @@ export default function usePagination(query, pageNumber) {
     return () => cancel();
   }, [query, pageNumber]);
 
-  return { loading, error, books, hasMore };
+  return { loading, error, data, hasMore };
 }

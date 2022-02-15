@@ -59,11 +59,12 @@ const index = ({ data }) => {
   };
 
   const handleBlogClick = (id) => {
-    const blog = blogsData.find((blog) => blog.id === id);
+    const blog = blogsData?.find((blog) => blog.id === id);
     router.push(`/blogs/${blog.id}`, null, { shallow: true });
     setSingleBlogData(blog);
     handleDrawerCollapse();
   };
+
 
   useEffect(() => {
     if (page !== 1) {
@@ -108,7 +109,7 @@ const index = ({ data }) => {
                     key={blog?.id}
                     blogId={blog?.id}
                     commentCount={blog?.commentCount}
-                    onClick={() => handleBlogClick(blog.id)}
+                    onClick={() => handleBlogClick(blog?.id)}
                   />
                 </div>
               ))}
