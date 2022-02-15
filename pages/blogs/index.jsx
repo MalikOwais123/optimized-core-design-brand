@@ -48,7 +48,7 @@ const Blog = () => {
           label: v.title,
           value: v.id,
         }));
-        console.log("tempOptions",tempOptions);
+        console.log("tempOptions", tempOptions);
         setBlogCategoryOptions(tempOptions);
       }
     } catch (error) {
@@ -69,13 +69,8 @@ const Blog = () => {
     }
   };
 
-  const handleBlogClick = (id) => {
-    const blog = blogsData.find((blog) => blog.id === id);
-    router.push(`/blogs/${blog.id}`, null, { shallow: true });
-  };
-
   // SEACH PAGINATION LOGICS
-  const { books, hasMore, loading, error } = usePagination(
+  const { data, hasMore, loading, error } = usePagination(
     queryParams,
     pageNumber
   );
@@ -114,6 +109,10 @@ const Blog = () => {
     });
     setPageNumber(1);
   };
+  const handleBlogClick = (id) => {
+    const blog = data?.find((blog) => blog.id === id);
+    router.push(`/blogs/${blog.id}`, null, { shallow: true });
+  };
 
   return (
     <>
@@ -149,8 +148,8 @@ const Blog = () => {
         )}
 
         <div className={classList.blog_wrapper}>
-          {books?.map((blog, index) => {
-            if (books.length === index + 1) {
+          {data?.map((blog, index) => {
+            if (data.length === index + 1) {
               return (
                 <div ref={lastBookElementRef} key={blog.id}>
                   <BlogCard
