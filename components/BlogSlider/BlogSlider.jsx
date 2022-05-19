@@ -37,10 +37,17 @@ const BlogSlider = ({ blogsData, handleBlogClick }) => {
                   style={{ cursor: "pointer" }}
                   onClick={() => handleBlogClick(id)}
                   className={classList.left}>
-                  <Image
+                  {/* <Image
                     height={400}
                     width={700}
                     objectFit="cover"
+                    src={getCoverPhoto(blogPhoto?.[0]?.url)}
+                    alt="sliderImage.png"
+                  /> */}
+                  <img
+                    height={400}
+                    width={700}
+                    style={{ objectFit: "cover" }}
                     src={getCoverPhoto(blogPhoto?.[0]?.url)}
                     alt="sliderImage.png"
                   />
